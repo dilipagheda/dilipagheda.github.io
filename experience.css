@@ -54,73 +54,47 @@ a:hover {
   color: white
 }
 
-header {
-  text-align: center;
-  background: url('images/sydney.jpg') no-repeat top center ;
-  background-size: cover;
-  overflow: hidden;
-  padding-top: 60px;
+header h1 {
+  background-color:  #77ff33;
+  color:black;
+  padding: 70px;
+  margin-top: 0px;
+  width: 100%;
+  display: table;
+  font-size:70px;
+  opacity: 0.7;
 }
 header {
   line-height: 1.5;
 }
-header .profile-image {
-  margin-top: 50px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid white;
+
+article {
+  margin: 0px 30px 30px 30px;
+  padding: 20px 40px 40px;
+  width: auto;
+  text-align: left;
+  background: #fff;
+  border-bottom: 4px solid #ccc;
+  border-radius: 6px;
   transition: all .5s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-header .profile-image:hover {
-  transform: scale(1.2) rotate(5deg);
+
+article li {
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 10px;
 }
-.tag {
+
+article h3 {
+  text-align: center;
   background-color:  #77ff33;
   color:black;
   padding: 10px;
   border-radius: 20px;
   display: table;
   margin: 10px auto;
-}
-.location {
-  background-color: #222;
-  color: yellow;
-}
-.card {
-  margin: 30px;
-  padding: 20px 40px 40px;
-  max-width: 500px;
-  text-align: left;
-  background: #fff;
-  border-bottom: 4px solid #ccc;
-  border-radius: 6px;
-  transition: all .5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.hobbies-card {
-  margin: 50px;
-  padding: 20px 40px 40px;
-  text-align: left;
-  background: #fff;
-  border-bottom: 4px solid #ccc;
-  border-radius: 6px;
-  transition: all .5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.hobbies-card img{
-  float:right;
-  width: 50%;
-  height: auto;
-  margin-left: 20px;
-}
-
-blockquote{
-  border-left: 3px solid black;
-  padding-left: 20px;
-  line-height: 1.5;
 }
 .card:hover {
   border-color: #ff99ff;
@@ -194,20 +168,8 @@ a.social:hover {
 /* Styles for larger screens */
 @media screen and (min-width: 720px) {
 
-  .flex {
-      display: -ms-flexbox;      /* TWEENER - IE 10 */
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      -ms-flex-pack: distribute;
-      justify-content: space-around;
-      margin: 0 auto;
-  }
 
-  header {
-    min-height: 470px;
-  }
+
 
   .nav {
     max-width: 1200px;
