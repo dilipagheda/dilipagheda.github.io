@@ -1,71 +1,23 @@
-/* Global Layout Set-up */
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  color: #222;
-  background: #f7f5f0;
-}
-/* Link Styles */
-
-a {
-  text-decoration: none;
-  color: #999;
-}
-a:hover {
-  color: #6633ff;
-}
-
-/* Section Styles */
-
-.main-nav {
-  width: 100%;
-  background: black;
-  min-height: 30px;
-  padding: 10px;
-  text-align: center;
-}
-.nav {
-  display: flex;
-  justify-content: space-around;
-  font-weight: 700;
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.nav .name {
-    display: block;
-    margin-right: auto;
-    color: white;
-}
-.nav li {
-  padding: 5px 10px 10px 10px;
-}
-.nav a {
-  transition: all .5s;
-}
-.nav a:hover {
-  color: white
-}
 
 header h1 {
-  background-color:  #77ff33;
-  color:black;
-  padding: 70px;
+  color:blue;
+  padding: 30px;
   margin-top: 0px;
   width: 100%;
   display: table;
   font-size:70px;
-  opacity: 0.7;
 }
 header {
   line-height: 1.5;
+
+}
+
+.header-text{
+  background-color:  #ffffff;
+  width: 100%;
+  opacity: 0.6;
+
 }
 
 article {
@@ -89,118 +41,52 @@ article li {
 
 article h3 {
   text-align: center;
-  background-color:  #77ff33;
-  color:black;
+  background-color:  #0000ff;
+  letter-spacing: 3px;
+  opacity: 0.3;
+  color:white;
   padding: 10px;
   border-radius: 20px;
   display: table;
   margin: 10px auto;
-}
-.card:hover {
-  border-color: #ff99ff;
-}
-
-ul.skills {
-  padding: 0;
-  text-align: center;
-}
-
-.skills li {
-  border-radius: 6px;
-  display: inline-block;
-  background: #ff9904;
-  color: white;
-  padding: 5px 10px;
-  margin: 2px;
-}
-
-.skills li:nth-child(odd) {
-  background: #0399ff;
-}
-
-footer {
-  width: 100%;
-  min-height: 30px;
-  padding: 20px 0 40px 20px;
-}
-
-footer .copyright {
-  top: -8px;
-  font-size: .75em;
-}
-
-footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-footer ul li {
-  display: inline-block;
-}
-
-a.social {
-  display: inline-block;
-  text-indent: -9999px;
-  margin-left: 5px;
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
-  opacity: .4;
-  transition: all .5s;
-}
-a.twitter {
-  background-image: url(images/twitter.svg);
-}
-a.linkedin {
-  background-image: url(images/linkedin.svg);
-}
-a.github {
-  background-image: url(images/github.svg);
-}
-a.social:hover {
-  opacity: 1;
-}
-.clearfix {
-  clear: both;
-}
-
-/* Styles for larger screens */
-@media screen and (min-width: 720px) {
-
-
-
-
-  .nav {
-    max-width: 1200px;
-    padding: 0 30px;
-  }
-
-
-  main {
-    padding-top: 20px;
-  }
-
-  main p {
-    line-height: 1.6em;
-    text-align: justify;
-  }
-
-  main h2 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 10px;
-  color: white;
-  opacity: 0.5;
-  background-image: linear-gradient(to right, rgba(0,0,255,0), rgba(0,0,255,1));
-
-  }
-
-  footer {
-    font-size: 1.3em;
-    max-width: 1200px;
-    margin: 40px auto;
-  }
 
 }
+
+ol {
+	counter-reset:li; /* Initiate a counter */
+	margin-left:0; /* Remove the default left margin */
+	padding-left:0; /* Remove the default left padding */
+}
+ol > li {
+	position:relative; /* Create a positioning context */
+	margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+	padding:4px 8px; /* Add some spacing around the content */
+	list-style:none; /* Disable the normal item numbering */
+	border-top:1px solid #666;
+}
+ol > li:before {
+	content:counter(li); /* Use the counter as content */
+	counter-increment:li; /* Increment the counter by 1 */
+	/* Position and style the number */
+	position:absolute;
+	top:-2px;
+	left:-2em;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	width:2em;
+	/* Some space between the number and the content in browsers that support
+	   generated content but not positioning it (Camino 2 is one example) */
+	margin-right:8px;
+	padding:4px;
+	border-top:2px solid #666;
+	color:#fff;
+	background:#0000ff;
+  opacity: 0.4;
+	font-weight:bold;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	text-align:center;
+}
+li ol,
+li ul {margin-top:6px;}
+ol ol li:last-child {margin-bottom:0;}
