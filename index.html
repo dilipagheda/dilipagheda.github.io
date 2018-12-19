@@ -66,17 +66,16 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 ml-auto mr-auto">
-              <div class="card" data-aos="fade-up" data-aos-offset="10">
-                <div class="card-body">
-                  <div class="h4 mt-0 title text-center">About Me</div>
-                  <ul class="list-group list-group-flush">
-                    <p>Hello! I am Dilip Agheda. Web Developer, Test Automation Engineer and tea addict.
-                      I am passionate about learning and applying digital technology to solve problems. I build, test
-                      and deploy awesome apps that adds value to everyday lives.
-                      In my free time, I build side projects using web, mobile and backend technologies. I continously
-                      learn and improve my skills through online coding bootcamps such as Treehouse and Udacity.
-                    </p>
-                    <div class="bootcamp-card">
+                <div class="h4 mt-0 title text-center">About Me</div>
+
+                <p>Hello! I am Dilip Agheda. Web Developer, Test Automation Engineer and tea addict.
+                    I am passionate about learning and applying digital technology to solve problems. I build, test
+                    and deploy awesome apps that adds value to everyday lives.
+                    In my free time, I build side projects using web, mobile and backend technologies. I continously
+                    learn and improve my skills through online coding bootcamps such as Treehouse and Udacity.
+                  </p>
+              <div class="card bootcamp-card" data-aos="fade-up" data-aos-offset="10">
+
                       <img class="badge-image" src="images/badge.svg" alt="Badge">
                       <div class="bootcamp-card-details">
                         <span class="bootcamp-card-details-title1">Techdegree Graduate</span>
@@ -86,9 +85,6 @@
                           and other front end technologies through lectures, coding challenges, quizzes and 9 portfolio
                           Projects. The program concluded with a final proctored exam.</p>
                       </div>
-                    </div>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -103,29 +99,31 @@
               <div class="h4 text-center mb-4 title">Portfolio</div>
               <div class="nav-align-center">
                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#web-development" role="tablist">Web</a></li>
-                  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#android" role="tablist">Android</a></li>
+                  <li class="nav-item portfolio-tab"><a class="nav-link active" data-toggle="tab" href="#web-development" role="tablist">Web</a></li>
+                  <li class="nav-item portfolio-tab"><a class="nav-link" data-toggle="tab" href="#android" role="tablist">Android</a></li>
                 </ul>
               </div>
             </div>
           </div>
 
           <div class="tab-content gallery mt-5">
-            <div class="tab-pane " id="web-development">
+            <div class="tab-pane active" id="web-development">
               <div class="ml-auto mr-auto">
                 <div class="row">
                   <div class="col-md-6 col-lg-4">
                     <!-- unit8 -->
-                    <div class="card mb-3 project">
-                      <img class="card-img-top" src="images/t-frontend/unit8.png" alt="Card image cap">
+                    <div class="card mb-3 web-project">
+ 
                       <div class="card-body text-center">
-                        <h5>Employee Directory</h5>
-                        <p class="card-text">A single page and fully responsive app that shows employee directory
+                          <h5>Employee Directory</h5>
+                          <img class="card-img-top" src="images/t-frontend/unit8.png" alt="Card image cap"> 
+                        <!-- <p class="card-text">A single page and fully responsive app that shows employee directory
                           developed using JavaScript and FetchAPI by communicating with a third-party API (Random User
-                          Generator API).</p>
+                          Generator API).</p> -->
                         <div>
                           <button class="btn btn-primary" href="#">Github</button>
                           <button class="btn btn-primary" href="#">Live View</button>
+                          <button class="btn btn-primary" href="#">Read More</button>
                         </div>
                       </div>
                     </div>
@@ -133,15 +131,18 @@
                   <!-- unit7 -->
                   <div class="col-md-6 col-lg-4">
 
-                    <div class="card project">
-                      <img class="card-img-top" src="images/t-frontend/unit7.png" alt="Card image cap">
+                    <div class="card web-project">
                       <div class="card-body text-center">
                         <h5>WebApp Dashboard</h5>
-                        <p class="card-text">An interactive and fully responsive dashboard built using SVG graphics and
-                          JavaScript programming. It involves creating tables, charts and graphics.</p>
+                        <img class="card-img-top" src="images/t-frontend/unit7.png" alt="Card image cap">
+
+                        <!-- <p class="card-text">An interactive and fully responsive dashboard built using SVG graphics and
+                          JavaScript programming. It involves creating tables, charts and graphics.</p> -->
                         <div>
                           <button class="btn btn-primary">Github</button>
                           <button class="btn btn-primary" href="#">Live View</button>
+                          <button class="btn btn-primary" href="#">Read More</button>
+
                         </div>
                       </div>
                     </div>
@@ -149,17 +150,20 @@
                   <!-- unit6 -->
                   <div class="col-md-6 col-lg-4">
 
-                    <div class="card project">
-                      <img class="card-img-top" src="images/t-frontend/unit6.png" alt="Card image cap">
+                    <div class="card web-project">
 
                       <div class="card-body text-center">
                         <h5>Game Show App</h5>
-                        <p class="card-text">A browser version of “Wheel of Success”, a word guessing game. It's built
+                        <img class="card-img-top" src="images/t-frontend/unit6.png" alt="Card image cap">
+
+                        <!-- <p class="card-text">A browser version of “Wheel of Success”, a word guessing game. It's built
                           using Javascript to come up with a random phrase that players will try to guess by entering
-                          different letters into the program.</p>
+                          different letters into the program.</p> -->
                         <div>
                           <button class="btn btn-primary">Github</button>
                           <button class="btn btn-primary">Live View</button>
+                          <button class="btn btn-primary" href="#">Read More</button>
+
                         </div>
                       </div>
                     </div>
@@ -167,16 +171,19 @@
                   <!-- unit5 -->
                   <div class="col-md-6 col-lg-4">
 
-                    <div class="card project">
-                      <img class="card-img-top" src="images/t-frontend/unit5.png" alt="Card image cap">
+                    <div class="card web-project">
 
                       <div class="card-body text-center">
                         <h5>An Interactive Photo Gallery</h5>
-                        <p class="card-text">An interactive and searchable image gallary built from scratch using just
-                          HTML, CSS and JavaScript.</p>
+                        <img class="card-img-top" src="images/t-frontend/unit5.png" alt="Card image cap">
+
+                        <!-- <p class="card-text">An interactive and searchable image gallary built from scratch using just
+                          HTML, CSS and JavaScript.</p> -->
                         <div>
                           <button class="btn btn-primary">Github</button>
                           <button class="btn btn-primary">Live View</button>
+                          <button class="btn btn-primary" href="#">Read More</button>
+
                         </div>
                       </div>
                     </div>
@@ -184,16 +191,20 @@
                   <!-- unit4 -->
                   <div class="col-md-6 col-lg-4">
 
-                    <div class="card project">
-                      <img class="card-img-top" src="images/t-frontend/unit4.png" alt="Card image cap">
+                    <div class="card web-project">
 
                       <div class="card-body text-center">
                         <h5>Web Style Guide</h5>
-                        <p class="card-text">A web style guide project built using whole bunch of Saas features. It can
-                          be re-used in many projects to speed-up styling and layout.</p>
+                        <img class="card-img-top" src="images/t-frontend/unit4.png" alt="Card image cap">
+
+                        <!-- <p class="card-text">A web style guide project built using whole bunch of Saas features. It can
+                          be re-used in many projects to speed-up styling and layout.
+                        </p> -->
                         <div>
                           <button class="btn btn-primary">Github</button>
                           <button class="btn btn-primary">Live View</button>
+                          <button class="btn btn-primary" href="#">Read More</button>
+
                         </div>
                       </div>
                     </div>
@@ -201,16 +212,20 @@
                   <!-- unit3 -->
                   <div class="col-md-6 col-lg-4">
 
-                    <div class="card project">
-                      <img class="card-img-top" src="images/t-frontend/unit3.png" alt="Card image cap">
+                    <div class="card web-project">
 
                       <div class="card-body text-center">
                         <h5>An Online Registration Form</h5>
-                        <p class="card-text">Web forms appear everywhere online.This project is about building a
-                          responsive, mobile-first registration form using a variety of HTML form elements.</p>
+                        <img class="card-img-top" src="images/t-frontend/unit3.png" alt="Card image cap">
+
+                        <!-- <p class="card-text">Web forms appear everywhere online.This project is about building a
+                          responsive, mobile-first registration form using a variety of HTML form elements.
+                        </p> -->
                         <div>
                           <button class="btn btn-primary">Github</button>
                           <button class="btn btn-primary">Live View</button>
+                          <button class="btn btn-primary" href="#">Read More</button>
+
                         </div>
                       </div>
                     </div>
@@ -218,16 +233,20 @@
                   <!-- unit2 -->
                   <div class="col-md-6 col-lg-4">
 
-                    <div class="card project">
-                      <img class="card-img-top" src="images/t-frontend/unit2.png" alt="Card image cap">
+                    <div class="card web-project">
 
                       <div class="card-body text-center">
                         <h5>Mobile-first Responsive Layout</h5>
-                        <p class="card-text">Using HTML, CSS, and responsive design, this page is created as a
+                        <img class="card-img-top" src="images/t-frontend/unit2.png" alt="Card image cap">
+
+                        <!-- <p class="card-text">Using HTML, CSS, and responsive design, this page is created as a
                           mobile-first with a layout that adjusts to fit mobile phones, tablets, and desktop displays.</p>
-                        <div class="card-buttons">
+                         -->
+                          <div class="card-buttons">
                           <button class="btn btn-primary">Github</button>
                           <button class="btn btn-primary">Live View</button>
+                          <button class="btn btn-primary" href="#">Read More</button>
+
                         </div>
                       </div>
                     </div>
@@ -236,7 +255,7 @@
               </div>
             </div>
             <!-- android portfolio begins -->
-            <div class="tab-pane active" id="android">
+            <div class="tab-pane" id="android">
               <div class="ml-auto mr-auto">
                 <div class="row">
                   <div class="col-md-6 col-lg-4">
@@ -248,28 +267,52 @@
                         <img src="images/u-android/PopularMovies/mobile-portrait.png" alt="baking recipe app">
 
                         <div>
-                          <button class="btn btn-primary">Github</button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Read More
-
-                            <!-- <a href="content/popularmovies.html">Read More</a> -->
+                          <button class="btn btn-primary">
+                            <a target="_blank" href="https://github.com/dilipagheda/PopularMovies2">Github</a>
+                          </button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popularmoviesmodal">Read
+                            More
                           </button>
                           <!-- Button trigger modal -->
 
                           <!-- Modal for display more info-->
-                          <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                          <div class="modal fade" id="popularmoviesmodal" tabindex="-1" role="dialog" aria-labelledby="popularmoviesmodal"
                             aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Popular Movies</h5>
+                                  <h5 class="modal-title" id="popularmoviesmodal">Popular Movies</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="card-text">This project is developed as part of Udacity's Android Developer Nanodegree Program. It is about consuming popular movies API and serving the content in a meaningful way to the user. Users see movies posters in a grid layout and can interact with the poster to learn more about the movie. Users can see movie details, reviews and trailers about the movie and can also mark the movie as favorite by starring it! All favorite movies are stored locally on the device in a database. Users can also choose to fetch movies differently based on a criteria.</p>
-                                    <h3>Skills Gained:</h3>
-                                    <p>Retrofit2 Network Library, Picasso Image Libary, Android Architecture Components such as Room, ViewModel and LiveData, Grid Layout</p>
+                                  <p class="card-text">This project is developed as part of Udacity's Android Developer
+                                    Nanodegree Program. It is about consuming popular movies API and serving the
+                                    content in a meaningful way to the user.
+                                    <p class="card-text">Users see movies posters in a grid layout and can interact
+                                      with the poster to learn more about the movie. Users can see movie details,
+                                      reviews and trailers about the movie and can also mark the movie as favorite by
+                                      starring it! All favorite movies are stored locally on the device in a database.
+                                    </p>
+                                    <p class="card-text">Users can also choose to fetch movies differently based on a
+                                      criteria.</p>
+                                    <h5>My Learnings</h5>
+                                    <ul>
+                                      <li>Fetch data from the Internet with theMovieDB API.</li>
+                                      <li>Use adapters and custom list layouts to populate list views.</li>
+                                      <li>Incorporate libraries to simplify the amount of code you need to write </li>
+                                      <li>Use Android architecture components</li>
+                                    </ul>
+                                    <h5>Skills Gained</h5>
+                                    <p>Retrofit2 Network Library, Picasso Image Libary, Android Architecture Components
+                                      such as Room, ViewModel and LiveData, Grid Layout</p>
+                                    <h5>Udacity Review</h5>
+                                    <p>Superb job implementing Stage 2 of Popular Movies! 👏 I really enjoyed using
+                                      your app! Great use of Paging concept during scroll. It helps to reduce network
+                                      data. This is the very useful concept if data is very large amount. its very user
+                                      friendly app. 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 Your code is well
+                                      structured form.👏 👏 👏 👏 👏 👏 Finally, Your hard work has paid off! </p>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -288,11 +331,68 @@
                       <h5>Baking Receipe</h5>
                       <div class="card-body text-center">
 
-                        <img src="images/u-android/Baking Recipe/mobile-portrait1.png" alt="sandwich club app">
-                        <!-- <p class="card-text">This project is about consuming popular movies API and serving the content in a meaningful way to the user. Users see movies posters in a grid layout and can interact with the poster to learn more about the movie. Users can see movie details, reviews and trailers about the movie and can also mark the movie as favorite by starring it! All favorite movies are stored locally on the device in a database. Users can also choose to fetch movies differently based on a criteria.</p> -->
+                        <img src="images/u-android/Baking Recipe/mobile-portrait1.png" alt="baking recipe app">
                         <div>
-                          <button class="btn btn-primary">Github</button>
-                          <button class="btn btn-primary">Read More</button>
+                          <button class="btn btn-primary">
+                            <a target="_blank" href="https://github.com/dilipagheda/BakingRecipe">Github</a>
+                          </button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bakingreceipemodal">Read
+                            More
+                          </button>
+                          <!-- Button trigger modal -->
+
+                          <!-- Modal for display more info-->
+                          <div class="modal fade" id="bakingreceipemodal" tabindex="-1" role="dialog" aria-labelledby="bakingreceipemodal"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="bakingreceipemodal">Baking Receipe</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <p class="card-text">This project is developed as part of Udacity's Android Developer
+                                    Nanodegree Program. It involves building an app that is ready to productionize.
+                                    This will involve finding and handling error cases, adding accessibility features,
+                                    allowing for localization, adding a widget, and adding a library.
+
+
+                                    <p class="card-text">This project required me to implement different layouts for
+                                      both phone and tablets in portrait and landscape modes, perform thorough testing
+                                      through automated tests using Espresso framework, re-use the functionality using
+                                      Fragments, handle various error cases to handle different values in the JSON
+                                      response, use libraries such as data-binding and above all integrate ExoPlayer to
+                                      play videos for each step of the recipe.
+                                    </p>
+                                    <p class="card-text">It took me around 3 weeks to fully implement this project. I
+                                      also needed to do lot of learning and building small projects bit by bit to fully
+                                      grasp different parts that went into it. I had to do lot of testing and I am glad
+                                      that Espresso tests were part of the requirements as I was able to use it again
+                                      and again after refactoring.</p>
+                                    <h5>My Learnings</h5>
+                                    <ul>
+                                      <li>Use MediaPlayer/Exoplayer to display videos.</li>
+                                      <li>Handle error cases in Android.</li>
+                                      <li>Add a widget to your app experience.</li>
+                                      <li>Leverage a third-party library in your app.</li>
+                                      <li>Use Fragments to create a responsive design that works on phones and tablets.</li>
+                                    </ul>
+
+                                    <h5>Skills Gained</h5>
+                                    <p>Retrofit2 Network Library, Picasso Image Libary, Espresso Tests, Create layouts
+                                      for Tablet and also for Portrait, Landscape modes, Implement app widget,
+                                      Implement cool features such as PreviewSeekBar and PIP (Picture in Picture)</p>
+                                    <h5>Udacity Review</h5>
+                                    <p>Good job! The project follows all the rubric requirements, well done! 👏 👏 👏</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -304,11 +404,54 @@
                       <h5>Sandwich Club</h5>
                       <div class="card-body text-center">
 
-                        <img src="images/u-android/sandwichclub/mobile-portrait.png" alt="popular movies app">
-                        <!-- <p class="card-text">This project is about consuming popular movies API and serving the content in a meaningful way to the user. Users see movies posters in a grid layout and can interact with the poster to learn more about the movie. Users can see movie details, reviews and trailers about the movie and can also mark the movie as favorite by starring it! All favorite movies are stored locally on the device in a database. Users can also choose to fetch movies differently based on a criteria.</p> -->
+                        <img src="images/u-android/sandwichclub/mobile-portrait.png" alt="sandwich club app">
                         <div>
-                          <button class="btn btn-primary">Github</button>
-                          <button class="btn btn-primary">Read More</button>
+                          <button class="btn btn-primary">
+                            <a target="_blank" href="https://github.com/dilipagheda/sandwich_club">Github</a>
+                          </button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sandwichmodal">Read
+                            More
+                          </button>
+                          <!-- Button trigger modal -->
+
+                          <!-- Modal for display more info-->
+                          <div class="modal fade" id="sandwichmodal" tabindex="-1" role="dialog" aria-labelledby="sandwichmodal"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="sandwichmodal">Sandwich Club</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <p class="card-text">This project is part of the Udacity Android develoer nanodegree program. It is about showing the details of each sandwich once it is selected.
+
+                                    </p>
+                                  <p class="card-text"></p>
+                                  </p>
+                                  <p class="card-text"></p>
+                                  <h5>My Learnings</h5>
+                                  <ul>
+                                      <li>Practice JSON parsing to a model object</li>
+                                      <li>Design an activity layout</li>
+                                      <li>Populate all fields in the layout accordingly</li>
+                                      </ul>
+
+                                  <h5>Skills Gained</h5>
+                                  <p>Building layouts, parsing JSON without use of any libraries</p>
+                                  <h5>Udacity Review</h5>
+                                  <p>Good work now it's time to take a power nap and be ready for next stage. Keep learning more learn more gain and more gain more shine so be ready to shine like a star and keep learning. Happy coding.
+
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
