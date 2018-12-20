@@ -238,9 +238,9 @@
 .web-project button{
   border: 1px solid white;
 }
-.android-project .card-body div{
+.android-project .card-body div.bg-grey{
     border-top:2px solid white;
-    background-color: grey;
+    /* background-color: grey; */
 
 }
 .android-project .card-body div{
