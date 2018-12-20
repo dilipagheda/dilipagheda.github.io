@@ -21,6 +21,11 @@
   
   
   /*custom for resume.html*/
+
+ .bg-grey {
+    background-color:grey;
+  }
+
   .skills-card {
     height: 510px;
     overflow: scroll;
@@ -127,6 +132,9 @@
 } */
 .portfolio-tab{
   width: 125px;
+}
+.portfolio-tab a {
+  border:1px solid black;
 }
  .badge-image{
       height: 100px;
@@ -271,6 +279,7 @@
 a:hover{
   text-decoration: none;
 }
+
   /* Tablet */
   @media (min-width:768px) {
     .experience-duration{
