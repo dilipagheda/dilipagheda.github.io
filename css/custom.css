@@ -164,7 +164,10 @@
     align-items: center;
     text-align: center;    
   }
-
+  .bootcamp-link{
+    font-weight: bold;
+    color:blue;
+  }
   .bootcamp-card-details-title1{
     font-size: 1.5rem;
     margin:5px 0;
@@ -354,8 +357,8 @@ a:hover{
         display: flex;
         flex-direction: row;
         padding:10px;
-        width:80%;
-        margin:auto;
+        /* width:80%; */
+        /* margin:auto; */
     }
     .bootcamp-card-details{
       display: flex;
