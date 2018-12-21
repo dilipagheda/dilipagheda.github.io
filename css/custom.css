@@ -1,4 +1,8 @@
 
+  .logo{
+    height: 30px;
+    width: 32px;
+  }
   .project .card-body{
     display: flex;
     flex-direction: column;
