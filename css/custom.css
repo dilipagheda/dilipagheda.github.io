@@ -27,7 +27,7 @@
   }
 
   .skills-card {
-    height: 510px;
+    height: auto;
     overflow: scroll;
   }
   .skills-card ul li div {
@@ -304,10 +304,16 @@
 a:hover{
   text-decoration: none;
 }
+.button-container a:hover{
+  transform: scale(1.1);
+}
 
   /* Tablet */
   @media (min-width:768px) {
-    
+    .skills-card {
+      height: 510px;
+      overflow: scroll;
+    }
     .experience-duration{
       font-size: 1.2rem;
       padding: 20px;
