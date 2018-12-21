@@ -18,9 +18,9 @@
 <body id="top">
   <header>
     <div class="profile-page sidebar-collapse">
-      <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" data-color-on-scroll="400">
         <div class="container">
-          <div class="navbar-translate"><a class="navbar-brand" href="index.html" rel="tooltip">Dilip Agheda</a>
+          <div class="navbar-translate"><a class="navbar-brand" href="index.html">Dilip Agheda</a>
             <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
               aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span
                 class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
@@ -40,7 +40,7 @@
     <div>
       <div class="profile-page">
         <div class="wrapper">
-          <div class="page-header page-header-small" filter-color="green">
+          <div class="page-header page-header-small">
             <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
             <div class="container">
               <div class="content-center">
@@ -53,9 +53,16 @@
             </div>
             <div class="section">
               <div class="container">
-                <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon profile-button" target="_blank" href="https://www.linkedin.com/in/dilip-a-3293b77/"
-                    rel="tooltip" title="Checkout my Linkedin Profile"><i class="fa fa-linkedin"></i></a><a class="btn btn-default btn-round btn-lg btn-icon profile-button"
-                    target="_blank" href="https://github.com/dilipagheda" rel="tooltip" title="Checkout my Github Projects"><i class="fa fa-github"></i></a></div>
+                <div class="button-container">
+                  <a class="btn btn-default btn-round btn-lg btn-icon profile-button" target="_blank" href="https://www.linkedin.com/in/dilip-a-3293b77/"
+                    data-rel="tooltip" title="Checkout my Linkedin Profile">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a class="btn btn-default btn-round btn-lg btn-icon profile-button"
+                    target="_blank" href="https://github.com/dilipagheda" data-rel="tooltip" title="Checkout my Github Projects">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -97,11 +104,12 @@
           <div class="row">
             <div class="col-md-6 ml-auto mr-auto">
               <div class="h4 text-center mb-4 title">Portfolio</div>
-              <div class="nav-align-center">
-                <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                  <li class="nav-item portfolio-tab"><a class="nav-link active" data-toggle="tab" href="#web-development" role="tablist">Web</a></li>
-                  <li class="nav-item portfolio-tab"><a class="nav-link" data-toggle="tab" href="#android" role="tablist">Android</a></li>
-                </ul>
+                <div class="nav-align-center">
+                <nav class="nav nav-pills nav-fill">
+                    <a class="nav-item portfolio-tab nav-link active" data-toggle="tab"  href="#web-development">Web</a>
+                    <a class="nav-item portfolio-tab nav-link" data-toggle="tab"  href="#android">Android</a>
+                </nav>
+                </div>
               </div>
             </div>
           </div>
@@ -117,15 +125,10 @@
                       <div class="card-body text-center">
                           <h5>Employee Directory</h5>
                           <img class="card-img-top" src="images/t-frontend/unit8.png" alt="Card image cap"> 
-                        <div>
-                          <button class="btn btn-primary" href="#">
-                            
-                            <a target="_blank" href="https://github.com/dilipagheda/employee_directory_v1">Github</a>
-                          </button>
-                          <button class="btn btn-primary" href="#">
-                            <a target="_blank" href="https://dilipagheda.github.io/employee_directory_v1/">Live View</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#empdirectory">Read
+                        <div>                            
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/employee_directory_v1">Github</a>
+                            <a class="btn btn-primary white-border" target="_blank" href="https://dilipagheda.github.io/employee_directory_v1/">Live View</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#empdirectory">Read
                               More
                             </button>
                             <!-- Button trigger modal -->
@@ -133,12 +136,12 @@
                             <!-- Modal for display more info-->
                             <div class="modal fade" id="empdirectory" tabindex="-1" role="dialog" aria-labelledby="empdirectory"
                               aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="empdirectory">Employee Directory</h5>
+                                    <h5 class="modal-title">Employee Directory</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </button>
                                   </div>
                                   <div class="modal-body">
@@ -178,14 +181,10 @@
                         <h5>WebApp Dashboard</h5>
                         <img class="card-img-top" src="images/t-frontend/unit7.png" alt="Card image cap">
                         <div>
-                          <button class="btn btn-primary">
-                            <a target="_blank" href="https://github.com/dilipagheda/web_app_dashboard_v3.1">Github</a>
-                          </button>
-                          <button class="btn btn-primary" href="#">
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/web_app_dashboard_v3.1">Github</a>
                             
-                          <a target="_blank" href="https://dilipagheda.github.io/web_app_dashboard_v3.1/">Live View</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#webappdashboard">Read
+                          <a class="btn btn-primary white-border" target="_blank" href="https://dilipagheda.github.io/web_app_dashboard_v3.1/">Live View</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#webappdashboard">Read
                               More
                             </button>
                             <!-- Button trigger modal -->
@@ -193,12 +192,12 @@
                             <!-- Modal for display more info-->
                             <div class="modal fade" id="webappdashboard" tabindex="-1" role="dialog" aria-labelledby="webappdashboard"
                               aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="webappdashboard">WebApp Dashboard</h5>
+                                    <h5 class="modal-title">WebApp Dashboard</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </button>
                                   </div>
                                   <div class="modal-body">
@@ -244,14 +243,10 @@
                           using Javascript to come up with a random phrase that players will try to guess by entering
                           different letters into the program.</p> -->
                         <div>
-                          <button class="btn btn-primary">
-                            <a target="_blank" href="https://github.com/dilipagheda/game_show_app_v1.2">Github</a>
-                          </button>
-                          <button class="btn btn-primary">
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/game_show_app_v1.2">Github</a>
                             
-                          <a target="_blank" href="https://dilipagheda.github.io/game_show_app_v1.2/">Live View</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gameshowapp">Read
+                          <a class="btn btn-primary white-border" target="_blank" href="https://dilipagheda.github.io/game_show_app_v1.2/">Live View</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#gameshowapp">Read
                               More
                             </button>
                             <!-- Button trigger modal -->
@@ -259,12 +254,12 @@
                             <!-- Modal for display more info-->
                             <div class="modal fade" id="gameshowapp" tabindex="-1" role="dialog" aria-labelledby="gameshowapp"
                               aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="gameshowapp">Game Show App</h5>
+                                    <h5 class="modal-title">Game Show App</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </button>
                                   </div>
                                   <div class="modal-body">
@@ -313,14 +308,10 @@
                         <!-- <p class="card-text">An interactive and searchable image gallary built from scratch using just
                           HTML, CSS and JavaScript.</p> -->
                         <div>
-                          <button class="btn btn-primary">
                             
-                            <a target="blank" href="https://github.com/dilipagheda/photo_gallery_v4">Github</a>
-                          </button>
-                          <button class="btn btn-primary">
-                          <a target="_blank" href="https://dilipagheda.github.io/photo_gallery_v4/">Live View</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#photogallary">Read
+                            <a class="btn btn-primary white-border" target="blank" href="https://github.com/dilipagheda/photo_gallery_v4">Github</a>
+                          <a class="btn btn-primary white-border" target="_blank" href="https://dilipagheda.github.io/photo_gallery_v4/">Live View</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#photogallary">Read
                               More
                             </button>
                             <!-- Button trigger modal -->
@@ -328,12 +319,12 @@
                             <!-- Modal for display more info-->
                             <div class="modal fade" id="photogallary" tabindex="-1" role="dialog" aria-labelledby="photogallary"
                               aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="photogallary">An Interactive Photo Gallery</h5>
+                                    <h5 class="modal-title">An Interactive Photo Gallery</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </button>
                                   </div>
                                   <div class="modal-body">
@@ -383,14 +374,10 @@
                           be re-used in many projects to speed-up styling and layout.
                         </p> -->
                         <div>
-                          <button class="btn btn-primary">
-                            <a target="_blank" href="https://github.com/dilipagheda/style_guide_v4">Github</a>
-                          </button>
-                          <button class="btn btn-primary">
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/style_guide_v4">Github</a>
                             
-                          <a target="_blank" href="https://dilipagheda.github.io/style_guide_v4/">Live View</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#webstyleguide">Read
+                          <a class="btn btn-primary white-border" target="_blank" href="https://dilipagheda.github.io/style_guide_v4/">Live View</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#webstyleguide">Read
                               More
                             </button>
                             <!-- Button trigger modal -->
@@ -398,12 +385,12 @@
                             <!-- Modal for display more info-->
                             <div class="modal fade" id="webstyleguide" tabindex="-1" role="dialog" aria-labelledby="webstyleguide"
                               aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="webstyleguide">Web Style Guide</h5>
+                                    <h5 class="modal-title">Web Style Guide</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </button>
                                   </div>
                                   <div class="modal-body">
@@ -450,13 +437,9 @@
                           responsive, mobile-first registration form using a variety of HTML form elements.
                         </p> -->
                         <div>
-                          <button class="btn btn-primary">
-                            <a target="_blank" href="https://github.com/dilipagheda/online_registration_form">Github</a>
-                          </button>
-                          <button class="btn btn-primary">
-                          <a target="_blank" href="https://dilipagheda.github.io/online_registration_form/">Live View</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#onlineregistration">Read
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/online_registration_form">Github</a>
+                          <a class="btn btn-primary white-border" target="_blank" href="https://dilipagheda.github.io/online_registration_form/">Live View</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#onlineregistration">Read
                               More
                             </button>
                             <!-- Button trigger modal -->
@@ -464,12 +447,12 @@
                             <!-- Modal for display more info-->
                             <div class="modal fade" id="onlineregistration" tabindex="-1" role="dialog" aria-labelledby="onlineregistration"
                               aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="onlineregistration">An Online Registration Form</h5>
+                                    <h5 class="modal-title">An Online Registration Form</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </button>
                                   </div>
                                   <div class="modal-body">
@@ -513,13 +496,9 @@
                           mobile-first with a layout that adjusts to fit mobile phones, tablets, and desktop displays.</p>
                          -->
                           <div class="card-buttons">
-                          <button class="btn btn-primary">
-                          <a target="_blank" href="https://github.com/dilipagheda/mobile-first-responsive-layout">Github</a>
-                          </button>
-                          <button class="btn btn-primary">
-                          <a target="_blank" href="https://dilipagheda.github.io/mobile-first-responsive-layout/">Live View</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mobilefirst">Read
+                          <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/mobile-first-responsive-layout">Github</a>
+                          <a class="btn btn-primary white-border" target="_blank" href="https://dilipagheda.github.io/mobile-first-responsive-layout/">Live View</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#mobilefirst">Read
                               More
                             </button>
                             <!-- Button trigger modal -->
@@ -527,12 +506,12 @@
                             <!-- Modal for display more info-->
                             <div class="modal fade" id="mobilefirst" tabindex="-1" role="dialog" aria-labelledby="mobilefirst"
                               aria-hidden="true">
-                              <div class="modal-dialog" role="document">
+                              <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="mobilefirst">Mobile-first Responsive Layout</h5>
+                                    <h5 class="modal-title">Mobile-first Responsive Layout</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
+                                        <i class="fa fa-times-circle"></i>
                                     </button>
                                   </div>
                                   <div class="modal-body">
@@ -580,10 +559,8 @@
                         <img src="images/u-android/PopularMovies/mobile-portrait.png" alt="baking recipe app">
 
                         <div class="bg-grey">
-                          <button class="btn btn-primary">
-                            <a target="_blank" href="https://github.com/dilipagheda/PopularMovies2">Github</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popularmoviesmodal">Read
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/PopularMovies2">Github</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#popularmoviesmodal">Read
                             More
                           </button>
                         </div> 
@@ -592,12 +569,12 @@
                           <!-- Modal for display more info-->
                           <div class="modal fade" id="popularmoviesmodal" tabindex="-1" role="dialog" aria-labelledby="popularmoviesmodal"
                             aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-lg" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="popularmoviesmodal">Popular Movies</h5>
+                                  <h5 class="modal-title">Popular Movies</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                      <i class="fa fa-times-circle"></i>
                                   </button>
                                 </div>
                                 <div class="modal-body">
@@ -644,12 +621,10 @@
                       <h5>Baking Receipe</h5>
                       <div class="card-body text-center">
 
-                        <img src="images/u-android/Baking Recipe/mobile-portrait1.png" alt="baking recipe app">
+                        <img src="images/u-android/BakingRecipe/mobile-portrait1.png" alt="baking recipe app">
                         <div class="bg-grey">
-                          <button class="btn btn-primary">
-                            <a target="_blank" href="https://github.com/dilipagheda/BakingRecipe">Github</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bakingreceipemodal">Read
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/BakingRecipe">Github</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#bakingreceipemodal">Read
                             More
                           </button>
                         </div> 
@@ -658,12 +633,12 @@
                           <!-- Modal for display more info-->
                           <div class="modal fade" id="bakingreceipemodal" tabindex="-1" role="dialog" aria-labelledby="bakingreceipemodal"
                             aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-lg" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="bakingreceipemodal">Baking Receipe</h5>
+                                  <h5 class="modal-title">Baking Receipe</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                      <i class="fa fa-times-circle"></i>
                                   </button>
                                 </div>
                                 <div class="modal-body">
@@ -719,10 +694,8 @@
 
                         <img src="images/u-android/sandwichclub/mobile-portrait.png" alt="sandwich club app">
                         <div class="bg-grey">
-                          <button class="btn btn-primary">
-                            <a target="_blank" href="https://github.com/dilipagheda/sandwich_club">Github</a>
-                          </button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sandwichmodal">Read
+                            <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/sandwich_club">Github</a>
+                          <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#sandwichmodal">Read
                             More
                           </button>
                         </div>  
@@ -731,21 +704,18 @@
                           <!-- Modal for display more info-->
                           <div class="modal fade" id="sandwichmodal" tabindex="-1" role="dialog" aria-labelledby="sandwichmodal"
                             aria-hidden="true">
-                            <div class="modal-dialog" role="document">
+                            <div class="modal-dialog modal-lg" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="sandwichmodal">Sandwich Club</h5>
+                                  <h5 class="modal-title">Sandwich Club</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                      <i class="fa fa-times-circle"></i>
                                   </button>
                                 </div>
                                 <div class="modal-body">
                                   <p class="card-text">This project is part of the Udacity Android develoer nanodegree program. It is about showing the details of each sandwich once it is selected.
 
                                     </p>
-                                  <p class="card-text"></p>
-                                  </p>
-                                  <p class="card-text"></p>
                                   <h5>My Learnings</h5>
                                   <ul>
                                       <li>Practice JSON parsing to a model object</li>
@@ -778,9 +748,6 @@
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
   <footer class="footer">
     <div class="h4 title text-center">Contact</div>
     <div class="text-center">

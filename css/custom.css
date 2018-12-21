@@ -132,7 +132,13 @@
 } */
 .portfolio-tab{
   width: 125px;
+  margin:0 10px;
+  border:1px solid black;
 }
+.portfolio-tab.active{
+  background-color:green !important;
+}
+
 .portfolio-tab a {
   border:1px solid black;
 }
@@ -234,8 +240,7 @@
     margin:0;
 
 }
-.android-project button,
-.web-project button{
+.white-border{
   border: 1px solid white;
 }
 .android-project .card-body div.bg-grey{
@@ -269,12 +274,32 @@
 
 .modal-dialog{
   text-align:left;
+
+}
+.modal-header {
+  position: relative;  
+
+}
+
+.modal-content .modal-header button{
+  margin:0;
+  padding:0 !important;
+  position: absolute;
+  top:-10px;
+  right:-10px;
+  width:50px !important;
+  height:50px;
+} 
+.modal-content .modal-header button:hover{
+  cursor: pointer;
 }
 .modal-dialog h5 {
   background-color: white;
   color:black;
-  text-align: center;
-  width:100%;
+  font-weight: bolder;
+  text-align: left;
+  padding:0;
+  margin:0;
 }
 a:hover{
   text-decoration: none;
@@ -282,6 +307,7 @@ a:hover{
 
   /* Tablet */
   @media (min-width:768px) {
+    
     .experience-duration{
       font-size: 1.2rem;
       padding: 20px;
