@@ -2,30 +2,30 @@
   height: 30px;
   width: 32px;
 }
-
+.image-path-resume{
+  background-image: url("../images/resumebackground.jpg") !important;
+}
+.image-path-home{
+  background-image: url('../images/cc-bg-1.jpg');
+}
 .project .card-body {
   display: flex;
   flex-direction: column;
   padding: 10px 10px;
   align-content: flex-end;
 }
-
 .project .card-body div {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   margin: auto;
 }
-
 .project .card-body p {
   height: 100px;
 }
-
 .project .card-body div button:nth-of-type(1) {
   margin-right: 10px;
 }
-
-
 /*custom for resume.html*/
 
 .bg-grey {
