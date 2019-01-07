@@ -185,7 +185,7 @@
 }
 
 .bootcamp-link {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: blue;
 }
 
@@ -199,6 +199,14 @@
   margin: 5px 0;
 }
 
+.bootcamp-card-details-project-count{
+  /* background-color: white; */
+  /* padding:5px 10px; */
+  /* border-radius: 25px; */
+  /* font-size: 1.2rem; */
+  font-weight: bolder;
+  /* color:white; */
+}
 .bootcamp-card-details p {
   margin: 5px 0;
 }
@@ -411,6 +419,9 @@ a:hover {
     align-items: flex-start;
     text-align: left;
     margin-left: 20px;
+  }
+  .bootcamp-card-details .btn {
+    align-self: flex-end;
   }
 
 }
