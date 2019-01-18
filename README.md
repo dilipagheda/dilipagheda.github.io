@@ -4,8 +4,8 @@ This is my personal website showcasing a portfolio of projects of different vari
 
 It is currently live and can be accesssed using below URLs.
 
-www.dilipagheda.com
-www.dilipagheda.github.io
+- www.dilipagheda.com
+- www.dilipagheda.github.io
 
 # Technologies used for this website
 HTML, CSS, JavaScript, jQuery, Bootstrap, Animate.css
