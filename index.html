@@ -112,7 +112,7 @@
                     website to make it more accessible through screen readers.
                     I built <span class="bootcamp-card-details-project-count">5 Projects</span>.</p>
                   <div class="bootcamp-card-buttons">
-                    <a class="btn btn-primary white-border bootcamp-card-button" target="_blank" href="#portfolio">View
+                    <a class="btn btn-primary white-border bootcamp-card-button smooth-scroll" href="#portfolio">View
                       Portfolio</a>
                   </div>
                 </div>
@@ -131,7 +131,7 @@
                   <div class="bootcamp-card-buttons">
                     <a class="btn btn-primary white-border bootcamp-card-button" target="_blank" href="TreeHouseFrontEndTD.pdf">View
                       Certificate</a>
-                    <a class="btn btn-primary white-border bootcamp-card-button" target="_blank" href="#portfolio">View
+                    <a class="btn btn-primary white-border bootcamp-card-button smooth-scroll" href="#portfolio">View
                       Portfolio</a>
                   </div>
                 </div>
@@ -177,7 +177,67 @@
             <div class="ml-auto mr-auto">
               <div class="container">
                 <div class="row">
+
                 
+                    <!-- feed reader testing-->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card mb-3 web-project">
+                            <div class="card-body text-center">
+                              <h5>Feedreader Testing</h5>
+                              <img class="card-img-top" src="images/u-frontend/feedreader.png" alt="Feedreader Testing">
+                              <div>
+                                <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/feedreader-jasmine">Github</a>
+                                <a class="btn btn-primary white-border" target="_blank" href="http://dilipagheda.com/feedreader-jasmine/">Live
+                                  View</a>
+                                <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#feedreader">Read
+                                  More
+                                </button>
+                              </div>
+                              <!-- Button trigger modal -->
+                              <!-- Modal for display more info-->
+                              <div class="modal fade" id="feedreader" tabindex="-1" role="dialog" aria-labelledby="feedreader"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title">Feedreader Testing</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <i class="fa fa-times-circle"></i>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="card-text">This project is a web-based application that reads RSS feeds. It uses Jasmine framework for unit tests.
+                                       <h5>Test cases</h5> 
+                                        <ol>
+                                          <li>Write a test that loops through each feed in the allFeeds object and ensures it has a URL defined and that the URL is not empty</li>
+                                          <li>Write a test that loops through each feed in the allFeeds object and ensures it has a name defined and that the name is not empty/li>
+                                          <li>Write a new test suite named "The menu"</li>
+                                          <li>Write a test that ensures the menu element is hidden by default</li>
+                                          <li>Write a test that ensures the menu changes visibility when the menu icon is clicked. </li>
+                                          <li>Write a test suite named "Initial Entries"</li>
+                                          <li>Write a test that ensures when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container</li>
+                                          <li>Write a test suite named "New Feed Selection"</li>
+                                          <li>Write a test that ensures when a new feed is loaded by the loadFeed function that the content actually changes</li>
+                                        </ol>
+                                        <h5>My Learnings</h5>
+                                        <ul>
+                                          <li>Jasmine Testing Framework</li>
+                                        </ul>
+                                        <h5>Udacity Review</h5>
+                                        <p>Great Job! all the tests work as expected</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+      
+                    </div>  
+
                     <div class="col-md-6 col-lg-4">
                         <div class="card mb-3 web-project">
                             <div class="card-body text-center">
@@ -773,6 +833,59 @@
                     </div>
                   </div>
                 </div>
+
+
+                    <!-- restaurant review -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card mb-3 web-project">
+                            <div class="card-body text-center">
+                              <h5>Restaurant Review</h5>
+                              <img class="card-img-top" src="images/u-frontend/restaurant-review.png" alt="Restaurant Review">
+                              <div>
+                                <a class="btn btn-primary white-border" target="_blank" href="https://github.com/dilipagheda/restaurant-review">Github</a>
+                                <button type="button" class="btn btn-primary white-border" data-toggle="modal" data-target="#restaurant-review">Read
+                                  More
+                                </button>
+                              </div>
+                              <!-- Button trigger modal -->
+                              <!-- Modal for display more info-->
+                              <div class="modal fade" id="restaurant-review" tabindex="-1" role="dialog" aria-labelledby="restaurant-review"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title">Restaurant Review</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <i class="fa fa-times-circle"></i>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="card-text">This project is about converting an existing static web app that lacks accessibility into fully responsive, mobile ready, offline first and accessible app.
+                                          It uses MapBox API for rendering maps, service workers for offline caching and accessibility tags for screen readers.
+                                      <p class="card-text">    
+                                        Note: This project is not hosted due to privacy of API key. Please refer to github for instructions on how to run this locally.
+                                      </p>
+                                        <h5>My Learnings</h5>
+                                        <ul>
+                                          <li>Web Accessibility</li>
+                                          <li>Service workers</li>
+                                          <li>Responsive web design</li>
+                                          <li>Mabbox API</li>
+                                        </ul>
+                                        <h5>Udacity Review</h5>
+                                        <p>Great Job!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+      
+                    </div>                  
               </div>
             </div>
           </div>
