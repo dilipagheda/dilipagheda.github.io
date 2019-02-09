@@ -189,6 +189,13 @@
   color: blue;
 }
 
+.bootcamp-card-buttons {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .bootcamp-card-details-title1 {
   font-size: 1.5rem;
   margin: 5px 0;
