@@ -1,0 +1,12 @@
+.image-path-home {
+    // background-color:red;
+      background-image: url('../data/images/cc-bg-1.jpg');
+    // height: 100vh;
+    // width: 100vw;
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
