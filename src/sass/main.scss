@@ -118,3 +118,18 @@
 button[data-toggle="collapse"].navbar-toggler{
   border:1px solid white;
 }
+
+.navbar-nav {
+  flex-direction:row;
+  justify-content: center;
+  flex-wrap: wrap;
+  .nav-item{
+    margin:0 10px;
+    .nav-link{
+      padding-bottom:0;
+    }
+    .nav-link.active{
+      border-bottom:1px solid white;
+    }
+  }
+}

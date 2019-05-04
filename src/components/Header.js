@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { NavLink } from 'react-router-dom'
+
 import logoImage from '../data/images/logo.svg';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -20,13 +22,24 @@ class Header extends Component {
                     <div className="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" href="#about">About Me</a>
+                                <NavLink className="nav-link" exact activeClassName="active" to="/">
+                                    Home
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#portfolio">Portfolio</a>
+                                <NavLink className="nav-link" activeClassName="active" to="/aboutme">
+                                    About Me
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="resume.html">Resume</a>
+                                <NavLink className="nav-link" activeClassName="active" to="/portfolio">
+                                    Portfolio
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" activeClassName="active" to="/resume">
+                                    Resume
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
