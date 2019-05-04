@@ -107,3 +107,14 @@
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
+
+
+/* Nav Bar - Header */
+
+.navbar a:not(.btn):not(.dropdown-item) {
+  color: #FFFFFF;
+}
+
+button[data-toggle="collapse"].navbar-toggler{
+  border:1px solid white;
+}
