@@ -1,10 +1,10 @@
 import { ABOUTME } from '../data/content/aboutme';
-import { CERTIFICATES } from '../data/content/certificates';
+import { ADVENTURES } from '../data/content/adventures';
 import { HOME } from '../data/content/home';
 
 export const initialState = {
     aboutme: ABOUTME,
-    certificates: CERTIFICATES,
+    adventures: ADVENTURES,
     home: HOME,
 };
 

@@ -7,6 +7,7 @@ $content-header-text-color: black;
   background-color: white;
   color:black;
   margin-top:100px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
 }
 .aboutme-card{
   width:100%;
@@ -25,8 +26,6 @@ $content-header-text-color: black;
   background-color: $content-header-bg-color;
   color:$content-header-text-color;
 }
-.content-main{
-  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-}
+
 /* Desktop */
 @media (min-width:1024px) {}
