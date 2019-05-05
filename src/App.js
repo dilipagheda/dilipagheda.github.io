@@ -8,20 +8,24 @@ import Resume from './components/Resume';
 import Introduction from './components/Introduction';
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './redux/configureStore';
 
+const store = ConfigureStore();
 library.add(faBars)
 
 function App() {
     return (
-        <Router>
-            <div>
-                <Header />
-                <Route path="/" exact render={(routeProps)=><Home {...routeProps} child={()=><Introduction />}/>} />
-                <Route path="/aboutme"  render={(routeProps)=><Home {...routeProps} child={()=><Aboutme />}/>} />
-                <Route path="/portfolio"  render={(routeProps)=><Home {...routeProps} child={()=><Portfolio />}/>} />
-                <Route path="/resume"  render={(routeProps)=><Home {...routeProps} child={()=><Resume />}/>} />
-            </div>
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <div>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/aboutme"  render={(routeProps)=><Aboutme />} />
+                    <Route path="/portfolio"  render={(routeProps)=><Portfolio />} />
+                    <Route path="/resume"  render={(routeProps)=><Resume />}/>
+                </div>
+            </Router>
+        </Provider>
     );
 }
 

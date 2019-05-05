@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
+import Introduction from "./Introduction";
 import Header from './Header';
-import TextLoop from "react-text-loop";
-import profileImage from '../data/images/me.png';
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 class Home extends Component {
 
     render(){
-
         return (
             <div>
+                <Header page="HOME" />
                 <div className="page-header-image image-path-home"></div>
                 <div className="page-header">
                     <div className="page-header-image image-path-home"></div>
                     <div className="container">
                         <div className="content-center">
-                            {this.props.child()}
+                            <Introduction home={this.props.home}/>
                         </div>
                     </div>
                 </div>
@@ -23,4 +24,10 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        home: state.home
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Home));

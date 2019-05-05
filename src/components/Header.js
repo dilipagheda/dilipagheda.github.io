@@ -8,9 +8,13 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 class Header extends Component {
     render() {
+        let classNames = "navbar navbar-expand-lg fixed-top navbar-dark px-5 pt-3";
+        if(this.props.page!=="HOME"){
+            classNames = "navbar navbar-expand-lg fixed-top navbar-dark px-5 pt-3 content-page";
+        }
         return (
             <header>
-                <nav className="navbar navbar-expand-lg fixed-top navbar-dark px-5 pt-3">
+                <nav className={classNames}>
                     <a className="navbar-brand" href="index.html">
                         <img className="logo" src={logoImage} alt=""></img>
                         <span> ilip Agheda</span>
