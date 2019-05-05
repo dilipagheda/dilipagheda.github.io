@@ -78,7 +78,10 @@
 .cc-profile-image a {
   position: relative;
 }
-
+.logo {
+  height: 30px;
+  width: 32px;
+}
 .cc-profile-image a:before {
   content: "";
   border: 15px solid rgba(55, 140, 63, 0.6);

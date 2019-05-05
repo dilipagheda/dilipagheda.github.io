@@ -4,6 +4,7 @@ import Header from './Header';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import badge from '../data/images/badge.svg';
+import SocialMedia from "./SocialMedia";
 
 const Certificates = (props)=>{
 
@@ -11,8 +12,8 @@ const Certificates = (props)=>{
     const certs = props.certificates.map(item=>{return (
         <div className="col-12 col-md-4">
 
-            <div className="card px-1">
-                <span style={{width:"100px",margin:"0 auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
+            <div className="card px-0">
+                <span style={{width:"100px",marginRight:"0",marginLeft:"auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
                 <div className="d-flex justify-content-center">
                     <img className="badge-image" src={badge} alt="Badge"></img>
                     <p className="card-title pt-4">{item.title}</p>
@@ -51,6 +52,7 @@ class Aboutme extends Component {
                                 </div>
                                 <div className="col-12 col-md-4 m-2">
                                     <img className="w-100" src={aboutMePhoto}/>
+                                    <SocialMedia />
                                 </div>
                                 <div className="col-12 col-md-7 m-2">
                                     <p>{p}</p>

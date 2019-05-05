@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Introduction from "./Introduction";
+import SocialMedia from "./SocialMedia";
 import Header from './Header';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
@@ -16,6 +17,7 @@ class Home extends Component {
                     <div className="container">
                         <div className="content-center">
                             <Introduction home={this.props.home}/>
+                            <SocialMedia />
                         </div>
                     </div>
                 </div>
