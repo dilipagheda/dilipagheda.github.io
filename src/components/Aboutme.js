@@ -14,9 +14,9 @@ const Certificates = (props)=>{
 
             <div className="card px-0">
                 <span style={{width:"100px",marginRight:"0",marginLeft:"auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center px-1">
                     <img className="badge-image" src={badge} alt="Badge"></img>
-                    <p className="card-title pt-4">{item.title}</p>
+                    <p className="card-title pt-4 pl-2">{item.title}</p>
                 </div>
                 <div className="card-body px-1">
 
@@ -41,11 +41,11 @@ class Aboutme extends Component {
     render() {
         const p = this.props.aboutme.p.map((p)=><p>{p}</p>);
         return (
-            <div className="container">
+            <div className="container pb-5">
                 <div className="row justify-content-md-center">
                     <div className="col-10">
                         <Header page="ABOUTME"/>
-                        <div className="container content-container">
+                        <div className="container content-container pb-5">
                             <div className="row justify-content-md-center ">
                                 <div className="col-12 content-header d-flex flex-column justify-content-center">
                                     <h1 className="text-center">About Me</h1>
@@ -62,8 +62,8 @@ class Aboutme extends Component {
                         </div>
                     </div>
                 </div>
-
             </div>
+
         );
     }
 }

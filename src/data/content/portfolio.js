@@ -1,34 +1,13 @@
-// Projects from Frontend Techdegree
-const FETD = [
-    {
-        title: "",
-        coverImage: "",
-        gitHubLink:"",
-        liveView:"",
-        moreInfo: {
-            description:[{
-                heading:"",
-                p:["","",""]
-            }],
-            myLearnings:["","",""],
-            images:[]
-        }
-    }
-]
-
-// Projects from Fullstack JavaScript Techdegree
-const FSJSTD = [
-
-]
-
-// Projects from Android Nanodegree Term1
-const ANDRND = [
-
-]
-
+import {FRONTEND} from './portfolio/frontend';
+import {ANDROID} from "./portfolio/android";
+import {REACTJS} from "./portfolio/reactjs";
+import {NODEJS} from "./portfolio/nodejs";
+import {FLUTTER} from "./portfolio/flutter";
 
 export const PORTFOLIO={
-    fetd:FETD,
-    fsjstd:FSJSTD,
-    andrnd:ANDRND
+    frontend:FRONTEND,
+    reactjs:REACTJS,
+    nodejs:NODEJS,
+    flutter:FLUTTER,
+    android:ANDROID
 }

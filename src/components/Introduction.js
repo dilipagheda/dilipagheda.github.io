@@ -7,12 +7,12 @@ class Introduction extends Component {
             <>
                 <div className="cc-profile-image"><a href="#"><img className="img-fluid" src={this.props.home.image}
                                                                    alt="Image"></img></a></div>
-                <h1>{this.props.home.name}</h1>
+                <h1 className="home-title">{this.props.home.name}</h1>
                 <TextLoop  className="intro-job-title" springConfig={{stiffness: 180, damping: 8}}
                               interval={[3000, 1000, 1000]}
                               children={this.props.home.jobTitles}/>
 
-                <p>{this.props.home.tagLine}</p>
+                <p className="home-description">{this.props.home.tagLine}</p>
             </>
         );
     }
