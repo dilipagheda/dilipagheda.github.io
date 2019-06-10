@@ -20,16 +20,16 @@ class Skills extends Component {
     renderSectionListItems = (items)=>{
         return items.map((item)=>(
             <li className="list-group-item">
+                <span className="skill-level badge badge-info">{item.level}</span>
                 <div className="d-flex flex-row">
 
-                    <div className="d-flex flex-column justify-content-center pl-2 pr-2 mr-3">
+                    <div className="d-flex flex-column justify-content-center pl-2 pr-2 mr-3" style={{width:"50px"}}>
                         <FontAwesomeIcon icon={item.icon} size="2x" color="black" className="text-center"/>
                     </div>
 
-                    <div className="d-flex flex-column">
-                        <div className="d-flex justify-content-between">
-                            <span className="item-heading">{item.heading}</span>
-                        </div>
+                    <div className="d-flex flex-column justify-content-between">
+                            <span className="item-heading mr-auto">{item.heading}</span>
+
                         {this.renderKeywords(item.tags)}
                     </div>
                 </div>
