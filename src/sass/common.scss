@@ -42,5 +42,14 @@ $nav-pill-text-color:#E28339;
   color:$content-header-text-color;
 }
 
+.keyword{
+  background-color: $content-header-bg-color;
+  color:$navbar-bg-color;
+  font-size: 12px;
+  font-family: 'Hind Vadodara', sans-serif;
+  border-radius: 5px;
+  font-weight: 800;
+}
+
 /* Desktop */
 @media (min-width:1024px) {}
