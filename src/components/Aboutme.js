@@ -6,12 +6,11 @@ import { connect } from 'react-redux';
 import badge from '../data/images/badge.svg';
 import SocialMedia from "./SocialMedia";
 
-const Certificates = (props)=>{
+const Adventures = (props)=>{
 
     const content = props.p.map(p=><p className="col-12">{p}</p>);
-    const certs = props.certificates.map(item=>{return (
+    const certs = props.certificates.items.map(item=>{return (
         <div className="col-12 col-md-4">
-
             <div className="card px-0">
                 <span style={{width:"100px",marginRight:"0",marginLeft:"auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
                 <div className="d-flex justify-content-center px-1">
@@ -58,7 +57,7 @@ class Aboutme extends Component {
                                     <p>{p}</p>
                                 </div>
                             </div>
-                            <Certificates certificates={this.props.adventures.certificates} p={this.props.adventures.p}/>
+                            <Adventures certificates={this.props.adventures.certificates} p={this.props.adventures.p}/>
                         </div>
                     </div>
                 </div>
