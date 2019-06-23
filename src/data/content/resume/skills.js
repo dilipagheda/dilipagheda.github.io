@@ -30,7 +30,7 @@ export const SKILLS = [{
         },
         {
             heading: "Libraries/Frameworks",
-            tags: ["React", "Redux"],
+            tags: ["React", "Redux","WordPress"],
             stars: 4,
             level: "Advanced",
             icon: faSitemap
@@ -44,7 +44,7 @@ export const SKILLS = [{
         },
         {
             heading: "Backend",
-            tags: ["Node.js", "Pug", "Express", "Python", "Flask", "Django"],
+            tags: ["PHP","Node.js", "Pug", "Express", "Python", "Flask", "Django"],
             stars: 3,
             level: "Intermediate",
             icon: faServer
