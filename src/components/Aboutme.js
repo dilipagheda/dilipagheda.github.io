@@ -5,40 +5,34 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import badge from '../data/images/badge.svg';
 import SocialMedia from "./SocialMedia";
+import Divider from "./common/Divider";
 
-const Adventures = (props)=>{
+const BootCamps = (props)=>{
 
-    const content = props.p.map(p=><p className="col-12">{p}</p>);
-    const certs = props.certificates.items.map(item=>{return (
-        <div className="col-12 col-md-4">
-            <div className="card px-0">
-                <span style={{width:"100px",marginRight:"0",marginLeft:"auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
-                <div className="d-flex justify-content-center px-1">
-                    <img className="badge-image" src={badge} alt="Badge"></img>
-                    <p className="card-title pt-4 pl-2">{item.title}</p>
-                </div>
-                <div className="card-body px-1">
+    return <>
+        {(props.bootcamps.items.map(item=>{return (
+            <div className="col-12 col-md-4">
+                <div className="card px-0">
+                    <span style={{width:"100px",marginRight:"0",marginLeft:"auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
+                    <div className="d-flex justify-content-center px-1">
+                        <img className="badge-image" src={badge} alt="Badge"></img>
+                        <p className="card-title pt-4 pl-2">{item.title}</p>
+                    </div>
+                    <div className="card-body px-1">
 
-                    <div className="text-center card-subtitle text-muted">{item.category}</div>
-                    <div style={{width:"100%"}} className="badge badge-light">{item.date}</div>
+                        <div className="text-center card-subtitle text-muted">{item.category}</div>
+                        <div style={{width:"100%"}} className="badge badge-light">{item.date}</div>
 
+                    </div>
                 </div>
             </div>
-        </div>
-    )});
-
-    return (
-        <div className="row justify-content-md-center">
-            <h2 className="col-12 text-center">My Latest Coding Adventures</h2>
-            {content}
-            {certs}
-        </div>
-    );
+            )}))
+        }
+    </>;
 }
 
 class Aboutme extends Component {
     render() {
-        const p = this.props.aboutme.p.map((p)=><p>{p}</p>);
         return (
             <div className="container pb-5">
                 <div className="row justify-content-md-center">
@@ -54,10 +48,23 @@ class Aboutme extends Component {
                                     <SocialMedia />
                                 </div>
                                 <div className="col-12 col-md-7 m-2">
-                                    <p>{p}</p>
+                                    {this.props.aboutme.content1}
                                 </div>
                             </div>
-                            <Adventures certificates={this.props.adventures.certificates} p={this.props.adventures.p}/>
+                            <Divider shouldDisplay="true"/>
+                            <div className="row justify-content-md-center">
+                                <div className="col-12">
+                                    {this.props.aboutme.content2}
+                                </div>
+                            </div>
+                            <Divider shouldDisplay="true"/>
+                            <div className="row justify-content-md-center">
+                                <div className="col-12">
+                                    {this.props.aboutme.content3}
+                                </div>
+                                <BootCamps bootcamps={this.props.bootcamps}/>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -70,7 +77,7 @@ class Aboutme extends Component {
 const mapStateToProps = state => {
     return {
         aboutme: state.aboutme,
-        adventures:state.adventures
+        bootcamps: state.bootcamps
     }
 }
 
