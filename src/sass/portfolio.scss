@@ -1,0 +1,123 @@
+
+
+.mobile-project {
+  &::before{
+    content:"";
+    width: 70%;
+    margin:auto;
+    border-top:10px solid $content-header-bg-color;
+  }
+  display: flex;
+  flex-direction: column;
+  background-color: $project-card-bg-color;
+  color:$project-card-text-color;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  h5 {
+    text-align: center;
+    margin-bottom: 0;
+    padding: 5px;
+    font-size: 1.1rem;
+  }
+  img {
+    height: 300px;
+    margin: 0;
+    display:block;
+    margin: auto;
+  }
+  button {
+    &:hover{
+      background-color: $project-card-buttons-hover-bg-color;
+      color:$project-card-buttons-hover-text-color;
+    }
+    a{
+      color:black;
+      text-decoration: none;
+    }
+    background-color: $project-card-buttons-bg-color;
+    color:black;
+    border-radius: 5px;
+  }
+  .card-body {
+    padding: 0;
+    margin: 0;
+    div.bg-grey {
+      border-top: 2px solid white;
+    }
+    div {
+      padding: 10px;
+    }
+  }
+}
+
+.web-project {
+  &::before{
+    content:"";
+    width: 70%;
+    margin:auto;
+    border-top:10px solid $content-header-bg-color;
+  }
+  display: flex;
+  flex-direction: column;
+  background-color: $project-card-bg-color;
+  color:$project-card-text-color;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  h5 {
+    text-align: center;
+    background-color: $project-card-bg-color;
+    font-size: 1.1rem;
+    padding: 5px;
+  }
+  img {
+    width: 95%;
+    margin: auto;
+    object-fit: cover;
+  }
+  button {
+    &:hover{
+      background-color: $project-card-buttons-hover-bg-color;
+      color:$project-card-buttons-hover-text-color;
+    }
+    a{
+      color:black;
+      text-decoration: none;
+    }
+    background-color: $project-card-buttons-bg-color;
+    color:black;
+    border-radius: 5px;
+  }
+  .card-body {
+    padding: 0;
+    margin: 0;
+    div {
+      margin-top: 5px;
+      padding: 10px;
+    }
+  }
+}
+
+//Styling for modal dialog
+
+.modal-dialog {
+  color:$content-header-text-color;
+  max-width: 100VW !important;
+  height: 100VH !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  .modal-content{
+    height:100% !important;
+    overflow-y: scroll;
+  }
+  .modal-header {
+    background-color: $content-header-bg-color;
+    .modal-title{
+      margin:auto;
+      text-align: center;
+      width:100%;
+      font-size: 30px;
+      color:$content-header-text-color;
+    }
+  }
+}
+video{
+  border: 2px solid $navbar-bg-color;
+}

@@ -1,0 +1,45 @@
+/* Nav Bar - Header */
+
+.navbar {
+  a:not(.btn):not(.dropdown-item) {
+    color: $navbar-text-color;
+  }
+  &.content-page{
+    background-color: $navbar-bg-color;
+  }
+}
+
+button[data-toggle="collapse"].navbar-toggler{
+  border:1px solid $navbar-text-color;
+}
+
+.navbar-nav {
+  flex-direction:row;
+  justify-content: center;
+  flex-wrap: wrap;
+  .nav-item{
+    margin:0 10px;
+    .nav-link{
+      padding-bottom:0;
+    }
+    .nav-link.active{
+      border-bottom:1px solid $navbar-text-color;
+
+    }
+  }
+}
+
+//Nav Bar - Pills - Portfolio Tabs
+
+.nav-pills {
+  .nav-item{
+    .nav-link.active{
+      background-color: $nav-pill-active-bg-color;
+      color: $nav-pill-active-text-color;
+    }
+    .nav-link{
+      background-color: $nav-pill-bg-color;
+      color: $nav-pill-text-color;
+    }
+  }
+}

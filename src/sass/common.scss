@@ -1,0 +1,59 @@
+$navbar-bg-color:#62422F;
+$navbar-text-color:#F0DC6C;
+$navbar-hover-bg-color:#F0DC6C;
+$navbar-hover-text-color:#62422F;
+
+$content-header-bg-color:#F0DC6C;
+$content-header-text-color: #62422F;
+$project-card-bg-color:white; //project card background header and footer
+$project-card-text-color:#62422F;
+$project-card-buttons-bg-color:#E7AA4D;
+$project-card-buttons-hover-bg-color:#F0DC6C;
+$project-card-buttons-hover-text-color:#904820;
+
+$nav-pill-active-bg-color:#E28339;
+$nav-pill-active-text-color:white;
+$nav-pill-bg-color:white;
+$nav-pill-text-color:#E28339;
+
+
+
+/*Common Styles across all pages*/
+
+.content-container{
+  background-color: white;
+  margin-top:100px;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+}
+.aboutme-card{
+  width:100%;
+  height: 100%;
+  background-color: white;
+  display:flex;
+  img{
+    height:200px;
+    padding:10px;
+  }
+}
+
+.content-header{
+  height:100px;
+  background-color: $content-header-bg-color;
+  color:$content-header-text-color;
+}
+
+.keyword{
+  background-color: $content-header-bg-color;
+  color:$navbar-bg-color;
+  font-size: 12px;
+  font-family: 'Hind Vadodara', sans-serif;
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+.divider{
+  height: 2px;
+  background-color: lightgrey;
+}
+/* Desktop */
+@media (min-width:1024px) {}
