@@ -1,4 +1,13 @@
+## About this branch
+Dev branch holds the source code of this React website. If you would like to fork then use this branch.
+DONOT use master branch as it contains live deployed pieces including binaries.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Deployment Instructions
+Read this to deploy
+https://medium.com/swlh/deploying-react-apps-to-github-pages-on-master-branch-creating-a-user-site-bc96c2a37dc8
+https://medium.com/the-andela-way/how-to-deploy-your-react-application-to-github-pages-in-less-than-5-minutes-8c5f665a2d2a
 
 ## Available Scripts
 
