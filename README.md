@@ -1,3 +1,7 @@
+## About this branch
+Dev branch holds the source code of this React website. If you would like to fork then use this branch.
+DONOT use master branch as it contains live deployed pieces including binaries.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
