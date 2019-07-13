@@ -143,6 +143,7 @@ class Projects extends Component {
                         color={'#F0DC6C'}
                         loading={!this.state.loaded}
                     />
+                    <p>{this.state.totalLoaded} project(s) of {this.props.items.length} downloaded!</p>
                 </div>);
             } else {
                 this.setLoadedTo(true);
