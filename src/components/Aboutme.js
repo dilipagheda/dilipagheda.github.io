@@ -11,7 +11,7 @@ const BootCamps = (props)=>{
 
     return <>
         {(props.bootcamps.items.map(item=>{return (
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-4 mb-3">
                 <div className="card px-0">
                     <span style={{width:"100px",marginRight:"0",marginLeft:"auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
                     <div className="d-flex justify-content-center px-1">
@@ -36,7 +36,7 @@ class Aboutme extends Component {
         return (
             <div className="container pb-5">
                 <div className="row justify-content-md-center">
-                    <div className="col-10">
+                    <div className="col-12 col-md-10">
                         <Header page="ABOUTME"/>
                         <div className="container content-container pb-5">
                             <div className="row justify-content-md-center ">
