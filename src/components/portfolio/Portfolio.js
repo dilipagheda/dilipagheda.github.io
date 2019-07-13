@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import Header from "../Header";
 import { Nav, NavItem , NavLink} from 'reactstrap';
-import {NavLink as RRNavLink, Redirect, Route, Switch} from 'react-router-dom';
+import {NavLink as RRNavLink, Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import Aboutme from "../Aboutme";
 import Projects from "./Projects";
+import {connect} from "react-redux";
 
 
 
@@ -60,11 +61,11 @@ class Portfolio extends Component {
                                         </Nav>
                                     </div>
                                     <Switch>
-                                        <Route exact path={`${this.props.match.url}/frontend`} render={(routeProps)=><Projects category="frontend" displayType="web-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/nodejs`} render={(routeProps)=><Projects category="nodejs" displayType="web-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/reactjs`} render={(routeProps)=><Projects category="reactjs" displayType="web-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/flutter`} render={(routeProps)=><Projects category="flutter" displayType="mobile-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/android`} render={(routeProps)=><Projects category="android" displayType="mobile-project" {...routeProps}/>} />/>
+                                        <Route exact path={`${this.props.match.url}/frontend`} render={(routeProps)=><Projects items={this.props.frontend} category="frontend" displayType="web-project" {...routeProps}/>} />/>
+                                        <Route exact path={`${this.props.match.url}/nodejs`} render={(routeProps)=><Projects  items={this.props.nodejs} category="nodejs" displayType="web-project" {...routeProps}/>} />/>
+                                        <Route exact path={`${this.props.match.url}/reactjs`} render={(routeProps)=><Projects items={this.props.reactjs}  category="reactjs" displayType="web-project" {...routeProps}/>} />/>
+                                        <Route exact path={`${this.props.match.url}/flutter`} render={(routeProps)=><Projects items={this.props.flutter}  category="flutter" displayType="mobile-project" {...routeProps}/>} />/>
+                                        <Route exact path={`${this.props.match.url}/android`} render={(routeProps)=><Projects items={this.props.android}  category="android" displayType="mobile-project" {...routeProps}/>} />/>
 
                                     </Switch>
                                 </div>
@@ -77,4 +78,14 @@ class Portfolio extends Component {
     }
 }
 
-export default Portfolio;
+const mapStateToProps = state => {
+    return {
+        frontend: state.portfolio.frontend,
+        reactjs:state.portfolio.reactjs,
+        nodejs:state.portfolio.nodejs,
+        flutter:state.portfolio.flutter,
+        android:state.portfolio.android
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Portfolio));

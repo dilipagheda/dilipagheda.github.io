@@ -9,18 +9,44 @@ import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
 import Header from "../Header";
+import Portfolio from "./Portfolio";
+import {BounceLoader} from "react-spinners";
+import { css } from '@emotion/core';
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+`;
 
 class Projects extends Component {
 
     state = {
         modal: false,
-        modalItem:null
+        modalItem:null,
+        totalLoaded:0,
+        loaded:false,
+        category: this.props.category
     }
+
+
 
     toggle = (item) => {
         this.setState(prevState => ({
             modal: !prevState.modal,
             modalItem: item
+        }));
+    }
+
+    loaded = () =>{
+        this.setState(prevState => ({
+            totalLoaded: prevState.totalLoaded + 1,
+        }));
+    }
+
+    setLoadedTo=(value) =>{
+        this.setState(prevState => ({
+            loaded: value,
         }));
     }
 
@@ -37,12 +63,12 @@ class Projects extends Component {
         }
     }
     renderProjects(){
-        const projects = this.props[this.props.category].map(item=>{return (
-            <div className="col-md-6 col-lg-4">
+        const projects = this.props.items.map(item=>{return (
+            <div className="col-md-6 col-lg-4" style={this.state.loaded ? {} : {display: 'none'}}>
                 <div className={`card mb-3 ${this.props.displayType}`}>
                     <div className="card-body text-center">
                         <h5>{item.title}</h5>
-                        <img  src={item.coverImage} alt=""></img>
+                        <img  src={item.coverImage} alt="" onLoad={this.loaded}></img>
                         <ButtonGroup>
                             <Button>
                                 <a  target="_blank"
@@ -61,7 +87,10 @@ class Projects extends Component {
             </div>
 
         )});
+
         return projects;
+
+
     }
 
     renderVideo(video){
@@ -101,10 +130,43 @@ class Projects extends Component {
         );
     }
 
+    renderLoader() {
+        if (this.state.loaded) {
+            return null;
+        } else {
+            if (this.state.totalLoaded < this.props.items.length) {
+               return (<div className='sweet-loading' style={{"padding":"100px","margin":"auto"}}>
+                    <BounceLoader
+                        css={override}
+                        sizeUnit={"px"}
+                        size={60}
+                        color={'#F0DC6C'}
+                        loading={!this.state.loaded}
+                    />
+                </div>);
+            } else {
+                this.setLoadedTo(true);
+                return null;
+            }
+        }
+    }
+
+
+    static getDerivedStateFromProps(nextProps, prevState){
+        console.log(nextProps.category+"  "+prevState.category);
+
+        // if(!prevState.category) return null;
+        if(nextProps.category!==prevState.category){
+            return { loaded: false, totalLoaded: 0, category: nextProps.category};
+        }
+        else return null;
+    }
+
     render(){
         return (
             <div className="container">
                 <div className="row">
+                    {this.renderLoader()}
                     {this.renderProjects()}
                     {this.renderModal()}
                 </div>
@@ -114,14 +176,15 @@ class Projects extends Component {
 }
 
 
-const mapStateToProps = state => {
-    return {
-        frontend: state.portfolio.frontend,
-        reactjs:state.portfolio.reactjs,
-        nodejs:state.portfolio.nodejs,
-        flutter:state.portfolio.flutter,
-        android:state.portfolio.android
-    }
-}
-
-export default withRouter(connect(mapStateToProps)(Projects));
+// const mapStateToProps = state => {
+//     return {
+//         frontend: state.portfolio.frontend,
+//         reactjs:state.portfolio.reactjs,
+//         nodejs:state.portfolio.nodejs,
+//         flutter:state.portfolio.flutter,
+//         android:state.portfolio.android
+//     }
+// }
+//
+// export default withRouter(connect(mapStateToProps)(Projects));
+export default Projects;
