@@ -42,18 +42,18 @@ class Portfolio extends Component {
                                     <div className="col-12 content-header d-flex flex-column justify-content-center">
                                         <h1 className="text-center">RESUME</h1>
                                     </div>
-                                    <div className="p-3">
-                                        <Nav pills>
-                                            <NavItem>
+                                    <div className="p-md-3 p-1 content-menu">
+                                        <Nav pills className="d-flex flex-column flex-md-row content-menu">
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink  activeClassName="active" to={`${this.props.match.url}/skills`} tag={RRNavLink}>Skills</NavLink>
                                             </NavItem>
-                                            <NavItem>
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink   activeClassName="active" to={`${this.props.match.url}/education`} tag={RRNavLink}>Education</NavLink>
                                             </NavItem>
-                                            <NavItem>
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink  activeClassName="active" to={`${this.props.match.url}/experience`} tag={RRNavLink}>Experience</NavLink>
                                             </NavItem>
-                                            <NavItem>
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink   activeClassName="active" to={`${this.props.match.url}/certifications`} tag={RRNavLink}>Certifications</NavLink>
                                             </NavItem>
                                         </Nav>

@@ -57,3 +57,14 @@ $nav-pill-text-color:#E28339;
 }
 /* Desktop */
 @media (min-width:1024px) {}
+
+.content-menu {
+  width: auto;
+}
+@media (max-width: 768px) {
+  .content-menu {
+    width: 80%;
+    margin:auto;
+    margin-bottom: 2px;
+  }
+}

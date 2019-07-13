@@ -41,21 +41,21 @@ class Portfolio extends Component {
                                     <div className="col-12 content-header d-flex flex-column justify-content-center">
                                         <h1 className="text-center">Portfolio</h1>
                                     </div>
-                                    <div className="p-3">
-                                        <Nav pills>
-                                            <NavItem>
+                                    <div className="p-md-3 p-1 content-menu">
+                                        <Nav pills className="d-flex flex-column flex-md-row content-menu">
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink  activeClassName="active" to={`${this.props.match.url}/frontend`} tag={RRNavLink}>Front-End</NavLink>
                                             </NavItem>
-                                            <NavItem>
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink   activeClassName="active" to={`${this.props.match.url}/nodejs`} tag={RRNavLink}>Node.JS</NavLink>
                                             </NavItem>
-                                            <NavItem>
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink  activeClassName="active" to={`${this.props.match.url}/reactjs`} tag={RRNavLink}>React.JS</NavLink>
                                             </NavItem>
-                                            <NavItem>
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink   activeClassName="active" to={`${this.props.match.url}/flutter`} tag={RRNavLink}>Flutter</NavLink>
                                             </NavItem>
-                                            <NavItem>
+                                            <NavItem className="content-menu text-center">
                                                 <NavLink  activeClassName="active" to={`${this.props.match.url}/Android`} tag={RRNavLink}>Android</NavLink>
                                             </NavItem>
                                         </Nav>

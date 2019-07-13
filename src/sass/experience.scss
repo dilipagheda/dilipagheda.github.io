@@ -1,16 +1,22 @@
 .container.experience{
   .card{
-    padding:30px 0px 30px 0px;
+    //padding:30px 0px 30px 0px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     .card-title{
-      margin:0;
+      //margin:0;
     }
     .card-subtitle{
       font-size: 15px;
     }
     .card-body{
       border-left:10px solid $content-header-bg-color;
-      padding: 0px 0px 5px 12px;
+      //padding: 0px 0px 5px 12px;
+    }
+    @media (max-width: 768px) {
+      .card-body {
+        border-left: none;
+        //padding: 0px;
+      }
     }
     .footer-title{
       font-size: 15px;

@@ -10,15 +10,15 @@ class Experience extends Component {
         return this.props.items.map((item,index) => {
             return (
                 <>
-                    <div className="row p-2">
-                        <div className="col-md-3">
+                    <div className="row p-1">
+                        <div className="col-md-3 p-0 p-md-2">
                             <h4>{item.companyName}</h4>
                             <p>{item.location}</p>
                         </div>
 
-                        <div className="col-md-9">
+                        <div className="col-12 col-md-9 p-0 p-md-2">
                             <div className="card">
-                                <div className="card-body">
+                                <div className="card-body p-2 p-md-3">
                                     <h5 className="card-title">{item.jobTitle}</h5>
                                     <span className="card-subtitle">{item.period}</span>
                                     <ul>
