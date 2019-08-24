@@ -2,6 +2,7 @@
 
 import React from "react";
 import bmiApp from '../../images/flutter/bmiapp.png';
+import todoApp from '../../images/flutter/todoey.png';
 
 // Projects - Frontend
 export const FLUTTER = [
@@ -55,5 +56,40 @@ export const FLUTTER = [
                 </div>
         }
     },
-
+    {
+        title: "Todoey",
+        coverImage: todoApp,
+        gitHubLink: "https://github.com/dilipagheda/todoey_flutter",
+        moreInfo: {
+            description:
+                <div>
+                    <h5>Description</h5>
+                    <p>A todo list app using Flutter and Providers package for state management. This app uses beautiful UI, bottomsheet form, FAB and global statemanagement using Google recommended Providers package.
+                    </p>
+                    <h5>Technology
+                    </h5>
+                    <ul>
+                        <li>Flutter</li>
+                        <li>Dart
+                        </li>
+                        <li>Providers package for state management
+                        </li>
+                    </ul>
+                    <h5>Skills gained
+                    </h5>
+                    <ul>
+                        <li>Understand what is state and why we need to manage it.</li>
+                        <li>Understand the difference between ephemeral (local) state and app state.</li>
+                        <li>See the problems with simply relying on setState().</li>
+                        <li>Learn about the concept of Prop Drilling.</li>
+                        <li>Examine various popular ways of managing app state for Flutter projects.</li>
+                        <li> Learn about the List Builder.</li>
+                        <li>Use the Flutter BottomSheet Widget.</li>
+                        <li>Learn to lift state up to be able to access it from children widgets.</li>
+                        <li>Learn about design patterns and why they are useful.</li>
+                        <li>Understand how the Provider package works and use it to manage app state.</li>
+                    </ul>
+                </div>
+        }
+    },
 ];
