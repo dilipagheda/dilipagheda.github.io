@@ -12,6 +12,7 @@ import Header from "../Header";
 import Portfolio from "./Portfolio";
 import {BounceLoader} from "react-spinners";
 import { css } from '@emotion/core';
+import ProjectDetail from './ProjectDetail';
 
 const override = css`
     display: block;
@@ -22,21 +23,21 @@ const override = css`
 class Projects extends Component {
 
     state = {
-        modal: false,
-        modalItem:null,
+        // modal: false,
+        // modalItem:null,
         totalLoaded:0,
         loaded:false,
-        category: this.props.category
+        category: this.props.match.params.category
     }
 
 
 
-    toggle = (item) => {
-        this.setState(prevState => ({
-            modal: !prevState.modal,
-            modalItem: item
-        }));
-    }
+    // toggle = (item) => {
+    //     this.setState(prevState => ({
+    //         modal: !prevState.modal,
+    //         modalItem: item
+    //     }));
+    // }
 
     loaded = () =>{
         this.setState(prevState => ({
@@ -63,9 +64,10 @@ class Projects extends Component {
         }
     }
     renderProjects(){
-        const projects = this.props.items.map(item=>{return (
+        const projects = this.props.items.map(item=>{
+            return (
             <div className="col-md-6 col-lg-4" style={this.state.loaded ? {} : {display: 'none'}}>
-                <div className={`card mb-3 ${this.props.displayType}`}>
+                <div className={`card mb-3 ${item.displayType}`}>
                     <div className="card-body text-center">
                         <h5>{item.title}</h5>
                         <img  src={item.coverImage} alt="" onLoad={this.loaded}></img>
@@ -77,10 +79,12 @@ class Projects extends Component {
                                 </a>
                             </Button>
                             {this.renderLiveViewButton(item.liveView)}
-                            <Button onClick={()=>this.toggle(item)}>
-                                <FontAwesomeIcon icon={faInfoCircle} size="lg" color="black"/>
-
-                            </Button>
+                            <Link to={`/${this.props.match.params.category}/projectdetails/${item.id}`}>
+                                Info
+                                {/* <Button>
+                                    <FontAwesomeIcon icon={faInfoCircle} size="lg" color="black"/>
+                                </Button> */}
+                            </Link>
                         </ButtonGroup>
                     </div>
                 </div>
@@ -105,30 +109,31 @@ class Projects extends Component {
             );
         }
     }
-    renderModal(){
-        if(!this.state.modalItem){
-            return null;
-        }
-        return (
-            <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                <ModalHeader toggle={()=>this.toggle(null)}>{this.state.modalItem.title}</ModalHeader>
-                <ModalBody>
 
-                    <div className="container">
-                        <div className="row justify-content-md-center">
-                            {this.renderVideo(this.state.modalItem.moreInfo.video)}
-                            <div className="col-12">
-                                {this.state.modalItem.moreInfo.description}
-                            </div>
-                        </div>
-                    </div>
-                </ModalBody>
-                <ModalFooter>
-                    <Button color="secondary" onClick={()=>this.toggle(null)}>Close</Button>
-                </ModalFooter>
-            </Modal>
-        );
-    }
+    // renderModal(){
+    //     if(!this.state.modalItem){
+    //         return null;
+    //     }
+    //     return (
+    //         <Modal isOpen={this.state.modal} toggle={this.toggle}>
+    //             <ModalHeader toggle={()=>this.toggle(null)}>{this.state.modalItem.title}</ModalHeader>
+    //             <ModalBody>
+
+    //                 <div className="container">
+    //                     <div className="row justify-content-md-center">
+    //                         {this.renderVideo(this.state.modalItem.moreInfo.video)}
+    //                         <div className="col-12">
+    //                             {this.state.modalItem.moreInfo.description}
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             </ModalBody>
+    //             <ModalFooter>
+    //                 <Button color="secondary" onClick={()=>this.toggle(null)}>Close</Button>
+    //             </ModalFooter>
+    //         </Modal>
+    //     );
+    // }
 
     renderLoader() {
         if (this.state.loaded) {
@@ -169,7 +174,7 @@ class Projects extends Component {
                 <div className="row">
                     {this.renderLoader()}
                     {this.renderProjects()}
-                    {this.renderModal()}
+                    {/* {this.renderModal()} */}
                 </div>
             </div>
         );
@@ -177,15 +182,10 @@ class Projects extends Component {
 }
 
 
-// const mapStateToProps = state => {
-//     return {
-//         frontend: state.portfolio.frontend,
-//         reactjs:state.portfolio.reactjs,
-//         nodejs:state.portfolio.nodejs,
-//         flutter:state.portfolio.flutter,
-//         android:state.portfolio.android
-//     }
-// }
-//
-// export default withRouter(connect(mapStateToProps)(Projects));
-export default Projects;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        items: state.portfolio[ownProps.match.params.category]
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Projects));

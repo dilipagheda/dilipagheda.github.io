@@ -9,6 +9,7 @@ export const ANDROID = [
     {
         title: "Popular Movies",
         coverImage: popularMoviesImage,
+        displayType: "mobile-project",
         gitHubLink: "https://github.com/dilipagheda/PopularMovies2",
         moreInfo: {
             description:
@@ -50,6 +51,7 @@ export const ANDROID = [
     {
         title: "Baking Receipe",
         coverImage: bakingRecipeImage,
+        displayType: "mobile-project",
         gitHubLink: "https://github.com/dilipagheda/BakingRecipe",
         moreInfo: {
             description: <div>
@@ -90,6 +92,7 @@ export const ANDROID = [
     {
         title: "Sandwich Club",
         coverImage: sandwichClubImage,
+        displayType: "mobile-project",
         gitHubLink: "https://github.com/dilipagheda/sandwich_club",
         moreInfo: {
             description: <div>

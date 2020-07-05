@@ -7,6 +7,7 @@ export const REACTJS = [
     {
         title: "Full Stack App - React + REST API",
         coverImage: FullStackAppReactAPI,
+        displayType: "web-project",
         gitHubLink: "https://github.com/dilipagheda/full_stack_app_with_react_and_a_rest_api-v1",
         moreInfo: {
             description: <div>
@@ -54,6 +55,7 @@ export const REACTJS = [
     {
         title: "React Gallary App",
         coverImage: ReactGallary,
+        displayType: "web-project",
         gitHubLink: "https://github.com/dilipagheda/react-gallary-app",
         liveView:"http://dilipagheda.com/react-gallary-app",
         moreInfo: {

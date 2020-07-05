@@ -8,6 +8,7 @@ export const NODEJS = [
     {
         title: "Static Node & Express Website",
         coverImage: StaticWebSite,
+        displayType: "web-project",
         gitHubLink: "https://github.com/dilipagheda/static_node_and_express_site-v1",
         liveView: "https://fsjs-portfolio.herokuapp.com/",
         moreInfo: {

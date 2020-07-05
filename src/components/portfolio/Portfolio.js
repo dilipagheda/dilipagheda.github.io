@@ -3,10 +3,8 @@ import Header from "../Header";
 import { Nav, NavItem , NavLink} from 'reactstrap';
 import {NavLink as RRNavLink, Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import Aboutme from "../Aboutme";
-import Projects from "./Projects";
 import {connect} from "react-redux";
-
-
+import Projects from "./Projects";
 
 class Portfolio extends Component {
     state = {
@@ -56,23 +54,17 @@ class Portfolio extends Component {
                                                 <NavLink   activeClassName="active" to={`${this.props.match.url}/flutter`} tag={RRNavLink}>Flutter</NavLink>
                                             </NavItem>
                                             <NavItem className="content-menu text-center">
-                                                <NavLink  activeClassName="active" to={`${this.props.match.url}/Android`} tag={RRNavLink}>Android</NavLink>
+                                                <NavLink  activeClassName="active" to={`${this.props.match.url}/android`} tag={RRNavLink}>Android</NavLink>
                                             </NavItem>
                                         </Nav>
                                     </div>
-                                    <Switch>
-                                        <Route exact path={`${this.props.match.url}/frontend`} render={(routeProps)=><Projects items={this.props.frontend} category="frontend" displayType="web-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/nodejs`} render={(routeProps)=><Projects  items={this.props.nodejs} category="nodejs" displayType="web-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/reactjs`} render={(routeProps)=><Projects items={this.props.reactjs}  category="reactjs" displayType="web-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/flutter`} render={(routeProps)=><Projects items={this.props.flutter}  category="flutter" displayType="mobile-project" {...routeProps}/>} />/>
-                                        <Route exact path={`${this.props.match.url}/android`} render={(routeProps)=><Projects items={this.props.android}  category="android" displayType="mobile-project" {...routeProps}/>} />/>
-
-                                    </Switch>
+                                    <Route path={`/portfolio/:category`} render={(routeProps)=><Projects {...routeProps}/>} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
         );
     }

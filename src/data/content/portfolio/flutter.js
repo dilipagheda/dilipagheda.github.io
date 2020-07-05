@@ -9,6 +9,7 @@ export const FLUTTER = [
     {
         title: "BMI Calculator",
         coverImage: bmiApp,
+        displayType: "mobile-project",
         gitHubLink: "https://github.com/dilipagheda/bmi-calculator-flutter",
         moreInfo: {
             description:
@@ -59,6 +60,7 @@ export const FLUTTER = [
     {
         title: "Todoey",
         coverImage: todoApp,
+        displayType: "mobile-project",
         gitHubLink: "https://github.com/dilipagheda/todoey_flutter",
         moreInfo: {
             description:

@@ -19,7 +19,9 @@ import React from "react";
 // Projects - Frontend
 export const FRONTEND = [
     {
+        id:1,
         title: "Feedreader Testing",
+        displayType: "web-project",
         coverImage: feedreaderImage,
         gitHubLink: "https://github.com/dilipagheda/feedreader-jasmine",
         liveView: "http://dilipagheda.com/feedreader-jasmine/",
@@ -61,7 +63,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:2,
         title: "Classic Arcade Game",
+        displayType: "web-project",
         coverImage: arcadeGameImage,
         gitHubLink: "https://github.com/dilipagheda/arcade-game",
         liveView: "http://dilipagheda.com/arcade-game/",
@@ -113,7 +117,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:3,
         title: "Memory Game",
+        displayType: "web-project",
         coverImage: memoryGameImage,
         gitHubLink: "https://github.com/dilipagheda/memory-game",
         liveView: "http://dilipagheda.com/memory-game/",
@@ -150,7 +156,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:4,
         title: "Employee Directory",
+        displayType: "web-project",
         coverImage: employeeDirectoryImage,
         gitHubLink: "https://github.com/dilipagheda/employee_directory_v1",
         liveView: "https://dilipagheda.github.io/employee_directory_v1/",
@@ -195,7 +203,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:5,
         title: "WebApp Dashboard",
+        displayType: "web-project",
         coverImage: webAppDashboardImage,
         gitHubLink: "https://github.com/dilipagheda/web_app_dashboard_v3.1",
         liveView: "https://dilipagheda.github.io/web_app_dashboard_v3.1/",
@@ -237,7 +247,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:6,
         title: "Game Show App",
+        displayType: "web-project",
         coverImage: wheelOfSuccessImage,
         gitHubLink: "https://github.com/dilipagheda/game_show_app_v1.2",
         liveView: "https://dilipagheda.github.io/game_show_app_v1.2/",
@@ -283,7 +295,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:7,
         title: "An Interactive Photo Gallery",
+        displayType: "web-project",
         coverImage: imageGallary,
         gitHubLink: "https://github.com/dilipagheda/photo_gallery_v4",
         liveView: "https://dilipagheda.github.io/photo_gallery_v4/",
@@ -325,7 +339,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:8,
         title: "Web Style Guide",
+        displayType: "web-project",
         coverImage: webStyleGuideImage,
         gitHubLink: "https://github.com/dilipagheda/style_guide_v4",
         liveView: "https://dilipagheda.github.io/style_guide_v4/",
@@ -368,7 +384,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:9,
         title: "An Online Registration Form",
+        displayType: "web-project",
         coverImage: formDesign,
         gitHubLink: "https://github.com/dilipagheda/online_registration_form",
         liveView: "https://dilipagheda.github.io/online_registration_form/",
@@ -398,7 +416,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:10,
         title: "Mobile-first Responsive Layout",
+        displayType: "web-project",
         coverImage: responsiveDesign,
         gitHubLink: "https://github.com/dilipagheda/mobile-first-responsive-layout",
         liveView: "https://dilipagheda.github.io/mobile-first-responsive-layout/",
@@ -430,7 +450,9 @@ export const FRONTEND = [
         }
     },
     {
+        id:11,
         title: "Restaurant Review",
+        displayType: "web-project",
         coverImage: restaurantReviewImage,
         gitHubLink: "https://github.com/dilipagheda/restaurant-review",
         moreInfo: {
