@@ -10,6 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
+    "marked": "^4.3.0",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -22,12 +23,14 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --open",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b master -d build",
+    "refresh:github-projects": "node scripts/refresh-github-projects.js",
+    "refresh:github-readmes": "node scripts/refresh-github-readmes.js"
   },
   "eslintConfig": {
     "extends": "react-app"

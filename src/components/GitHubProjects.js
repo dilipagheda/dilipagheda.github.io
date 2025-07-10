@@ -4,6 +4,9 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar, faCodeBranch, faEye, faTimes, faExternalLinkAlt, faCalendarAlt, faCode } from '@fortawesome/free-solid-svg-icons';
+import githubProjects from '../data/github-projects.json';
+import githubReadmes from '../data/github-readmes.json';
+import { marked } from 'marked';
 
 class GitHubProjects extends Component {
     constructor(props) {
@@ -24,143 +27,15 @@ class GitHubProjects extends Component {
     }
 
     componentDidMount() {
-        this.fetchGitHubProjects();
+        this.loadLocalProjects();
     }
 
-    fetchGitHubProjects = async () => {
-        try {
-            this.setState({ loading: true, error: null });
-            
-            // Replace 'dilipagheda' with your actual GitHub username
-            const username = 'dilipagheda';
-            const response = await fetch(`https://api.github.com/users/${username}/repos?sort=${this.state.sortBy}&per_page=100`, {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'dilipagheda-portfolio'
-                }
-            });
-            
-            if (response.ok) {
-                const projects = await response.json();
-                this.setState({
-                    projects: projects,
-                    loading: false
-                });
-            } else if (response.status === 403) {
-                // Rate limit exceeded - use fallback data
-                console.log('GitHub API rate limited, using fallback data');
-                this.setState({
-                    projects: this.getFallbackProjects(),
-                    loading: false
-                });
-            } else if (response.status === 404) {
-                this.setState({
-                    error: 'User not found or repositories are private.',
-                    loading: false
-                });
-            } else {
-                this.setState({
-                    error: `Failed to fetch projects: ${response.status} ${response.statusText}`,
-                    loading: false
-                });
-            }
-        } catch (error) {
-            console.error('Error fetching GitHub projects:', error);
-            // Use fallback data on network errors too
-            this.setState({
-                projects: this.getFallbackProjects(),
-                loading: false
-            });
-        }
-    };
-
-    getFallbackProjects = () => {
-        return [
-            {
-                id: 1,
-                name: 'react-would-you-rather',
-                description: 'A React app that lets users play the "Would You Rather" game. Built with React, Redux, and Bootstrap.',
-                language: 'JavaScript',
-                stargazers_count: 5,
-                forks_count: 2,
-                watchers_count: 3,
-                updated_at: '2024-01-15T10:30:00Z',
-                html_url: 'https://github.com/dilipagheda/react-would-you-rather',
-                homepage: 'https://react-would-you-rather.vercel.app',
-                fork: false,
-                owner: { login: 'dilipagheda' }
-            },
-            {
-                id: 2,
-                name: 'myreads-app',
-                description: 'A React app for managing personal book library. Users can search for books and organize them into shelves.',
-                language: 'JavaScript',
-                stargazers_count: 8,
-                forks_count: 3,
-                watchers_count: 4,
-                updated_at: '2024-01-10T14:20:00Z',
-                html_url: 'https://github.com/dilipagheda/myreads-app',
-                homepage: 'https://myreads-app.vercel.app',
-                fork: false,
-                owner: { login: 'dilipagheda' }
-            },
-            {
-                id: 3,
-                name: 'neighborhood-map',
-                description: 'A React app that displays a map with various points of interest. Features include filtering and search functionality.',
-                language: 'JavaScript',
-                stargazers_count: 6,
-                forks_count: 1,
-                watchers_count: 2,
-                updated_at: '2024-01-05T09:15:00Z',
-                html_url: 'https://github.com/dilipagheda/neighborhood-map',
-                homepage: 'https://neighborhood-map.vercel.app',
-                fork: false,
-                owner: { login: 'dilipagheda' }
-            },
-            {
-                id: 4,
-                name: 'restaurant-reviews',
-                description: 'A Progressive Web App for restaurant reviews. Features offline functionality and responsive design.',
-                language: 'JavaScript',
-                stargazers_count: 4,
-                forks_count: 2,
-                watchers_count: 3,
-                updated_at: '2024-01-01T16:45:00Z',
-                html_url: 'https://github.com/dilipagheda/restaurant-reviews',
-                homepage: 'https://restaurant-reviews.vercel.app',
-                fork: false,
-                owner: { login: 'dilipagheda' }
-            },
-            {
-                id: 5,
-                name: 'memory-game',
-                description: 'A classic memory card game built with React. Features animations and score tracking.',
-                language: 'JavaScript',
-                stargazers_count: 7,
-                forks_count: 4,
-                watchers_count: 5,
-                updated_at: '2023-12-28T11:30:00Z',
-                html_url: 'https://github.com/dilipagheda/memory-game',
-                homepage: 'https://memory-game.vercel.app',
-                fork: false,
-                owner: { login: 'dilipagheda' }
-            },
-            {
-                id: 6,
-                name: 'arcade-game',
-                description: 'A browser-based arcade game inspired by classic Frogger. Built with HTML5 Canvas and JavaScript.',
-                language: 'JavaScript',
-                stargazers_count: 9,
-                forks_count: 3,
-                watchers_count: 6,
-                updated_at: '2023-12-20T13:20:00Z',
-                html_url: 'https://github.com/dilipagheda/arcade-game',
-                homepage: 'https://arcade-game.vercel.app',
-                fork: false,
-                owner: { login: 'dilipagheda' }
-            }
-        ];
+    loadLocalProjects = () => {
+        this.setState({
+            projects: githubProjects,
+            loading: false,
+            error: null
+        });
     };
 
     handleSearchChange = (e) => {
@@ -169,74 +44,29 @@ class GitHubProjects extends Component {
 
     handleSortChange = (e) => {
         this.setState({ sortBy: e.target.value }, () => {
-            this.fetchGitHubProjects();
+            // No API call needed for local data
         });
     };
 
-    handleProjectClick = async (project) => {
-        console.log('Project clicked:', project.name);
+    handleProjectClick = (project) => {
         this.setState({
             selectedProject: project,
             modalOpen: true,
             readmeContent: null,
             readmeLoading: true
+        }, () => {
+            this.loadLocalReadmeContent(project);
         });
-        
-        await this.fetchReadmeContent(project);
     };
 
-    fetchReadmeContent = async (project) => {
-        try {
-            const response = await fetch(`https://api.github.com/repos/${project.owner.login}/${project.name}/readme`, {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'dilipagheda-portfolio'
-                }
-            });
-            
-            if (response.ok) {
-                const data = await response.json();
-                const transformedContent = this.transformReadmeContent(data.content);
-                this.setState({
-                    readmeContent: data.content,
-                    transformedContent: transformedContent,
-                    readmeLoading: false
-                });
-            } else if (response.status === 403) {
-                // Rate limited - show fallback content
-                const fallbackContent = this.getFallbackReadmeContent(project.name);
-                const transformedContent = this.transformReadmeContent(fallbackContent);
-                this.setState({
-                    readmeContent: fallbackContent,
-                    transformedContent: transformedContent,
-                    readmeLoading: false
-                });
-            } else if (response.status === 404) {
-                // No README found
-                this.setState({
-                    readmeContent: null,
-                    transformedContent: null,
-                    readmeLoading: false
-                });
-            } else {
-                // Other error
-                this.setState({
-                    readmeContent: null,
-                    transformedContent: null,
-                    readmeLoading: false
-                });
-            }
-        } catch (error) {
-            console.error('Error fetching README:', error);
-            // Use fallback content on network errors
-            const fallbackContent = this.getFallbackReadmeContent(project.name);
-            const transformedContent = this.transformReadmeContent(fallbackContent);
-            this.setState({
-                readmeContent: fallbackContent,
-                transformedContent: transformedContent,
-                readmeLoading: false
-            });
-        }
+    loadLocalReadmeContent = (project) => {
+        const readme = githubReadmes[project.name] || null;
+        const transformedContent = this.transformReadmeContent(readme);
+        this.setState({
+            readmeContent: readme,
+            transformedContent: transformedContent,
+            readmeLoading: false
+        });
     };
 
     getFallbackReadmeContent = (projectName) => {
@@ -543,23 +373,12 @@ npm start
 
     transformReadmeContent = (content) => {
         if (!content) {
-            return null;
+            return '';
         }
-        
-        // Check if content is base64 encoded or plain text
-        let decodedContent;
-        try {
-            // Try to decode as base64 first
-            decodedContent = atob(content);
-        } catch (error) {
-            // If base64 decoding fails, treat as plain text
-            decodedContent = content;
+        if (Array.isArray(content)) {
+            return content.join('\n');
         }
-        
-        // Enhanced content processing with AI-like capabilities
-        const processedContent = this.processContentWithAI(decodedContent);
-        
-        return processedContent;
+        return content;
     }
 
     processContentWithAI = (content) => {
@@ -1123,6 +942,34 @@ npm start
             );
         }
 
+        const readmeStyles = `
+.readme-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.readme-content {
+  column-count: 1;
+  column-gap: 0;
+  width: 100%;
+  word-break: break-word;
+}
+.readme-content h1 { font-size: 1.6em; font-weight: bold; }
+.readme-content h2 { font-size: 1.3em; font-weight: bold; }
+.readme-content h3 { font-size: 1.1em; font-weight: bold; }
+.readme-content h4, .readme-content h5, .readme-content h6 { font-size: 1em; font-weight: bold; }
+.readme-content h1, .readme-content h2, .readme-content h3, .readme-content h4, .readme-content h5, .readme-content h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.readme-content ul, .readme-content ol {
+  margin-left: 2em;
+}
+`;
+
         return (
             <div className="container pb-5">
                 <div className="row justify-content-md-center">
@@ -1379,73 +1226,74 @@ npm start
                                 overflowY: 'auto',
                                 flex: 1
                             }}>
-                                {this.state.selectedProject && (
-                                    <div>
-                                        {/* Project Stats */}
-                                        <div style={{
-                                            display: 'grid',
-                                            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-                                            gap: '15px',
-                                            marginBottom: '20px',
-                                            padding: '15px',
-                                            backgroundColor: '#f8f9fa',
-                                            borderRadius: '6px'
-                                        }}>
-                                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                <FontAwesomeIcon icon={faStar} style={{ color: '#ffc107', marginRight: '8px' }} />
-                                                <span>{this.state.selectedProject.stargazers_count} stars</span>
-                                            </div>
-                                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                <FontAwesomeIcon icon={faCodeBranch} style={{ color: '#17a2b8', marginRight: '8px' }} />
-                                                <span>{this.state.selectedProject.forks_count} forks</span>
-                                            </div>
-                                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                <FontAwesomeIcon icon={faEye} style={{ color: '#6c757d', marginRight: '8px' }} />
-                                                <span>{this.state.selectedProject.watchers_count} watchers</span>
-                                            </div>
-                                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                <FontAwesomeIcon icon={faCalendarAlt} style={{ color: '#6c757d', marginRight: '8px' }} />
-                                                <span>Updated {this.formatDate(this.state.selectedProject.updated_at)}</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Project Description */}
-                                        {this.state.selectedProject.description && (
-                                            <div style={{ marginBottom: '20px' }}>
-                                                <h5>Description</h5>
-                                                <p>{this.state.selectedProject.description}</p>
-                                            </div>
-                                        )}
-
-                                        {/* Transformed Content */}
+                                <div style={{ position: 'relative' }}>
+                                    <style>{readmeStyles}</style>
+                                    {this.state.selectedProject && (
                                         <div>
-                                            <h5>Project Details</h5>
-                                            {this.state.readmeLoading ? (
-                                                <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                                                    <div style={{
-                                                        border: '4px solid #f3f3f3',
-                                                        borderTop: '4px solid #007bff',
-                                                        borderRadius: '50%',
-                                                        width: '40px',
-                                                        height: '40px',
-                                                        animation: 'spin 1s linear infinite',
-                                                        margin: '0 auto 20px'
-                                                    }}></div>
-                                                    <p>Loading project details...</p>
+                                            {/* Project Stats */}
+                                            <div style={{
+                                                display: 'grid',
+                                                gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+                                                gap: '15px',
+                                                marginBottom: '20px',
+                                                padding: '15px',
+                                                backgroundColor: '#f8f9fa',
+                                                borderRadius: '6px'
+                                            }}>
+                                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                    <FontAwesomeIcon icon={faStar} style={{ color: '#ffc107', marginRight: '8px' }} />
+                                                    <span>{this.state.selectedProject.stargazers_count} stars</span>
                                                 </div>
-                                            ) : this.state.transformedContent ? (
-                                                <div>
-                                                    {this.renderTransformedContent(this.state.transformedContent)}
+                                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                    <FontAwesomeIcon icon={faCodeBranch} style={{ color: '#17a2b8', marginRight: '8px' }} />
+                                                    <span>{this.state.selectedProject.forks_count} forks</span>
                                                 </div>
-                                            ) : (
-                                                <div style={{ textAlign: 'center', padding: '40px 0', color: '#6c757d' }}>
-                                                    <FontAwesomeIcon icon={faCode} size="2x" style={{ marginBottom: '15px' }} />
-                                                    <p>No detailed information available for this project.</p>
+                                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                    <FontAwesomeIcon icon={faEye} style={{ color: '#6c757d', marginRight: '8px' }} />
+                                                    <span>{this.state.selectedProject.watchers_count} watchers</span>
+                                                </div>
+                                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                    <FontAwesomeIcon icon={faCalendarAlt} style={{ color: '#6c757d', marginRight: '8px' }} />
+                                                    <span>Updated {this.formatDate(this.state.selectedProject.updated_at)}</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Project Description */}
+                                            {this.state.selectedProject.description && (
+                                                <div style={{ marginBottom: '20px' }}>
+                                                    <h5>Description</h5>
+                                                    <p>{this.state.selectedProject.description}</p>
                                                 </div>
                                             )}
+
+                                            {/* Transformed Content */}
+                                            <div>
+                                                <h5>Project Details</h5>
+                                                {this.state.readmeLoading ? (
+                                                    <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                                                        <div style={{
+                                                            border: '4px solid #f3f3f3',
+                                                            borderTop: '4px solid #007bff',
+                                                            borderRadius: '50%',
+                                                            width: '40px',
+                                                            height: '40px',
+                                                            animation: 'spin 1s linear infinite',
+                                                            margin: '0 auto 20px'
+                                                        }}></div>
+                                                        <p>Loading project details...</p>
+                                                    </div>
+                                                ) : this.state.transformedContent ? (
+                                                    <div className="readme-content" dangerouslySetInnerHTML={{ __html: marked(Array.isArray(this.state.transformedContent) ? this.state.transformedContent.join('\n') : (this.state.transformedContent || '')) }} />
+                                                ) : (
+                                                    <div style={{ textAlign: 'center', padding: '40px 0', color: '#6c757d' }}>
+                                                        <FontAwesomeIcon icon={faCode} size="2x" style={{ marginBottom: '15px' }} />
+                                                        <p>No detailed information available for this project.</p>
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

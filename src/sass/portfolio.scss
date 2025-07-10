@@ -121,3 +121,12 @@
 video{
   border: 2px solid $navbar-bg-color;
 }
+
+// Ensure images in README/modal content are responsive and GIFs animate correctly
+.readme-content img {
+  max-width: 100%;
+  height: auto !important;
+  display: block;
+  margin: 16px auto;
+  object-fit: unset !important;
+}
