@@ -103,6 +103,11 @@ class Header extends Component {
                                     Resume
                                 </NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" activeClassName="active" to="/github-projects">
+                                    GitHub
+                                </NavLink>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>

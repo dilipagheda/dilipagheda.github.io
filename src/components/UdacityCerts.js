@@ -1,0 +1,54 @@
+import React from 'react';
+
+const UdacityCerts = (props) => {
+    console.log('UdacityCerts props:', props);
+    console.log('certifications:', props.certifications);
+    
+    if (!props.certifications || !props.certifications.items) {
+        console.log('No certifications data found');
+        return <div>No Udacity certifications found</div>;
+    }
+    
+    return (
+        <>
+            {props.certifications.items.map((cert, index) => (
+                <div key={index} className="col-12 col-md-6 mb-4">
+                    <div className="udacity-cert-card">
+                        <div className="udacity-cert-header">
+                            <div className="udacity-logo">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 40" width="200" height="60" fill="none">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M2.17898 7.89443L9.04064 3.91339V15.0847C9.0271 19.2282 11.9369 22.9384 15.9429 23.9134L16.0376 23.9405L15.9835 24.0082C15.8888 24.13 15.8076 24.2384 15.6993 24.3467C15.3339 24.7123 14.9414 25.0373 14.5083 25.3216C14.0752 25.606 13.6286 25.8497 13.1549 26.0529C12.6677 26.256 12.167 26.4049 11.6527 26.5133C11.1113 26.6216 10.6512 26.6757 10.1504 26.6757H10.0963C9.55492 26.6757 9.01357 26.6216 8.48575 26.5133C7.97147 26.4049 7.47071 26.256 6.98349 26.0393C6.50981 25.8362 6.04966 25.5925 5.63011 25.3081C5.21056 25.0237 4.80455 24.6988 4.45267 24.3332C4.08725 23.9676 3.76244 23.5749 3.47823 23.1551C3.19402 22.7218 2.95041 22.2749 2.7474 21.8C2.54444 21.3271 2.39553 20.826 2.28725 20.3115C2.17898 19.7563 2.16545 19.1876 2.16545 18.7001V7.93505L2.17898 7.89443ZM19.4346 21.977C19.8271 20.8667 20.0301 19.7699 20.0436 18.7407V6.93302L25.2406 3.95401V15.1253C25.2406 15.6263 25.1865 16.1138 25.1053 16.5471C25.0106 16.994 24.8752 17.4408 24.6858 17.8741C24.5098 18.2939 24.2797 18.7001 24.0226 19.0657C23.7655 19.4449 23.4677 19.7969 23.1564 20.1084C22.8316 20.4334 22.4797 20.7177 22.1008 20.975C21.7218 21.2323 21.3158 21.4489 20.8963 21.625C20.4632 21.8145 20.0707 21.9364 19.57 22.0312C19.5564 22.0312 19.5294 22.0312 19.5158 22.0447L19.4211 22.0583L19.4346 21.977ZM0.108307 6.81115V18.6595C0.0947773 24.1436 4.56094 28.6256 10.0827 28.6392H10.1098C11.8557 28.6392 13.588 28.1788 15.0903 27.3122L22.385 23.1416C25.403 21.5843 27.2978 18.5105 27.2978 15.1253V2.74886C27.2978 2.70824 27.2842 2.68116 27.2436 2.66762L25.4572 1.62496C25.4301 1.61142 25.3895 1.61142 25.3624 1.62496L18.0406 5.74142C18.0136 5.755 17.9865 5.79556 17.9865 5.82227V18.7137C17.9865 19.2553 17.9324 19.7969 17.8241 20.325C17.7158 20.8396 17.5534 21.3406 17.3504 21.8145C17.158 22.2839 16.9307 22.7341 16.7504 23.1815C16.5241 23.7093 15.8068 24.1341 14.197 20.975C13.8181 20.7177 13.4662 20.4334 13.1414 20.1084C12.8166 19.7834 12.5324 19.4431 12.2752 19.0522C12.0181 18.673 11.8015 18.2668 11.6256 17.847C11.4497 17.4273 11.3143 16.9694 11.1113 16.5118V2.74886C11.1113 2.70824 11.0978 2.68116 11.0572 2.66762L9.27071 1.58434C9.25718 1.5708 9.23011 1.5708 9.21658 1.58434L0.148909 6.72991C0.121841 6.74334 0.108307 6.78407 0.108307 6.81115Z" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                            <div className="udacity-cert-badge">
+                                <span className="udacity-badge-text">Nanodegree</span>
+                            </div>
+                        </div>
+                        <div className="udacity-cert-body">
+                            <h3 className="udacity-cert-title">{cert.title}</h3>
+                            <div className="udacity-cert-meta">
+                                <span className="udacity-issuer">Udacity</span>
+                                <span className="udacity-date">{cert.date}</span>
+                            </div>
+                            <div className="udacity-cert-category">{cert.category}</div>
+                            <p className="udacity-cert-description">{cert.description}</p>
+                            <div className="udacity-cert-details">
+                                <div className="udacity-detail-item">
+                                    <strong>Projects Completed:</strong> {cert.totalProjects}
+                                </div>
+                                <div className="udacity-detail-item">
+                                    <strong>Program Type:</strong> Nanodegree
+                                </div>
+                                <div className="udacity-detail-item">
+                                    <strong>Focus Area:</strong> {cert.category}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </>
+    );
+};
+
+export default UdacityCerts; 

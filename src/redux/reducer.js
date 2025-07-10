@@ -6,6 +6,8 @@ import {EXPERIENCE} from '../data/content/experience';
 import {CERTIFICATES} from "../data/content/education/certificates";
 import {EDUCATION} from "../data/content/education/education";
 import {BOOTCAMPS} from "../data/content/education/bootcamps";
+import {LINUXFOUNDATION} from "../data/content/education/linuxfoundation";
+import {UDACITY} from "../data/content/education/udacity";
 
 export const initialState = {
     aboutme: ABOUTME,
@@ -15,7 +17,9 @@ export const initialState = {
     experience:EXPERIENCE,
     certificates:CERTIFICATES,
     education:EDUCATION,
-    bootcamps: BOOTCAMPS
+    bootcamps: BOOTCAMPS,
+    linuxfoundation: LINUXFOUNDATION,
+    udacity: UDACITY
 };
 
 export const Reducer = (state = initialState, action) => {

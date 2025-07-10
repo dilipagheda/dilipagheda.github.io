@@ -6,30 +6,9 @@ import { connect } from 'react-redux';
 import badge from '../data/images/badge.svg';
 import SocialMedia from "./SocialMedia";
 import Divider from "./common/Divider";
-
-const BootCamps = (props)=>{
-
-    return <>
-        {(props.bootcamps.items.map(item=>{return (
-            <div className="col-12 col-md-4 mb-3">
-                <div className="card px-0">
-                    <span style={{width:"100px",marginRight:"0",marginLeft:"auto"}} className="badge badge-info">{item.totalProjects} Projects</span>
-                    <div className="d-flex justify-content-center px-1">
-                        <img className="badge-image" src={badge} alt="Badge"></img>
-                        <p className="card-title pt-4 pl-2">{item.title}</p>
-                    </div>
-                    <div className="card-body px-1">
-
-                        <div className="text-center card-subtitle text-muted">{item.category}</div>
-                        <div style={{width:"100%"}} className="badge badge-light">{item.date}</div>
-
-                    </div>
-                </div>
-            </div>
-            )}))
-        }
-    </>;
-}
+import LinuxFoundationCerts from "./LinuxFoundationCerts";
+import UdacityCerts from "./UdacityCerts";
+import TreehouseCerts from "./TreehouseCerts";
 
 class Aboutme extends Component {
     render() {
@@ -62,7 +41,21 @@ class Aboutme extends Component {
                                 <div className="col-12">
                                     {this.props.aboutme.content3}
                                 </div>
-                                <BootCamps bootcamps={this.props.bootcamps}/>
+                                <LinuxFoundationCerts certifications={this.props.linuxfoundation}/>
+                            </div>
+                            <Divider shouldDisplay="true"/>
+                            <div className="row justify-content-md-center">
+                                <div className="col-12">
+                                    <h2 className="text-center mb-4">Udacity Certifications</h2>
+                                </div>
+                                <UdacityCerts certifications={this.props.udacity}/>
+                            </div>
+                            <Divider shouldDisplay="true"/>
+                            <div className="row justify-content-md-center">
+                                <div className="col-12">
+                                    <h2 className="text-center mb-4">Treehouse Certifications</h2>
+                                </div>
+                                <TreehouseCerts bootcamps={this.props.bootcamps}/>
                             </div>
 
                         </div>
@@ -77,7 +70,9 @@ class Aboutme extends Component {
 const mapStateToProps = state => {
     return {
         aboutme: state.aboutme,
-        bootcamps: state.bootcamps
+        bootcamps: state.bootcamps,
+        linuxfoundation: state.linuxfoundation,
+        udacity: state.udacity
     }
 }
 

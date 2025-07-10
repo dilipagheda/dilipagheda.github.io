@@ -1,0 +1,478 @@
+.github-projects {
+    .content-header {
+        margin-bottom: 3rem;
+        
+        h1 {
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 0;
+        }
+    }
+    
+    .project-card {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        border: 1px solid #e1e5e9;
+        border-radius: 8px;
+        cursor: pointer;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #24292e;
+            
+            a {
+                color: #0366d6;
+                
+                &:hover {
+                    color: #024ea4;
+                    text-decoration: underline;
+                }
+            }
+            
+            .badge {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.4rem;
+                background-color: #6c757d;
+            }
+        }
+        
+        .card-text {
+            font-size: 0.875rem;
+            line-height: 1.4;
+            color: #586069;
+        }
+        
+        .project-language-icon {
+            font-size: 1.2rem;
+            color: #586069;
+        }
+        
+        .project-stats {
+            font-size: 0.8rem;
+            color: #586069;
+            
+            .fas {
+                font-size: 0.75rem;
+            }
+        }
+        
+        .project-footer {
+            border-top: 1px solid #e1e5e9;
+            padding-top: 0.75rem;
+            margin-top: 0.75rem;
+        }
+    }
+    
+    .search-filter-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        
+        .search-section {
+            width: 100%;
+            
+            .input-group {
+                width: 100%;
+                
+                .form-control {
+                    border-radius: 6px 0 0 6px;
+                    border: 1px solid #d1d5da;
+                    
+                    &:focus {
+                        border-color: #0366d6;
+                        box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+                    }
+                }
+                
+                .input-group-append {
+                    .input-group-text {
+                        background-color: #f6f8fa;
+                        border: 1px solid #d1d5da;
+                        border-left: none;
+                        border-radius: 0 6px 6px 0;
+                        color: #586069;
+                    }
+                }
+            }
+        }
+        
+        .filter-section {
+            .filter-controls {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                justify-content: flex-end;
+                
+                .form-check {
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    white-space: nowrap;
+                    
+                    .form-check-input {
+                        margin-right: 0.5rem;
+                        margin-top: 0;
+                    }
+                    
+                    .form-check-label {
+                        font-size: 0.9rem;
+                        color: #586069;
+                        margin: 0;
+                        cursor: pointer;
+                    }
+                }
+                
+                .sort-select {
+                    min-width: 140px;
+                    max-width: 160px;
+                    border-radius: 4px;
+                    border: 1px solid #d1d5da;
+                    font-size: 0.9rem;
+                    
+                    &:focus {
+                        border-color: #0366d6;
+                        box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+                    }
+                }
+            }
+        }
+    }
+    
+    .loading-container {
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: #0366d6;
+        }
+    }
+    
+    .error-container {
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .alert {
+            max-width: 500px;
+            border-radius: 6px;
+        }
+    }
+    
+    .no-projects {
+        text-align: center;
+        padding: 3rem 0;
+        color: #586069;
+    }
+    
+    // Custom Modal Styles
+    .custom-modal-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        z-index: 9999 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem !important;
+    }
+    
+    .custom-modal {
+        background: white !important;
+        border-radius: 8px !important;
+        max-width: 600px !important;
+        width: 100% !important;
+        max-height: 80vh !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+        position: relative !important;
+        z-index: 10000 !important;
+    }
+    
+    .custom-modal-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid #e1e5e9;
+        background-color: #f8f9fa;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .custom-modal-body {
+        padding: 1.5rem;
+        flex: 1;
+        overflow-y: auto;
+        max-height: 60vh;
+    }
+    
+    .custom-modal-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid #e1e5e9;
+        background-color: #f8f9fa;
+        border-radius: 0 0 8px 8px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .modal-header {
+        border-bottom: 1px solid #e1e5e9;
+        padding: 1.5rem;
+        
+        .modal-header-content {
+            width: 100%;
+            
+            h4 {
+                color: #24292e;
+                font-weight: 600;
+            }
+            
+            .project-links {
+                .btn {
+                    font-size: 0.875rem;
+                    padding: 0.375rem 0.75rem;
+                }
+            }
+        }
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+        
+        .project-details {
+            .project-stats-overview {
+                background-color: #f6f8fa;
+                border-radius: 6px;
+                padding: 1rem;
+                
+                .stat-item {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 0.5rem;
+                    
+                    .fas {
+                        width: 16px;
+                    }
+                }
+            }
+            
+            .project-description {
+                h5 {
+                    color: #24292e;
+                    font-weight: 600;
+                    margin-bottom: 0.75rem;
+                }
+                
+                p {
+                    color: #586069;
+                    line-height: 1.6;
+                }
+            }
+            
+            .readme-content {
+                h5 {
+                    color: #24292e;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+                
+                .transformed-body {
+                    .transformed-content {
+                        .content-section {
+                            margin-bottom: 1.5rem;
+                            
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            
+                            .section-title {
+                                color: #24292e;
+                                font-weight: 600;
+                                font-size: 1.25rem;
+                                margin-bottom: 1rem;
+                                border-bottom: 2px solid #0366d6;
+                                padding-bottom: 0.5rem;
+                            }
+                            
+                            .section-content {
+                                h5 {
+                                    color: #24292e;
+                                    font-weight: 600;
+                                    font-size: 1rem;
+                                    margin-bottom: 0.75rem;
+                                }
+                                
+                                p {
+                                    color: #586069;
+                                    line-height: 1.6;
+                                    margin-bottom: 0.75rem;
+                                    
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                                
+                                code {
+                                    background-color: #e1e5e9;
+                                    padding: 0.2rem 0.4rem;
+                                    border-radius: 3px;
+                                    font-size: 0.875rem;
+                                    color: #24292e;
+                                }
+                                
+                                strong {
+                                    font-weight: 600;
+                                    color: #24292e;
+                                }
+                                
+                                em {
+                                    font-style: italic;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .modal-footer {
+        border-top: 1px solid #e1e5e9;
+        padding: 1rem 1.5rem;
+    }
+}
+
+// Spinner animation
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+// Technology Icons Styling
+.technologies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 12px;
+        border: 1px solid #dee2e6;
+        transition: all 0.3s ease;
+        text-align: center;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-color: #007bff;
+        }
+        
+        .tech-icon {
+            margin-bottom: 0.5rem;
+            
+            i {
+                font-size: 2.5rem;
+                color: #495057;
+                transition: color 0.3s ease;
+            }
+        }
+        
+        .tech-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #495057;
+            text-transform: capitalize;
+        }
+        
+        // Technology-specific colors
+        &:hover .tech-icon i {
+            &.devicon-javascript-plain { color: #f7df1e; }
+            &.devicon-typescript-plain { color: #3178c6; }
+            &.devicon-react-original { color: #61dafb; }
+            &.devicon-vuejs-plain { color: #4fc08d; }
+            &.devicon-angularjs-plain { color: #dd0031; }
+            &.devicon-nodejs-plain { color: #339933; }
+            &.devicon-python-plain { color: #3776ab; }
+            &.devicon-java-plain { color: #007396; }
+            &.devicon-html5-plain { color: #e34f26; }
+            &.devicon-css3-plain { color: #1572b6; }
+            &.devicon-php-plain { color: #777bb4; }
+            &.devicon-ruby-plain { color: #cc342d; }
+            &.devicon-go-plain { color: #00add8; }
+            &.devicon-rust-plain { color: #ce422b; }
+            &.devicon-swift-plain { color: #fa7343; }
+            &.devicon-kotlin-plain { color: #7f52ff; }
+            &.devicon-cplusplus-plain { color: #00599c; }
+            &.devicon-csharp-plain { color: #239120; }
+            &.devicon-docker-plain { color: #2496ed; }
+            &.devicon-git-plain { color: #f05032; }
+            &.devicon-mongodb-plain { color: #47a248; }
+            &.devicon-mysql-plain { color: #4479a1; }
+            &.devicon-postgresql-plain { color: #336791; }
+            &.devicon-sqlite-plain { color: #003b57; }
+            &.devicon-express-original { color: #000000; }
+            &.devicon-django-plain { color: #092e20; }
+            &.devicon-flask-plain { color: #000000; }
+            &.devicon-spring-plain { color: #6db33f; }
+            &.devicon-webpack-plain { color: #8dd6f9; }
+            &.devicon-babel-plain { color: #f9dc3e; }
+            &.devicon-sass-original { color: #cf649a; }
+            &.devicon-less-plain-wordmark { color: #1d365d; }
+            &.devicon-bootstrap-plain { color: #7952b3; }
+            &.devicon-tailwindcss-plain { color: #06b6d4; }
+            &.devicon-jquery-plain { color: #0769ad; }
+            &.devicon-redux-original { color: #764abc; }
+            &.devicon-graphql-plain { color: #e10098; }
+            &.devicon-amazonwebservices-original { color: #ff9900; }
+            &.devicon-azure-plain { color: #0089d6; }
+            &.devicon-firebase-plain { color: #ffca28; }
+            &.devicon-heroku-plain { color: #430098; }
+            &.devicon-vercel-plain { color: #000000; }
+            &.devicon-netlify-plain { color: #00c7b7; }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .github-projects {
+        .project-card {
+            .card-body {
+                padding: 1rem;
+            }
+            
+            .card-title {
+                font-size: 1rem;
+            }
+            
+            .project-stats {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+        }
+    }
+} 

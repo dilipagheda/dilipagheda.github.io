@@ -16,12 +16,10 @@
     "react-popper": "^1.3.3",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
     "react-spinners": "^0.5.8",
     "react-text-loop": "^2.0.1",
     "reactstrap": "^8.0.0",
-    "redux": "^4.0.1",
-    "@emotion/core": "latest"
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,5 +44,8 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "react-scripts": "^3.0.0",
+    "sass": "^1.89.2"
+  }
 }

@@ -6,3 +6,535 @@
 @import 'skills';
 @import 'experience';
 @import 'certifications';
+@import 'github-projects';
+
+// Linux Foundation Certification Cards
+.lf-cert-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        border-color: #FCC624;
+    }
+}
+
+.lf-cert-header {
+    background: linear-gradient(135deg, #FCC624 0%, #f4b800 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.lf-logo {
+    display: flex;
+    align-items: center;
+}
+
+.lf-cert-badge {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 6px 12px;
+    border-radius: 20px;
+    
+    .lf-badge-text {
+        color: #FCC624;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+}
+
+.lf-cert-body {
+    padding: 24px;
+}
+
+.lf-cert-title {
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.lf-cert-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    
+    .lf-issuer {
+        color: #6c757d;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .lf-date {
+        background: #FCC624;
+        color: #000;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+
+.lf-cert-category {
+    background: #e9ecef;
+    color: #495057;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.lf-cert-description {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.lf-cert-details {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid #FCC624;
+    
+    .lf-detail-item {
+        color: #495057;
+        font-size: 13px;
+        margin-bottom: 8px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .lf-cert-card {
+        margin-bottom: 20px;
+    }
+    
+    .lf-cert-header {
+        padding: 16px;
+    }
+    
+    .lf-cert-body {
+        padding: 20px;
+    }
+    
+    .lf-cert-title {
+        font-size: 16px;
+    }
+}
+
+// Udacity Certification Cards
+.udacity-cert-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(32, 21, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    
+    &:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(32, 21, 255, 0.15);
+        border-color: #2015FF;
+    }
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #2015FF 0%, #4A90E2 50%, #2015FF 100%);
+        z-index: 1;
+    }
+}
+
+.udacity-cert-header {
+    background: linear-gradient(135deg, #2015FF 0%, #4A90E2 100%);
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    }
+}
+
+.udacity-logo {
+    display: flex;
+    align-items: center;
+    transition: filter 0.3s ease;
+    
+    img {
+        max-width: 120px;
+        height: auto;
+    }
+}
+
+.udacity-cert-badge {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    .udacity-badge-text {
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.udacity-cert-body {
+    padding: 28px;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbff 100%);
+}
+
+.udacity-cert-title {
+    color: #2015FF;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.3;
+    background: linear-gradient(135deg, #2015FF 0%, #4A90E2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.udacity-cert-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    
+    .udacity-issuer {
+        color: #6c757d;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .udacity-date {
+        background: linear-gradient(135deg, #2015FF 0%, #4A90E2 100%);
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(32, 21, 255, 0.3);
+    }
+}
+
+.udacity-cert-category {
+    background: linear-gradient(135deg, #2015FF 0%, #4A90E2 100%);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(32, 21, 255, 0.2);
+}
+
+.udacity-cert-description {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.udacity-cert-details {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #2015FF;
+    box-shadow: inset 0 1px 3px rgba(32, 21, 255, 0.1);
+    
+    .udacity-detail-item {
+        color: #495057;
+        font-size: 13px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        strong {
+            color: #2015FF;
+            font-weight: 700;
+        }
+    }
+}
+
+// Responsive adjustments for Udacity cards
+@media (max-width: 768px) {
+    .udacity-cert-card {
+        margin-bottom: 20px;
+    }
+    
+    .udacity-cert-header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .udacity-cert-body {
+        padding: 24px;
+    }
+    
+    .udacity-cert-title {
+        font-size: 18px;
+    }
+    
+    .udacity-cert-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+// Treehouse Certification Cards
+.treehouse-cert-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(95, 207, 128, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: visible; // Allow logo to extend outside the card
+    height: 100%;
+    position: relative;
+    margin-top: 32px; // 40% of 100px = 32px space for logo hanging outside
+    
+    &:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(95, 207, 128, 0.15);
+        border-color: #5FCF80;
+    }
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #5FCF80 0%, #4A9C6B 50%, #5FCF80 100%);
+        z-index: 1;
+    }
+}
+
+.treehouse-logo-container {
+    position: absolute;
+    top: -32px; /* 40% of 100px = 32px hanging outside */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.treehouse-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.3s ease;
+    
+    .treehouse-seal-image {
+        width: 100px;
+        height: 100px;
+        filter: drop-shadow(0 4px 8px rgba(95, 207, 128, 0.3));
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.treehouse-cert-header {
+    background: linear-gradient(135deg, #5FCF80 0%, #4A9C6B 100%);
+    padding: 24px;
+    padding-top: 68px; // 60% of 100px = 60px for logo inside header (deeper)
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    }
+}
+
+.treehouse-cert-badge {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    .treehouse-badge-text {
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.treehouse-cert-body {
+    padding: 28px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.treehouse-cert-title {
+    color: #5FCF80;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.3;
+    background: linear-gradient(135deg, #5FCF80 0%, #4A9C6B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.treehouse-cert-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    
+    .treehouse-issuer {
+        color: #6c757d;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .treehouse-date {
+        background: linear-gradient(135deg, #5FCF80 0%, #4A9C6B 100%);
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(95, 207, 128, 0.3);
+    }
+}
+
+.treehouse-cert-category {
+    background: linear-gradient(135deg, #5FCF80 0%, #4A9C6B 100%);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(95, 207, 128, 0.2);
+}
+
+.treehouse-cert-details {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f0f8f0 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #5FCF80;
+    box-shadow: inset 0 1px 3px rgba(95, 207, 128, 0.1);
+    
+    .treehouse-detail-item {
+        color: #495057;
+        font-size: 13px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        strong {
+            color: #5FCF80;
+            font-weight: 700;
+        }
+    }
+}
+
+// Responsive adjustments for Treehouse cards
+@media (max-width: 768px) {
+    .treehouse-cert-card {
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    
+    .treehouse-cert-header {
+        padding: 20px;
+        padding-top: 50px;
+    }
+    
+    .treehouse-cert-body {
+        padding: 24px;
+    }
+    
+    .treehouse-cert-title {
+        font-size: 18px;
+    }
+    
+    .treehouse-cert-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

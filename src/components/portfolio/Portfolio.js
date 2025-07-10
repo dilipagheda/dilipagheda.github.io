@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import Header from "../Header";
 import { Nav, NavItem , NavLink} from 'reactstrap';
-import {NavLink as RRNavLink, Redirect, Route, Switch, withRouter} from 'react-router-dom';
-import Aboutme from "../Aboutme";
+import {NavLink as RRNavLink, Redirect, Route, withRouter} from 'react-router-dom';
 import {connect} from "react-redux";
 import Projects from "./Projects";
 
