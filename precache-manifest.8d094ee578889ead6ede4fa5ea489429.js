@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b0f89facfc4ce252e894e2351d6294d0",
+    "revision": "24bb73edeb2647b09e18f990362b6756",
     "url": "/index.html"
   },
   {
-    "revision": "fe1c25dec188643f2c68",
-    "url": "/static/css/2.266e55a5.chunk.css"
+    "revision": "24cb7ed2061a26c3ad75",
+    "url": "/static/css/2.7f1403ef.chunk.css"
   },
   {
-    "revision": "92b446507dfb81a15aba",
-    "url": "/static/css/main.bc87ca72.chunk.css"
+    "revision": "a9da7bb866445045046d",
+    "url": "/static/css/main.6c2d8924.chunk.css"
   },
   {
-    "revision": "fe1c25dec188643f2c68",
-    "url": "/static/js/2.add5719b.chunk.js"
+    "revision": "24cb7ed2061a26c3ad75",
+    "url": "/static/js/2.291df3c1.chunk.js"
   },
   {
-    "revision": "92b446507dfb81a15aba",
-    "url": "/static/js/main.b480b83e.chunk.js"
+    "revision": "a9da7bb866445045046d",
+    "url": "/static/js/main.fb94d4b3.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/arcade-game.9dffb01c.png"
   },
   {
-    "revision": "2bd18c723ec3d3f6666c06c1cbbabbe6",
-    "url": "/static/media/badge.2bd18c72.svg"
+    "revision": "be81cfafd5d80285330e5a771ef338a6",
+    "url": "/static/media/badge.be81cfaf.svg"
   },
   {
     "revision": "0f8c9b50932d57b47dfd468a2a0db5ca",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/cc-bg-1.35218858.jpg"
   },
   {
-    "revision": "12bbbc2d516714a4022b304f16ec686a",
-    "url": "/static/media/email.12bbbc2d.svg"
+    "revision": "6a3cda5644a08f6b40ecfbb379e53af2",
+    "url": "/static/media/email.6a3cda56.svg"
   },
   {
     "revision": "361ce2842992d1adcfe80c10dfce1365",
@@ -68,8 +68,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/linkedin.fd58b21d.svg"
   },
   {
-    "revision": "d1e2e0c1f6796dc14125c97b69376e87",
-    "url": "/static/media/logo.d1e2e0c1.svg"
+    "revision": "0299917e12e132a99559ed39fcddc02c",
+    "url": "/static/media/logo.0299917e.svg"
   },
   {
     "revision": "461ce4e5bbc63173af3eb297283c6e70",
@@ -92,6 +92,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/mobile-portrait.b10a7fb6.png"
   },
   {
+    "revision": "4d6dd02cb6ef846793ced7bb77b15b70",
+    "url": "/static/media/nodejs-appdev-badge.4d6dd02c.png"
+  },
+  {
+    "revision": "bebb7f8cd5b1c44d901c095436dca2c9",
+    "url": "/static/media/nodejs-servdev-badge.bebb7f8c.png"
+  },
+  {
     "revision": "5a66e861e516c80b2804be3481f8cf4e",
     "url": "/static/media/personal2.5a66e861.jpg"
   },
@@ -102,6 +110,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "207a290a50b033543cbb07314ac4c43a",
     "url": "/static/media/todoey.207a290a.png"
+  },
+  {
+    "revision": "0ae449e2afda094f9d22b599832150e1",
+    "url": "/static/media/treehouse-techdegree-seal.0ae449e2.webp"
   },
   {
     "revision": "1aa1f8ac4c2b1502e0240cc95795e3d9",
