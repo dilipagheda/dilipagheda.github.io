@@ -1,52 +1,19 @@
 export const EXPERIENCE = {
     items: [
         {
+            companyName: "Atlassian",
+            jobTitle: "Software Engineer",
+            period: "Apr 2024 - Apr 2025"
+        },
+        {
+            companyName: "Origin Energy",
+            jobTitle: "Senior Software Engineer",
+            period: "Jan 2021 - Mar 2024"
+        },
+        {
             companyName: "Commonwealth Bank",
-            location:"Sydney",
-            jobTitle: "Test Automation Engineer (Web & Native Apps)",
-            period: "Aug 2018 - Present",
-            achievements: [
-                "I am currently working on RebatesHub project that will enable everyday Australians to discover rebates that they are eligible for. This project involves development of responsive web pages using React, C# and SQL Server. These pages are part of NetBank web application and also Native apps.",
-                "Developed Automation test library using Java & Appium for Native apps that automates testing of Native app features and also runs tests on responsive pages using Native Browsers.",
-                "Built a small project that demonstrates use of Node.js & JavaScript for Web and Mobile automation with the intention to migrate C# tests to Node.js in future."
-            ],
-            skillsGained: [
-                "Selenium Webdriver", "C#", "Specflow", "Java", "Appium", "RestSharp", "Postman", "JavaScript", "Node.js"
-            ]
-        },
-        {
-            companyName: "Treehouse",
-            location:"Online(USA)",
-            jobTitle: "Web Development Student Mentor",
-            period: "Jan 2019 - May 2019",
-            achievements: [
-                "Mentored students to overcome obstacles in their coding journey while working on JavaScript projects.",
-                "Reviewed projects and graded according to Rubric provided by Treehouse."
-            ],
-            skillsGained: [
-                "JavaScript", "Node.js", "React"
-            ]
-        },
-        {
-            companyName: "Macquarie Bank",
-            location:"Sydney",
-            jobTitle: "Test Automation Engineer (Mobile, Web, APIs)",
-            period: "Mar 2014 - Aug 2018",
-            achievements: [
-                "Developed automation test scripts in SWIFT for iOS app and in Java for Android.",
-                "Owned the testing for Macquarie Mobile Banking app for iOS and Android",
-                "Set-up extensive range of test data in back-end databases related to Mortgages, Credit cards and Cash Products on Siebel and SAP.",
-                "Performed technical analysis on complex JSON data structures to formulate the business requirements in terms of data mapping from back-end to front-end."
-            ],
-            skillsGained: [
-                "Appium",
-                "Java",
-                "XCTest",
-                "Swift",
-                "Espresso",
-                "Android",
-                "iOS"
-            ]
+            jobTitle: "Software Engineer",
+            period: "Aug 2019 - Jan 2021"
         },
         {
             companyName: "Reserve Bank of Australia",

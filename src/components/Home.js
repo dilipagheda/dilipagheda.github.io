@@ -82,12 +82,37 @@ class Home extends Component {
                             <ExperienceCarousel />
                         ) : (
                             <div className="floating-experience-panel right-center">
-                                <h3>Recent Work Experience</h3>
-                                <ul>
+                                <h3 style={{ textAlign: 'left' }}>Recent Work Experience</h3>
+                                <ul style={{ textAlign: 'left', paddingLeft: 0 }}>
                                     {lastExperiences.map((exp, idx) => (
-                                        <li key={idx} className="experience-item">
-                                            <strong>{exp.jobTitle}</strong> @ {exp.companyName} <br/>
-                                            <span className="exp-period">{exp.period}</span>
+                                        <li key={idx} className="experience-item" style={{ textAlign: 'left', listStyle: 'none', marginBottom: 18 }}>
+                                            {idx === 2 && exp.companyName === 'Commonwealth Bank' ? (
+                                                <>
+                                                    <img src={require('../data/images/commonwealthbank_logo.png')} alt="Commonwealth Bank Logo" style={{height: 24, verticalAlign: 'middle', marginRight: 8}} />
+                                                    <span style={{verticalAlign: 'middle', fontWeight: 700, fontSize: '1.25rem'}}>Commonwealth Bank</span><br/>
+                                                    <strong style={{fontSize: '0.95rem', fontWeight: 500}}>{exp.jobTitle}</strong><br/>
+                                                    <span className="exp-period">{exp.period}</span>
+                                                </>
+                                            ) : idx === 1 && exp.companyName === 'Origin Energy' ? (
+                                                <>
+                                                    <img src={require('../data/images/origin_energy_logo.png')} alt="Origin Energy Logo" style={{height: 24, verticalAlign: 'middle', marginRight: 8}} />
+                                                    <span style={{verticalAlign: 'middle', fontWeight: 700, fontSize: '1.25rem'}}>Origin Energy</span><br/>
+                                                    <strong style={{fontSize: '0.95rem', fontWeight: 500}}>{exp.jobTitle}</strong><br/>
+                                                    <span className="exp-period">{exp.period}</span>
+                                                </>
+                                            ) : idx === 0 && exp.companyName === 'Atlassian' ? (
+                                                <>
+                                                    <img src={require('../data/images/atlassian_logo.png')} alt="Atlassian Logo" style={{height: 24, verticalAlign: 'middle', marginRight: 8}} />
+                                                    <span style={{verticalAlign: 'middle', fontWeight: 700, fontSize: '1.25rem'}}>Atlassian</span><br/>
+                                                    <strong style={{fontSize: '0.95rem', fontWeight: 500}}>{exp.jobTitle}</strong><br/>
+                                                    <span className="exp-period">{exp.period}</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <strong>{exp.jobTitle}</strong> @ {exp.companyName} <br/>
+                                                    <span className="exp-period">{exp.period}</span>
+                                                </>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
