@@ -1,0 +1,38 @@
+.experience-carousel-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  min-height: 18px;
+  background: rgba(34, 34, 34, 0.95);
+  color: #fff;
+  z-index: 120;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  padding: 2px 0 2px 0;
+  border-radius: 0;
+  .carousel-content {
+    text-align: center;
+    width: 100%;
+    strong {
+      color: #fff;
+    }
+    .exp-period {
+      color: #b2ffb2;
+      font-size: 0.7rem;
+    }
+  }
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  pointer-events: none;
+} 

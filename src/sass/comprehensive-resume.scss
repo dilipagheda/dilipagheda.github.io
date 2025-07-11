@@ -1,0 +1,388 @@
+.comprehensive-resume {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+
+    .container {
+        max-width: 900px;
+    }
+
+    .resume-header {
+        background: white;
+        border-radius: 15px;
+        padding: 3rem 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+
+            span {
+                color: #34495e;
+                font-size: 0.95rem;
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .social-links {
+                a {
+                    color: #3498db;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #2980b9;
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        border: none;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .section-title {
+        color: #2c3e50;
+        font-weight: 600;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+        }
+    }
+
+    .experience-item {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #ecf0f1;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        h4 {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        h5 {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .achievement-list {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+
+            li {
+                color: #34495e;
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+                position: relative;
+
+                &::before {
+                    content: '▸';
+                    color: #3498db;
+                    font-weight: bold;
+                    position: absolute;
+                    left: -1rem;
+                }
+            }
+        }
+    }
+
+    .skills-container {
+        .skill-badge {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            }
+        }
+    }
+
+    .education-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid #ecf0f1;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        h4 {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        h5 {
+            color: #3498db;
+            font-weight: 500;
+        }
+    }
+
+    .certification-item {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #3498db;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        h5 {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .text-primary {
+            color: #3498db !important;
+        }
+    }
+
+    .download-btn {
+        background: linear-gradient(135deg, #3498db, #9b59b6);
+        border: none;
+        border-radius: 25px;
+        padding: 1rem 2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+    }
+
+    // Responsive design
+    @media (max-width: 768px) {
+        padding: 1rem 0;
+
+        .resume-header {
+            padding: 2rem 1rem;
+
+            .contact-info {
+                .d-flex {
+                    flex-direction: column;
+                    align-items: center;
+
+                    span {
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        .card {
+            margin-bottom: 1rem;
+        }
+
+        .experience-item {
+            .d-flex {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .text-end {
+                    text-align: left !important;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+
+        .education-item {
+            .d-flex {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .text-end {
+                    text-align: left !important;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+
+    // Print styles
+    @media print {
+        background: white;
+        padding: 0;
+
+        .card {
+            box-shadow: none;
+            border: 1px solid #dee2e6;
+        }
+
+        .download-btn {
+            display: none;
+        }
+    }
+}
+
+.polished-resume {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.resume-sticky-header {
+  z-index: 100;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.resume-main-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #4f46e5;
+  text-shadow: 0 2px 8px rgba(79,70,229,0.08);
+}
+
+.resume-section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6366f1;
+  border-left: 5px solid #a78bfa;
+  padding-left: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #f3f4f6 80%, #ede9fe 100%);
+  border-radius: 0 8px 8px 0;
+}
+
+.resume-subheading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #818cf8;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.resume-content {
+  font-size: 1.05rem;
+  color: #22223b;
+  line-height: 1.7;
+}
+
+.resume-section {
+  margin-bottom: 2.2rem;
+}
+
+.resume-bullets {
+  margin: 0.5rem 0 1.2rem 1.5rem;
+  padding-left: 1.2rem;
+  color: #3730a3;
+  font-size: 1rem;
+  list-style: disc inside;
+}
+
+.resume-bullets li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 0.2rem;
+}
+
+.resume-paragraph {
+  margin-bottom: 0.5rem;
+  color: #22223b;
+}
+
+.resume-info-labels {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem 0;
+  justify-content: flex-end;
+}
+
+.info-label {
+  background: linear-gradient(90deg, #6366f1 60%, #a78bfa 100%);
+  color: #fff !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  padding: 0.35rem 1rem;
+  margin: 0.1rem 0;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  display: flex;
+  align-items: center;
+  transition: background 0.2s, box-shadow 0.2s;
+  min-width: 180px;
+  justify-content: flex-end;
+}
+
+.info-label a {
+  color: #fff !important;
+  text-decoration: underline;
+  margin-left: 0.3rem;
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: color 0.2s;
+}
+
+.info-label a:hover {
+  color: #fbbf24 !important;
+}
+
+@media (max-width: 768px) {
+  .resume-info-labels {
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+  .info-label {
+    min-width: 120px;
+    font-size: 0.92rem;
+    padding: 0.3rem 0.7rem;
+  }
+} 

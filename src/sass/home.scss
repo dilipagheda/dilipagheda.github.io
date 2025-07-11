@@ -125,6 +125,11 @@ $home-text-color:white;
   z-index: -1;
 }
 
+.page-header-image,
+.image-path-home {
+  pointer-events: none;
+}
+
 .home-description,
 .home-title{
   color:$home-text-color;
@@ -141,6 +146,15 @@ $home-text-color:white;
   }
 }
 
+.mobile-fade.fade-in {
+  opacity: 1;
+  transition: opacity 0.35s ease-in;
+}
+.mobile-fade.fade-out {
+  opacity: 0;
+  transition: opacity 0.35s ease-out;
+}
+
 ///Style for certificate on aboutme page
 .badge{
   background-color: $navbar-bg-color;
@@ -151,4 +165,205 @@ $home-text-color:white;
 .badge-image{
   height: 100px;
   width: 100px;
+}
+
+// Floating Experience Panel Styles
+.floating-experience-panel {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 340px;
+  background: rgba(34, 34, 34, 0.92);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 24px 20px 18px 20px;
+  z-index: 10;
+  transition: box-shadow 0.2s;
+  border: 2px solid #4caf50;
+  h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+    color: #4caf50;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .experience-item {
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    &:last-child {
+      border-bottom: none;
+    }
+    strong {
+      font-size: 1.05rem;
+      color: #fff;
+    }
+    .exp-period {
+      font-size: 0.95rem;
+      color: #b2ffb2;
+    }
+    .exp-location {
+      font-size: 0.9rem;
+      color: #bdbdbd;
+    }
+    .exp-achievements {
+      margin-top: 4px;
+      font-size: 0.92rem;
+      color: #e0ffe0;
+      li {
+        margin-bottom: 2px;
+      }
+    }
+  }
+  max-height: 340px;
+  overflow-y: auto;
+  @media (max-width: 900px) {
+    position: static;
+    width: 100%;
+    margin: 0 auto 18px auto;
+    top: unset;
+    right: unset;
+    border-radius: 10px;
+  }
+}
+
+.floating-experience-panel.center-top {
+  left: 50%;
+  right: unset;
+  top: 32px;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  max-width: 340px;
+  width: 90%;
+  padding: 18px 16px 12px 16px;
+  max-height: unset;
+  overflow: unset;
+}
+
+.floating-experience-panel.right-center {
+  top: 50%;
+  left: unset;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 0;
+  max-width: 340px;
+  width: 90%;
+  padding: 18px 16px 12px 16px;
+  max-height: unset;
+  overflow: unset;
+  position: absolute;
+  padding-top: 32px; // add space for close button
+}
+@media (max-width: 900px) {
+  .floating-experience-panel.right-center {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: unset;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    margin: 0;
+    transform: none;
+    z-index: 100;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.18);
+    padding: 6px 4px 6px 4px;
+    min-height: 38px;
+    h3 {
+      display: none;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+      li {
+        margin: 0 4px;
+        font-size: 0.85rem;
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+  .page-header .container {
+    padding-bottom: 36px;
+  }
+}
+
+.close-floating-panel {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: #888;
+  cursor: pointer;
+  z-index: 20;
+  padding: 0 6px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.close-floating-panel:hover {
+  color: #d32f2f;
+}
+
+.floating-panel-collapsed {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 5000;
+  background: #fffbe6;
+  border: 2px solid #ffe066;
+  border-radius: 24px; // changed from 50% for pill shape
+  box-shadow: 0 2px 12px rgba(44,44,44,0.10);
+  min-width: 120px; // increased to fit icon and button
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0 12px; // add horizontal padding
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.floating-panel-collapsed:hover {
+  background: #ffe066;
+  box-shadow: 0 4px 18px rgba(44,44,44,0.16);
+}
+
+.floating-panel-collapsed button {
+  cursor: pointer;
+}
+
+.builder-highlight {
+  color: #2e7d32;
+  background: #e0f7fa;
+  font-weight: bold;
+  padding: 0.15em 0.5em;
+  border-radius: 8px;
+  font-size: 1.08em;
+  box-shadow: 0 1px 6px rgba(44,44,44,0.07);
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin: 0 0.2em;
+  border: 1.5px solid #b2dfdb;
+}
+
+.large-tagline {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #ffe066;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+  margin-top: 0.3em;
 }

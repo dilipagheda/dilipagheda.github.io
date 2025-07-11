@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, createRef} from 'react';
 import { NavLink } from 'react-router-dom'
 
 import logoImage from '../data/images/logo.svg';
@@ -18,6 +18,8 @@ import {
 
 class Header extends Component {
 
+    githubRef = createRef();
+
     state = {
         collapsed: true
     };
@@ -25,7 +27,27 @@ class Header extends Component {
     toggleNavbar = ()=> {
         this.setState({
             collapsed: !this.state.collapsed
+        }, () => {
+            window.dispatchEvent(new CustomEvent('navbarCollapseState', {
+                detail: { collapsed: this.state.collapsed }
+            }));
         });
+    }
+
+    componentDidMount() {
+        if (this.githubRef.current) {
+            window.dispatchEvent(new CustomEvent('githubMenuRight', {
+                detail: this.githubRef.current.getBoundingClientRect().right
+            }));
+        }
+    }
+
+    componentDidUpdate() {
+        if (this.githubRef.current) {
+            window.dispatchEvent(new CustomEvent('githubMenuRight', {
+                detail: this.githubRef.current.getBoundingClientRect().right
+            }));
+        }
     }
 
     render() {
@@ -104,7 +126,12 @@ class Header extends Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" activeClassName="active" to="/github-projects">
+                                <NavLink
+                                    className="nav-link"
+                                    activeClassName="active"
+                                    to="/github-projects"
+                                    innerRef={this.githubRef}
+                                >
                                     GitHub
                                 </NavLink>
                             </NavItem>
