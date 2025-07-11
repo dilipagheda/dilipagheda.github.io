@@ -74,9 +74,44 @@ class Aboutme extends Component {
                                                             </div>
                                                         )}
                                                     </>
-                                                ) : (idx === 1 && exp.companyName === 'Origin Energy') || (idx === 2 && exp.companyName === 'Commonwealth Bank') ? (
+                                                ) : idx === 1 && exp.companyName === 'Origin Energy' ? (
                                                     <>
-                                                        <strong>{exp.jobTitle}</strong> @ {exp.companyName} <br/>
+                                                        <img src={originLogo} alt="Origin Energy Logo" style={{height: 24, verticalAlign: 'middle', marginRight: 8}} />
+                                                        <span style={{verticalAlign: 'middle', fontWeight: 700, fontSize: '1.25rem'}}>Origin Energy</span><br/>
+                                                        <strong style={{fontSize: '0.95rem', fontWeight: 500}}>{exp.jobTitle}</strong><br/>
+                                                        <span className="exp-period">{exp.period}</span>
+                                                        {exp.achievements && (
+                                                            <ul style={{ marginTop: 10, marginBottom: 0, paddingLeft: 22 }}>
+                                                                {exp.achievements.map((ach, i) => (
+                                                                    <li key={i} style={{ marginBottom: 4 }}>{ach}</li>
+                                                                ))}
+                                                            </ul>
+                                                        )}
+                                                        {exp.skills && exp.skills.length > 0 && (
+                                                            <div style={{ marginTop: 8, marginBottom: 8 }}>
+                                                                {exp.skills.map((skill, i) => (
+                                                                    <span key={i} style={{
+                                                                        display: 'inline-block',
+                                                                        background: '#e0f7fa',
+                                                                        color: '#00796b',
+                                                                        borderRadius: 8,
+                                                                        padding: '1px 6px',
+                                                                        fontSize: '0.72rem',
+                                                                        fontWeight: 600,
+                                                                        marginRight: 4,
+                                                                        marginBottom: 2,
+                                                                        border: '1px solid #b2dfdb',
+                                                                        boxShadow: '0 1px 2px rgba(44,44,44,0.05)'
+                                                                    }}>{skill}</span>
+                                                                ))}
+                                                            </div>
+                                                        )}
+                                                    </>
+                                                ) : idx === 2 && exp.companyName === 'Commonwealth Bank' ? (
+                                                    <>
+                                                        <img src={commbankLogo} alt="Commonwealth Bank Logo" style={{height: 24, verticalAlign: 'middle', marginRight: 8}} />
+                                                        <span style={{verticalAlign: 'middle', fontWeight: 700, fontSize: '1.25rem'}}>Commonwealth Bank</span><br/>
+                                                        <strong style={{fontSize: '0.95rem', fontWeight: 500}}>{exp.jobTitle}</strong><br/>
                                                         <span className="exp-period">{exp.period}</span>
                                                         {exp.achievements && (
                                                             <ul style={{ marginTop: 10, marginBottom: 0, paddingLeft: 22 }}>
