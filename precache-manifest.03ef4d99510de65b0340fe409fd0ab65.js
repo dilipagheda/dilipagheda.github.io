@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8105f21994919296d2e768682d3cb909",
+    "revision": "0a18466528bc85536bab055aec102842",
     "url": "/index.html"
   },
   {
-    "revision": "d22f520169ddb1078480",
+    "revision": "af4e5eecc47e8b64782c",
     "url": "/static/css/2.7f1403ef.chunk.css"
   },
   {
-    "revision": "3820fd90bb3fdbcb5ba2",
-    "url": "/static/css/main.70b8a043.chunk.css"
+    "revision": "f23fa74a9618dc74c321",
+    "url": "/static/css/main.c09215d3.chunk.css"
   },
   {
-    "revision": "d22f520169ddb1078480",
-    "url": "/static/js/2.256c398f.chunk.js"
+    "revision": "af4e5eecc47e8b64782c",
+    "url": "/static/js/2.5c45873d.chunk.js"
   },
   {
-    "revision": "3820fd90bb3fdbcb5ba2",
-    "url": "/static/js/main.4682faaa.chunk.js"
+    "revision": "f23fa74a9618dc74c321",
+    "url": "/static/js/main.867b2375.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1b2d90c444c568b83558741b9e142646",
     "url": "/static/media/ArcadeGame.1b2d90c4.mp4"
+  },
+  {
+    "revision": "1e7c46163d5e7c9067d1f1d73c950566",
+    "url": "/static/media/Dilip Agheda Resume 2024.1e7c4616.pdf"
   },
   {
     "revision": "9adb8818c7082336aa99a3fe13dd54f1",
