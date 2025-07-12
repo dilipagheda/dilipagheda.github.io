@@ -1,6 +1,4 @@
 import React from "react";
-import badge from "../images/badge.svg";
-import Divider from "../../components/common/Divider";
 
 export const ABOUTME = {
 

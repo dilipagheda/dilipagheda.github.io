@@ -3,7 +3,7 @@ import Header from './Header';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faStar, faCodeBranch, faEye, faTimes, faExternalLinkAlt, faCalendarAlt, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faStar, faCodeBranch, faEye, faExternalLinkAlt, faCalendarAlt, faCode } from '@fortawesome/free-solid-svg-icons';
 import githubProjects from '../data/github-projects.json';
 import githubReadmes from '../data/github-readmes.json';
 import { marked } from 'marked';

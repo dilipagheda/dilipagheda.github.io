@@ -40,11 +40,11 @@ export const ANDROID = [
                         <li>Grid Layout</li>
                     </ul>
                     <h5>Udacity Review</h5>
-                    <p>Superb job implementing Stage 2 of Popular Movies! 👏 I really enjoyed using
+                    <p>Superb job implementing Stage 2 of Popular Movies! <span role="img" aria-label="clapping hands">👏</span> I really enjoyed using
                         your app! Great use of Paging concept during scroll. It helps to reduce network
                         data. This is the very useful concept if data is very large amount. its very user
-                        friendly app. 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 👍🏻 Your code is well
-                        structured form.👏 👏 👏 👏 👏 👏 Finally, Your hard work has paid off! </p>
+                        friendly app. <span role="img" aria-label="thumbs up">👍🏻</span> <span role="img" aria-label="thumbs up">👍🏻</span> <span role="img" aria-label="thumbs up">👍🏻</span> <span role="img" aria-label="thumbs up">👍🏻</span> <span role="img" aria-label="thumbs up">👍🏻</span> Your code is well
+                        structured form.<span role="img" aria-label="clapping hands">👏</span> <span role="img" aria-label="clapping hands">👏</span> <span role="img" aria-label="clapping hands">👏</span> <span role="img" aria-label="clapping hands">👏</span> <span role="img" aria-label="clapping hands">👏</span> <span role="img" aria-label="clapping hands">👏</span> Finally, Your hard work has paid off! </p>
             </div>
         }
     },
@@ -85,7 +85,7 @@ export const ANDROID = [
                         for Tablet and also for Portrait, Landscape modes, Implement app widget,
                         Implement cool features such as PreviewSeekBar and PIP (Picture in Picture)</p>
                     <h5>Udacity Review</h5>
-                    <p>Good job! The project follows all the rubric requirements, well done! 👏 👏 👏</p>
+                    <p>Good job! The project follows all the rubric requirements, well done! <span role="img" aria-label="clapping hands">👏</span> <span role="img" aria-label="clapping hands">👏</span> <span role="img" aria-label="clapping hands">👏</span></p>
             </div>
         }
     },

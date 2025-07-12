@@ -1,18 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {Link, Route, withRouter} from "react-router-dom";
-import badge from "../../data/images/badge.svg";
+import {Link, withRouter} from "react-router-dom";
 import {Button, ButtonGroup} from "reactstrap";
-import {  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
-import {faInfoCircle} from "@fortawesome/free-solid-svg-icons";
-import Header from "../Header";
-import Portfolio from "./Portfolio";
 import {BounceLoader} from "react-spinners";
-// import { css } from '@emotion/core';
-import ProjectDetail from './ProjectDetail';
 
 // const override = css`
 //     display: block;
@@ -54,36 +47,26 @@ class Projects extends Component {
     renderLiveViewButton(liveViewLink){
         if(liveViewLink){
             return (
-                <Button>
-                    <a  target="_blank" href={liveViewLink}>
-                        <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" color="black"/>
-                    </a>
-
-
+                <Button tag="a" target="_blank" rel="noopener noreferrer" href={liveViewLink}>
+                    <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" color="black"/>
                 </Button>);
         }
     }
     renderProjects(){
-        const projects = this.props.items.map(item=>{
+        const projects = this.props.items.map((item, index)=>{
             return (
-            <div className="col-md-6 col-lg-4" style={this.state.loaded ? {} : {display: 'none'}}>
+            <div key={item.id || index} className="col-md-6 col-lg-4" style={this.state.loaded ? {} : {display: 'none'}}>
                 <div className={`card mb-3 ${item.displayType}`}>
                     <div className="card-body text-center">
                         <h5>{item.title}</h5>
                         <img  src={item.coverImage} alt="" onLoad={this.loaded}></img>
                         <ButtonGroup>
-                            <Button>
-                                <a  target="_blank"
-                                       href={item.gitHubLink}>
-                                    <FontAwesomeIcon icon={faGithub} size="lg" color="black"/>
-                                </a>
+                            <Button tag="a" target="_blank" rel="noopener noreferrer" href={item.gitHubLink}>
+                                <FontAwesomeIcon icon={faGithub} size="lg" color="black"/>
                             </Button>
                             {this.renderLiveViewButton(item.liveView)}
                             <Link to={`/${this.props.match.params.category}/projectdetails/${item.id}`}>
                                 Info
-                                {/* <Button>
-                                    <FontAwesomeIcon icon={faInfoCircle} size="lg" color="black"/>
-                                </Button> */}
                             </Link>
                         </ButtonGroup>
                     </div>

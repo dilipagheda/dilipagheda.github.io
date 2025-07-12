@@ -35,7 +35,7 @@ export const REACTJS = [
                     <li>Go to the /api directory</li>
                     <li>Run npm install</li>
                     <li>Run npm start</li>
-                    <li>Voila! API server is running on port 5000 and Your MongoDB is also setup and running in the background! 👏</li>
+                    <li>Voila! API server is running on port 5000 and Your MongoDB is also setup and running in the background! <span role="img" aria-label="clapping hands">👏</span></li>
                 </ul>
                 <h6>Setup React App</h6>
                 <ul>
@@ -45,7 +45,7 @@ export const REACTJS = [
                     </li>
                     <li>Run npm start
                     </li>
-                    <li>React app should start in your browser at http://localhost:3000. Have fun! 👍
+                    <li>React app should start in your browser at http://localhost:3000. Have fun! <span role="img" aria-label="thumbs up">👍</span>
                     </li>
                 </ul>
 

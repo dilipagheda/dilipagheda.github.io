@@ -177,23 +177,25 @@
     }
 
     .download-btn {
-        background: linear-gradient(135deg, #E7AA4D, #F0DC6C);
-        border: none;
-        border-radius: 25px;
-        padding: 1rem 2rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(231, 170, 77, 0.3);
+        background: linear-gradient(135deg, #f8f9fa, #fff3cd);
+        border: 1px solid #E7AA4D;
+        border-radius: 20px;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(231, 170, 77, 0.15);
         color: #62422F;
 
         &:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(231, 170, 77, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 12px rgba(231, 170, 77, 0.25);
+            background: linear-gradient(135deg, #fff3cd, #f8f9fa);
             color: #62422F;
         }
 
         &:focus {
-            box-shadow: 0 0 0 0.2rem rgba(231, 170, 77, 0.25);
+            box-shadow: 0 0 0 0.15rem rgba(231, 170, 77, 0.2);
         }
     }
 
@@ -422,6 +424,16 @@
   &:hover svg {
     color: #F0DC6C !important;
     fill: #F0DC6C !important;
+  }
+}
+
+// Avatar styling
+.resume-avatar {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(231, 170, 77, 0.3) !important;
   }
 }
 

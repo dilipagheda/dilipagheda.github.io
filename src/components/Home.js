@@ -5,7 +5,6 @@ import Header from './Header';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import ExperienceCarousel from './ExperienceCarousel';
-import { FaBriefcase } from 'react-icons/fa';
 
 class Home extends Component {
     constructor(props) {
@@ -24,15 +23,19 @@ class Home extends Component {
 
     handleResize() {
         const isMobile = window.innerWidth <= 900;
-        if (isMobile !== this.state.isMobile) {
-            this.setState({ isMobile });
-        }
+        // If switching between mobile/desktop, always collapse nav
+        this.setState({
+            isMobile,
+            navCollapsed: true
+        });
     }
 
-    handleGithubMenuRight(e) {
+    handleGithubMenuRight = (e) => {
         const right = e.detail;
         const rightOffset = window.innerWidth - right;
-        this.setState({ githubRight: rightOffset });
+        if (this.state.githubRight !== rightOffset) {
+            this.setState({ githubRight: rightOffset });
+        }
     }
 
     handleNavbarCollapseState(e) {

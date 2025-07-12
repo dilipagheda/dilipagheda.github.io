@@ -191,6 +191,7 @@ class Aboutme extends Component {
                                 <LinuxFoundationCerts certifications={this.props.linuxfoundation}/>
                             </div>
                             <Divider shouldDisplay="true"/>
+                            
                             <div className="row justify-content-md-center">
                                 <div className="col-12">
                                     <h2 className="text-center mb-4">Udacity Certifications</h2>

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import resumeData from '../../data/comprehensive-resume.json';
-import { Container, Row, Col, Card, Button } from 'reactstrap';
+import { Container, Row, Col, Card } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faEnvelope, faPhone, faLinkedin, faGithub } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin as faLinkedinBrand, faGithub as faGithubBrand, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import '../../sass/comprehensive-resume.scss';
+import githubAvatar from '../../data/images/github-avatar.jpg';
 
 // Helper to extract contact info from the text
 function extractContactInfo(text) {
@@ -175,9 +176,6 @@ const ComprehensiveResume = () => {
   );
 
   const resumeContent = resumeText ? formatResumeText(resumeText) : [];
-  const renderedContent = resumeContent.map((el, idx) =>
-    el === INFO_LABELS_PLACEHOLDER ? <React.Fragment key={"info-labels"}>{infoLabelsComponent}</React.Fragment> : el
-  );
 
   return (
     <div className="comprehensive-resume polished-resume">
@@ -185,29 +183,44 @@ const ComprehensiveResume = () => {
       <div className="resume-sticky-header shadow-sm bg-white py-3 mb-4 sticky-top">
         <Container>
           <Row className="align-items-center">
-            <Col md={6} className="text-center text-md-start">
+            <Col md={8} className="text-center text-md-start">
               <h2 className="mb-0">{contact.name}</h2>
+              <div className="mt-2">
+                {contact.email && (
+                  <span className="me-3"><FontAwesomeIcon icon={faEnvelope} className="me-1" />{contact.email}</span>
+                )}
+                {contact.phone && (
+                  <span className="me-3"><FontAwesomeIcon icon={faPhone} className="me-1" />{contact.phone}</span>
+                )}
+                {contact.linkedin && (
+                  <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none resume-social-link">
+                    <FontAwesomeIcon icon={faLinkedinBrand} size="lg" className="fa-linkedin" />
+                  </a>
+                )}
+                {contact.github && (
+                  <a href={contact.github} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none resume-social-link">
+                    <FontAwesomeIcon icon={faGithubBrand} size="lg" className="fa-github" />
+                  </a>
+                )}
+                <a href={require('../../data/Dilip Agheda Resume 2024.pdf')} download className="btn btn-sm ms-2 download-btn">
+                  <FontAwesomeIcon icon={faDownload} className="me-1" /> Download PDF
+                </a>
+              </div>
             </Col>
-            <Col md={6} className="text-center text-md-end mt-2 mt-md-0">
-              {contact.email && (
-                <span className="me-3"><FontAwesomeIcon icon={faEnvelope} className="me-1" />{contact.email}</span>
-              )}
-              {contact.phone && (
-                <span className="me-3"><FontAwesomeIcon icon={faPhone} className="me-1" />{contact.phone}</span>
-              )}
-              {contact.linkedin && (
-                <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none resume-social-link">
-                  <FontAwesomeIcon icon={faLinkedinBrand} size="lg" className="fa-linkedin" />
-                </a>
-              )}
-              {contact.github && (
-                <a href={contact.github} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none resume-social-link">
-                  <FontAwesomeIcon icon={faGithubBrand} size="lg" className="fa-github" />
-                </a>
-              )}
-              <a href={require('../../data/Dilip Agheda Resume 2024.pdf')} download className="btn btn-sm ms-2 download-btn">
-                <FontAwesomeIcon icon={faDownload} className="me-1" /> Download PDF
-              </a>
+            <Col md={4} className="text-center">
+              <img 
+                src={githubAvatar} 
+                alt="Dilip Agheda" 
+                className="resume-avatar"
+                style={{
+                  width: '80px',
+                  height: '80px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  border: '3px solid #E7AA4D',
+                  boxShadow: '0 4px 12px rgba(231, 170, 77, 0.2)'
+                }}
+              />
             </Col>
           </Row>
         </Container>

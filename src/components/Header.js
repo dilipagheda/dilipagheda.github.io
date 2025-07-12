@@ -10,11 +10,7 @@ import {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    NavItem } from 'reactstrap';
 
 class Header extends Component {
 
@@ -34,19 +30,39 @@ class Header extends Component {
         });
     }
 
+    handleResize = () => {
+        // If resizing to desktop, always collapse the navbar
+        if (window.innerWidth > 900 && !this.state.collapsed) {
+            this.setState({ collapsed: true }, () => {
+                window.dispatchEvent(new CustomEvent('navbarCollapseState', {
+                    detail: { collapsed: true }
+                }));
+            });
+        }
+    }
+
     componentDidMount() {
         if (this.githubRef.current) {
             window.dispatchEvent(new CustomEvent('githubMenuRight', {
                 detail: this.githubRef.current.getBoundingClientRect().right
             }));
         }
+        window.addEventListener('resize', this.handleResize);
     }
 
-    componentDidUpdate() {
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
         if (this.githubRef.current) {
-            window.dispatchEvent(new CustomEvent('githubMenuRight', {
-                detail: this.githubRef.current.getBoundingClientRect().right
-            }));
+            const newRight = this.githubRef.current.getBoundingClientRect().right;
+            if (this.prevGithubRight !== newRight) {
+                window.dispatchEvent(new CustomEvent('githubMenuRight', {
+                    detail: newRight
+                }));
+                this.prevGithubRight = newRight;
+            }
         }
     }
 

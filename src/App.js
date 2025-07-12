@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Route, HashRouter as Router, Switch} from 'react-router-dom'
 import Home from './components/Home';
 import Aboutme from './components/Aboutme';
@@ -16,10 +16,18 @@ const store = ConfigureStore();
 library.add(faBars)
 
 function App() {
+    const [resizeKey, setResizeKey] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => setResizeKey(k => k + 1);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <Provider store={store}>
             <Router>
-                <div>
+                <div key={resizeKey}>
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/aboutme"  render={(routeProps)=><Aboutme {...routeProps}/>} />

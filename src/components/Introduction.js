@@ -15,8 +15,8 @@ class Introduction extends Component {
     render(){
         return (
             <>
-                <div className="cc-profile-image"><a href="#"><img className="img-fluid" src={this.props.home.image}
-                                                                   alt="Image"></img></a></div>
+                <div className="cc-profile-image"><img className="img-fluid" src={this.props.home.image}
+                                                                   alt="Dilip Agheda"></img></div>
                 <h1 className="home-title">{this.props.home.name}</h1>
                 <div className="intro-job-title-inline">
                     {jobTitles.map((title, idx) => (
