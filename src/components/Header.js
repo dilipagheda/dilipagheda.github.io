@@ -4,13 +4,7 @@ import { NavLink } from 'react-router-dom'
 import logoImage from '../data/images/logo.svg';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem } from 'reactstrap';
+import {faTimes} from '@fortawesome/free-solid-svg-icons'
 
 class Header extends Component {
 
@@ -24,6 +18,13 @@ class Header extends Component {
         this.setState({
             collapsed: !this.state.collapsed
         }, () => {
+            // Prevent body scrolling when mobile menu is open
+            if (!this.state.collapsed && window.innerWidth <= 900) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+            
             window.dispatchEvent(new CustomEvent('navbarCollapseState', {
                 detail: { collapsed: this.state.collapsed }
             }));
@@ -34,6 +35,7 @@ class Header extends Component {
         // If resizing to desktop, always collapse the navbar
         if (window.innerWidth > 900 && !this.state.collapsed) {
             this.setState({ collapsed: true }, () => {
+                document.body.style.overflow = '';
                 window.dispatchEvent(new CustomEvent('navbarCollapseState', {
                     detail: { collapsed: true }
                 }));
@@ -52,6 +54,8 @@ class Header extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
+        // Ensure body scroll is restored when component unmounts
+        document.body.style.overflow = '';
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -71,91 +75,123 @@ class Header extends Component {
         if(this.props.page!=="HOME"){
             classNames = "navbar navbar-expand-lg fixed-top navbar-dark px-5 pt-3 content-page";
         }
+
+        const isMobile = window.innerWidth <= 900;
+        const { collapsed } = this.state;
+
         return (
             <header>
-                {/*<nav className={classNames}>*/}
-                {/*    <a className="navbar-brand" href="index.html">*/}
-                {/*        <img className="logo" src={logoImage} alt=""></img>*/}
-                {/*        <span> ilip Agheda</span>*/}
-                {/*    </a>*/}
-                {/*    <button onClick={this.toggleCollapse} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"*/}
-                {/*            aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">*/}
-                {/*        <FontAwesomeIcon icon="bars" color="white"/>*/}
-                {/*    </button>*/}
-                {/*    <div className="collapse navbar-collapse justify-content-end" id="navigation">*/}
-                {/*        <ul className="navbar-nav">*/}
-                {/*            <li className="nav-item">*/}
-                {/*                <NavLink className="nav-link" exact activeClassName="active" to="/">*/}
-                {/*                    Home*/}
-                {/*                </NavLink>*/}
-                {/*            </li>*/}
-                {/*            <li className="nav-item">*/}
-                {/*                <NavLink className="nav-link" activeClassName="active" to="/aboutme">*/}
-                {/*                    About Me*/}
-                {/*                </NavLink>*/}
-                {/*            </li>*/}
-                {/*            <li className="nav-item">*/}
-                {/*                <NavLink className="nav-link" activeClassName="active" to="/portfolio">*/}
-                {/*                    Portfolio*/}
-                {/*                </NavLink>*/}
-                {/*            </li>*/}
-                {/*            <li className="nav-item">*/}
-                {/*                <NavLink className="nav-link" activeClassName="active" to="/resume">*/}
-                {/*                    Resume*/}
-                {/*                </NavLink>*/}
-                {/*            </li>*/}
-                {/*        </ul>*/}
-                {/*    </div>*/}
-                {/*</nav>*/}
+                <nav className={classNames}>
+                    <a className="navbar-brand" href="/">
+                        <img className="logo" src={logoImage} alt=""></img>
+                        <span>Dilip Agheda</span>
+                    </a>
+                    
+                    {/* Desktop Navigation */}
+                    <div className="navbar-nav desktop-nav">
+                        <NavLink className="nav-link" exact activeClassName="active" to="/">
+                            Home
+                        </NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/aboutme">
+                            About Me
+                        </NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/portfolio">
+                            Portfolio
+                        </NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/resume">
+                            Resume
+                        </NavLink>
+                        <NavLink
+                            className="nav-link"
+                            activeClassName="active"
+                            to="/github-projects"
+                            innerRef={this.githubRef}
+                        >
+                            GitHub
+                        </NavLink>
+                    </div>
 
+                    {/* Mobile Hamburger Button */}
+                    {isMobile && (
+                        <button 
+                            onClick={this.toggleNavbar} 
+                            className="navbar-toggler mobile-toggle"
+                            type="button"
+                            aria-label="Toggle navigation"
+                        >
+                            <FontAwesomeIcon icon="bars" color="white"/>
+                        </button>
+                    )}
+                </nav>
 
-                <Navbar color="faded" light className={classNames}>
-                    <NavbarBrand href="/" className="mr-auto">
-                        <a className="navbar-brand" href="index.html">
-                            <img className="logo" src={logoImage} alt=""></img>
-                            <span> ilip Agheda</span>
-                        </a>
-                    </NavbarBrand>
-                    <NavbarToggler onClick={this.toggleNavbar} className="mr-2">
-                        <FontAwesomeIcon icon="bars" color="white"/>
-                    </NavbarToggler>
-                    <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-end">
-                        <Nav navbar>
-                            <NavItem>
-                                <NavLink className="nav-link" exact activeClassName="active" to="/">
+                {/* Mobile Slide-out Sheet */}
+                {isMobile && (
+                    <>
+                        {/* Backdrop */}
+                        <div 
+                            className={`mobile-nav-backdrop ${!collapsed ? 'active' : ''}`}
+                            onClick={this.toggleNavbar}
+                        />
+                        
+                        {/* Slide-out Sheet */}
+                        <div className={`mobile-nav-sheet ${!collapsed ? 'active' : ''}`}>
+                            <div className="mobile-nav-header">
+                                <h3>Menu</h3>
+                                <button 
+                                    onClick={this.toggleNavbar}
+                                    className="mobile-nav-close"
+                                    aria-label="Close navigation"
+                                >
+                                    <FontAwesomeIcon icon={faTimes} />
+                                </button>
+                            </div>
+                            <div className="mobile-nav-content">
+                                <NavLink 
+                                    className="mobile-nav-link" 
+                                    exact 
+                                    activeClassName="active" 
+                                    to="/"
+                                    onClick={this.toggleNavbar}
+                                >
                                     Home
                                 </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" activeClassName="active" to="/aboutme">
+                                <NavLink 
+                                    className="mobile-nav-link" 
+                                    activeClassName="active" 
+                                    to="/aboutme"
+                                    onClick={this.toggleNavbar}
+                                >
                                     About Me
                                 </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" activeClassName="active" to="/portfolio">
+                                <NavLink 
+                                    className="mobile-nav-link" 
+                                    activeClassName="active" 
+                                    to="/portfolio"
+                                    onClick={this.toggleNavbar}
+                                >
                                     Portfolio
                                 </NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" activeClassName="active" to="/resume">
+                                <NavLink 
+                                    className="mobile-nav-link" 
+                                    activeClassName="active" 
+                                    to="/resume"
+                                    onClick={this.toggleNavbar}
+                                >
                                     Resume
                                 </NavLink>
-                            </NavItem>
-                            <NavItem>
                                 <NavLink
-                                    className="nav-link"
+                                    className="mobile-nav-link"
                                     activeClassName="active"
                                     to="/github-projects"
                                     innerRef={this.githubRef}
+                                    onClick={this.toggleNavbar}
                                 >
                                     GitHub
                                 </NavLink>
-                            </NavItem>
-                        </Nav>
-                    </Collapse>
-                </Navbar>
-
-
+                            </div>
+                        </div>
+                    </>
+                )}
             </header>
         );
     }

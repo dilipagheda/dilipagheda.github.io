@@ -29,6 +29,164 @@ button[data-toggle="collapse"].navbar-toggler{
   }
 }
 
+// Desktop Navigation
+.desktop-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  
+  .nav-link {
+    margin: 0 10px;
+    padding-bottom: 0;
+    color: $navbar-text-color;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $navbar-hover-text-color;
+    }
+    
+    &.active {
+      border-bottom: 1px solid $navbar-text-color;
+    }
+  }
+}
+
+// Mobile Navigation Styles
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid $navbar-text-color;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Mobile Backdrop
+.mobile-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Mobile Slide-out Sheet
+.mobile-nav-sheet {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1050;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  
+  &.active {
+    right: 0;
+  }
+}
+
+// Mobile Nav Header
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: $navbar-bg-color;
+  color: $navbar-text-color;
+  
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .mobile-nav-close {
+    background: none;
+    border: none;
+    color: $navbar-text-color;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// Mobile Nav Content
+.mobile-nav-content {
+  flex: 1;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  
+  .mobile-nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #f8f9fa;
+      color: $navbar-bg-color;
+    }
+    
+    &.active {
+      background-color: $navbar-bg-color;
+      color: $navbar-text-color;
+      border-left: 4px solid $navbar-text-color;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-nav-backdrop,
+  .mobile-nav-sheet {
+    display: none;
+  }
+}
+
 //Nav Bar - Pills - Portfolio Tabs
 
 .nav-pills {
