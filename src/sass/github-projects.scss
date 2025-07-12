@@ -30,9 +30,17 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: #24292e;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
             
             a {
                 color: #0366d6;
+                word-break: break-all;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
                 
                 &:hover {
                     color: #024ea4;
@@ -44,6 +52,7 @@
                 font-size: 0.7rem;
                 padding: 0.2rem 0.4rem;
                 background-color: #6c757d;
+                flex-shrink: 0;
             }
         }
         

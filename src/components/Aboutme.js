@@ -3,7 +3,6 @@ import aboutMePhoto from '../data/images/personal2.jpg';
 import Header from './Header';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import badge from '../data/images/badge.svg';
 import SocialMedia from "./SocialMedia";
 import Divider from "./common/Divider";
 import LinuxFoundationCerts from "./LinuxFoundationCerts";
@@ -27,13 +26,14 @@ class Aboutme extends Component {
                                     <h1 className="text-center">About Me</h1>
                                 </div>
                                 <div className="col-12 col-md-4 m-2">
-                                    <img className="w-100" src={aboutMePhoto}/>
+                                    <img className="w-100" src={aboutMePhoto} alt="Dilip Agheda"/>
                                     <SocialMedia />
                                 </div>
                                 <div className="col-12 col-md-7 m-2">
                                     {this.props.aboutme.content1}
                                 </div>
                             </div>
+
                             <Divider shouldDisplay="true"/>
                             <div className="row justify-content-md-center">
                                 <div className="col-12">
@@ -154,10 +154,36 @@ class Aboutme extends Component {
                             <Divider shouldDisplay="true"/>
                             <div className="row justify-content-md-center">
                                 <div className="col-12">
-                                    {this.props.aboutme.content2}
+                                    <h2 className="mb-4" style={{ textAlign: 'left' }}>My Recent Projects</h2>
+                                    {/* Atlassian Project */}
+                                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24, flexWrap: 'nowrap', marginBottom: 32 }}>
+                                        <div style={{ flexBasis: '70%', flexGrow: 0, flexShrink: 0, minWidth: 220, textAlign: 'justify' }}>
+                                            <h4 style={{ marginBottom: 8 }}>Atlassian New Navigation System</h4>
+                                            <p style={{ marginBottom: 0 }}>
+                                                As a software engineer at Atlassian, I contributed to the development of a new navigation system across Atlassian products. I worked with cross-functional teams to design and implement a modular navigation framework that improved user experience and performance. By using modern web technologies and following best practices in accessibility and internationalization, we ensured the navigation system was user-friendly and scalable. This project streamlined the user interface and made it easier for users to navigate between different tools, enhancing their overall experience.
+                                            </p>
+                                        </div>
+                                        <img src={require('../data/images/atlassian_nav_system.gif')} alt="Atlassian New Navigation System" style={{ flexBasis: '30%', maxWidth: '30%', minWidth: 80, borderRadius: 8, boxShadow: '0 2px 12px rgba(44,44,44,0.10)', alignSelf: 'flex-start', marginLeft: 8, marginTop: 8 }} />
+                                    </div>
+                                    {/* Origin Energy Project */}
+                                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 24, flexWrap: 'nowrap', marginBottom: 32 }}>
+                                        <div style={{ flexBasis: '70%', flexGrow: 0, flexShrink: 0, minWidth: 220, textAlign: 'justify' }}>
+                                            <h4 style={{ marginBottom: 8 }}>Form Engine</h4>
+                                            <p style={{ marginBottom: 0 }}>
+                                                As a software engineer at Origin Energy, I developed a dynamic form engine that enabled the digital transformation of over 300 paper-based forms during the COVID-19 pandemic. The core of this system was a configuration file written in TypeScript, structured as JavaScript objects, which defined form layouts, logic, and validation rules. This configuration was processed by the form engine to render complex forms using React components. These forms featured multi-section layouts with conditional logic; for instance, user responses to initial questions could enable or disable subsequent sections or inputs. Designed to collect measurement data from oil and gas wells, the digitized forms streamlined data entry processes, ensuring accuracy and efficiency. The collected data was integrated into a centralized data platform, where it was utilized by machine learning algorithms to predict equipment failures, facilitating proactive maintenance and reducing downtime.
+                                            </p>
+                                        </div>
+                                        <img src={require('../data/images/origin_energy_logo.png')} alt="Origin Energy Logo" style={{ flexBasis: '30%', maxWidth: '30%', minWidth: 80, height: 96, alignSelf: 'flex-start', marginLeft: 8, marginTop: 8, objectFit: 'contain' }} />
+                                    </div>
                                 </div>
                             </div>
                             <Divider shouldDisplay="true"/>
+                            {/* <div className="row justify-content-md-center">
+                                <div className="col-12">
+                                    {this.props.aboutme.content2}
+                                </div>
+                            </div> */}
+                            {/* <Divider shouldDisplay="true"/> */}
                             <div className="row justify-content-md-center">
                                 <div className="col-12">
                                     {this.props.aboutme.content3}

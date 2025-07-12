@@ -65,7 +65,7 @@ function formatResumeText(text) {
     if (idx === 0 && trimmed.match(/^Dilip Agheda/i)) {
       pushSection();
       elements.push(
-        <h1 className="resume-main-heading text-primary text-center mb-2" key="main-heading">{trimmed}</h1>
+        <h1 className="resume-main-heading text-center mb-2" key="main-heading">{trimmed}</h1>
       );
       return;
     }
@@ -73,7 +73,7 @@ function formatResumeText(text) {
     if (/^[A-Z][A-Z\s]+$/.test(trimmed) && trimmed.length < 40) {
       pushSection();
       currentSection.push(
-        <h2 className="resume-section-heading text-secondary mt-4 mb-3" key={`section-${idx}`}>{trimmed}</h2>
+        <h2 className="resume-section-heading mt-4 mb-3" key={`section-${idx}`}>{trimmed}</h2>
       );
       return;
     }
@@ -81,7 +81,7 @@ function formatResumeText(text) {
     if (/^[A-Z][a-z]+( [A-Z][a-z]+)*:?$/.test(trimmed) || trimmed.endsWith(':')) {
       pushSection();
       currentSection.push(
-        <h4 className="resume-subheading text-info mt-3 mb-2" key={`subheading-${idx}`}>{trimmed.replace(/:$/, '')}</h4>
+        <h4 className="resume-subheading mt-3 mb-2" key={`subheading-${idx}`}>{trimmed.replace(/:$/, '')}</h4>
       );
       return;
     }
@@ -186,7 +186,7 @@ const ComprehensiveResume = () => {
         <Container>
           <Row className="align-items-center">
             <Col md={6} className="text-center text-md-start">
-              <h2 className="mb-0 text-primary">{contact.name}</h2>
+              <h2 className="mb-0">{contact.name}</h2>
             </Col>
             <Col md={6} className="text-center text-md-end mt-2 mt-md-0">
               {contact.email && (
@@ -196,16 +196,16 @@ const ComprehensiveResume = () => {
                 <span className="me-3"><FontAwesomeIcon icon={faPhone} className="me-1" />{contact.phone}</span>
               )}
               {contact.linkedin && (
-                <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none">
-                  <FontAwesomeIcon icon={faLinkedinBrand} size="lg" />
+                <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none resume-social-link">
+                  <FontAwesomeIcon icon={faLinkedinBrand} size="lg" className="fa-linkedin" />
                 </a>
               )}
               {contact.github && (
-                <a href={contact.github} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none">
-                  <FontAwesomeIcon icon={faGithubBrand} size="lg" />
+                <a href={contact.github} target="_blank" rel="noopener noreferrer" className="me-3 text-decoration-none resume-social-link">
+                  <FontAwesomeIcon icon={faGithubBrand} size="lg" className="fa-github" />
                 </a>
               )}
-              <a href={require('../../data/Dilip Agheda Resume 2024.pdf')} download className="btn btn-outline-primary btn-sm ms-2">
+              <a href={require('../../data/Dilip Agheda Resume 2024.pdf')} download className="btn btn-sm ms-2 download-btn">
                 <FontAwesomeIcon icon={faDownload} className="me-1" /> Download PDF
               </a>
             </Col>

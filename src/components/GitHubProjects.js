@@ -1054,26 +1054,27 @@ npm start
                                                     style={{ cursor: 'pointer' }}
                                                 >
                                                     <div className="card-body">
-                                                        <div className="d-flex justify-content-between align-items-start mb-2">
-                                                            <div className="flex-grow-1">
-                                                                <h5 className="card-title mb-0">
-                                                                    <a 
-                                                                        href={project.html_url} 
-                                                                        target="_blank" 
-                                                                        rel="noopener noreferrer"
-                                                                        className="text-decoration-none"
-                                                                    >
-                                                                        {project.name}
-                                                                    </a>
-                                                                    {project.fork && (
-                                                                        <span className="badge badge-secondary ml-2">Fork</span>
-                                                                    )}
-                                                                </h5>
-                                                            </div>
-                                                            {project.language && (
-                                                                <i className={`${this.getLanguageIcon(project.language)} project-language-icon`}></i>
-                                                            )}
+                                                                                                            <div className="d-flex justify-content-between align-items-start mb-2">
+                                                        <div className="flex-grow-1" style={{ minWidth: 0 }}>
+                                                            <h5 className="card-title mb-0">
+                                                                <a 
+                                                                    href={project.html_url} 
+                                                                    target="_blank" 
+                                                                    rel="noopener noreferrer"
+                                                                    className="text-decoration-none"
+                                                                    title={project.name}
+                                                                >
+                                                                    {project.name}
+                                                                </a>
+                                                                {project.fork && (
+                                                                    <span className="badge badge-secondary ml-2">Fork</span>
+                                                                )}
+                                                            </h5>
                                                         </div>
+                                                        {project.language && (
+                                                            <i className={`${this.getLanguageIcon(project.language)} project-language-icon`} style={{ flexShrink: 0 }}></i>
+                                                        )}
+                                                    </div>
                                                         
                                                         {project.description && (
                                                             <p className="card-text text-muted small">
