@@ -16,9 +16,6 @@ class Portfolio extends Component {
         })
     }
 
-
-
-
     render() {
         if(this.state.redirect){
             this.setState({
@@ -63,7 +60,6 @@ class Portfolio extends Component {
                         </div>
                     </div>
                 </div>
-                
             </div>
         );
     }

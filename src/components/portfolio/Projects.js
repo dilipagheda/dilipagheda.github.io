@@ -7,30 +7,13 @@ import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 import {BounceLoader} from "react-spinners";
 
-// const override = css`
-//     display: block;
-//     margin: 0 auto;
-//     border-color: red;
-// `;
-
 class Projects extends Component {
 
     state = {
-        // modal: false,
-        // modalItem:null,
         totalLoaded:0,
         loaded:false,
         category: this.props.match.params.category
     }
-
-
-
-    // toggle = (item) => {
-    //     this.setState(prevState => ({
-    //         modal: !prevState.modal,
-    //         modalItem: item
-    //     }));
-    // }
 
     loaded = () =>{
         this.setState(prevState => ({
@@ -65,9 +48,6 @@ class Projects extends Component {
                                 <FontAwesomeIcon icon={faGithub} size="lg" color="black"/>
                             </Button>
                             {this.renderLiveViewButton(item.liveView)}
-                            <Link to={`/${this.props.match.params.category}/projectdetails/${item.id}`}>
-                                Info
-                            </Link>
                         </ButtonGroup>
                     </div>
                 </div>
@@ -76,47 +56,7 @@ class Projects extends Component {
         )});
 
         return projects;
-
-
     }
-
-    renderVideo(video){
-        if(video){
-            return (
-                <div className="col-12">
-                    <h5>Video Demo</h5>
-                    <video width="100%" height="auto" loop autoPlay controls>
-                        <source src={this.state.modalItem.moreInfo.video} type="video/mp4"/>
-                    </video>
-                </div>
-            );
-        }
-    }
-
-    // renderModal(){
-    //     if(!this.state.modalItem){
-    //         return null;
-    //     }
-    //     return (
-    //         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-    //             <ModalHeader toggle={()=>this.toggle(null)}>{this.state.modalItem.title}</ModalHeader>
-    //             <ModalBody>
-
-    //                 <div className="container">
-    //                     <div className="row justify-content-md-center">
-    //                         {this.renderVideo(this.state.modalItem.moreInfo.video)}
-    //                         <div className="col-12">
-    //                             {this.state.modalItem.moreInfo.description}
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </ModalBody>
-    //             <ModalFooter>
-    //                 <Button color="secondary" onClick={()=>this.toggle(null)}>Close</Button>
-    //             </ModalFooter>
-    //         </Modal>
-    //     );
-    // }
 
     renderLoader() {
         if (this.state.loaded) {
@@ -125,7 +65,6 @@ class Projects extends Component {
             if (this.state.totalLoaded < this.props.items.length) {
                return (<div className='sweet-loading' style={{"padding":"100px","margin":"auto"}}>
                     <BounceLoader
-                        // css={override}
                         sizeUnit={"px"}
                         size={60}
                         color={'#F0DC6C'}
@@ -140,11 +79,7 @@ class Projects extends Component {
         }
     }
 
-
     static getDerivedStateFromProps(nextProps, prevState){
-        console.log(nextProps.category+"  "+prevState.category);
-
-        // if(!prevState.category) return null;
         if(nextProps.category!==prevState.category){
             return { loaded: false, totalLoaded: 0, category: nextProps.category};
         }
@@ -157,13 +92,11 @@ class Projects extends Component {
                 <div className="row">
                     {this.renderLoader()}
                     {this.renderProjects()}
-                    {/* {this.renderModal()} */}
                 </div>
             </div>
         );
     }
 }
-
 
 const mapStateToProps = (state, ownProps) => {
     return {
