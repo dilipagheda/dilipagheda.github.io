@@ -4,6 +4,53 @@ $home-text-color:white;
   //Add fonts
   font-family: 'Maven Pro', sans-serif;
 }
+
+// Creative fallback animations
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.4;
+  }
+  25% { 
+    transform: translateY(-10px) rotate(90deg); 
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-5px) rotate(180deg); 
+    opacity: 0.8;
+  }
+  75% { 
+    transform: translateY(-15px) rotate(270deg); 
+    opacity: 0.6;
+  }
+}
+
+.fallback-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(154, 138, 46, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(139, 106, 46, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(74, 47, 26, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fallback-particle {
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .page-header {
   height: 100vh;
   max-height: 1050px;
@@ -12,6 +59,9 @@ $home-text-color:white;
   background-position: center center;
   background-size: cover;
   background-color: rgba(44, 44, 44, 0.6);
+  // Fallback background color in case image fails to load
+  background-color: #2c2c2c;
+  
   .page-header-image {
     position: absolute;
     background-size: cover;
@@ -111,19 +161,8 @@ $home-text-color:white;
   width: 32px;
 }
 
-
-.image-path-home {
-  // background-color:red;
-  background-image: url('../data/images/cc-bg-1.jpg');
-  // height: 100vh;
-  // width: 100vw;
-  position: absolute;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
+// Removed the problematic .image-path-home class that used CSS background-image
+// Now using inline styles with imported image for better reliability
 
 .page-header-image,
 .image-path-home {

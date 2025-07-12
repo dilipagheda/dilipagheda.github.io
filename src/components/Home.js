@@ -5,6 +5,7 @@ import Header from './Header';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import ExperienceCarousel from './ExperienceCarousel';
+import backgroundImage from '../data/images/cc-bg-1.jpg';
 
 class Home extends Component {
     constructor(props) {
@@ -13,6 +14,9 @@ class Home extends Component {
             isMobile: window.innerWidth <= 900,
             githubRight: null,
             navCollapsed: true,
+            backgroundLoaded: false,
+            backgroundError: false,
+            particles: [],
             // panelCollapsed removed
         };
         this.handleResize = this.handleResize.bind(this);
@@ -42,12 +46,42 @@ class Home extends Component {
         this.setState({ navCollapsed: e.detail.collapsed });
     }
 
+    // Preload background image
+    preloadBackgroundImage() {
+        const img = new Image();
+        img.onload = () => {
+            this.setState({ backgroundLoaded: true });
+        };
+        img.onerror = () => {
+            this.setState({ backgroundError: true });
+            this.generateFallbackParticles();
+        };
+        img.src = backgroundImage;
+    }
+
+    // Generate floating particles for creative fallback
+    generateFallbackParticles() {
+        const particles = Array.from({length: 12}, (_, i) => ({
+            id: i,
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            size: Math.random() * 15 + 8,
+            color: ['#4A2E1F', '#B88A3A', '#C4A83A', '#5A2F1A'][Math.floor(Math.random() * 4)],
+            speed: Math.random() * 3 + 2,
+            delay: Math.random() * 4
+        }));
+        this.setState({ particles });
+    }
+
     // Removed panel collapse/expand handlers
 
     componentDidMount() {
         window.addEventListener('resize', this.handleResize);
         window.addEventListener('githubMenuRight', this.handleGithubMenuRight);
         window.addEventListener('navbarCollapseState', this.handleNavbarCollapseState);
+        
+        // Preload the background image
+        this.preloadBackgroundImage();
     }
 
     componentWillUnmount() {
@@ -65,16 +99,63 @@ class Home extends Component {
     }
 
     render(){
-        const { isMobile, navCollapsed } = this.state;
+        const { isMobile, navCollapsed, backgroundLoaded, backgroundError, particles } = this.state;
         // Show mobile panel if window is <= 900px or if the hamburger menu is visible (collapsed == false)
         const showMobilePanel = isMobile || !navCollapsed;
         const lastExperiences = this.getLastExperiences();
+        
+        // Background image style - only apply if image loaded successfully
+        const backgroundStyle = {
+            backgroundImage: backgroundLoaded && !backgroundError ? `url(${backgroundImage})` : 
+                'linear-gradient(135deg, #2A1A15 0%, #8B6A2E 25%, #9A8A2E 50%, #4A2F1A 75%, #2A1A15 100%)',
+            backgroundSize: backgroundLoaded && !backgroundError ? 'cover' : '400% 400%',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: backgroundLoaded && !backgroundError ? 'rgba(44, 44, 44, 0.6)' : 'transparent',
+            animation: backgroundError ? 'gradientShift 8s ease infinite' : 'none',
+            position: 'relative'
+        };
+        
         return (
             <div>
                 <Header page="HOME" />
-                <div className="page-header-image image-path-home"></div>
-                <div className="page-header">
-                    <div className="page-header-image image-path-home"></div>
+                <div className="page-header" style={backgroundStyle}>
+                    {/* Dark overlay for background image */}
+                    {backgroundLoaded && !backgroundError && (
+                        <div style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                            zIndex: 1
+                        }}></div>
+                    )}
+                    {/* Creative fallback overlay with particles */}
+                    {backgroundError && (
+                        <>
+                            <div className="fallback-overlay"></div>
+                            {particles.map(particle => (
+                                <div
+                                    key={particle.id}
+                                    className="fallback-particle"
+                                    style={{
+                                        position: 'absolute',
+                                        left: `${particle.x}%`,
+                                        top: `${particle.y}%`,
+                                        width: particle.size,
+                                        height: particle.size,
+                                        backgroundColor: particle.color,
+                                        borderRadius: '50%',
+                                        opacity: 0.4,
+                                        animation: `float ${particle.speed}s ease-in-out infinite`,
+                                        animationDelay: `${particle.delay}s`
+                                    }}
+                                />
+                            ))}
+                        </>
+                    )}
                     <div className="container">
                         <div className="content-center">
                             <Introduction home={this.props.home}/>
